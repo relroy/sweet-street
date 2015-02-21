@@ -1,0 +1,4 @@
+      invoke  active_record
+      create    db/migrate/20150221183513_add_devise_to_users.rb
+      insert    app/models/user.rb
+       route  devise_for :users
