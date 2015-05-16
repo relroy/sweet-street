@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div ng-app="app">
+    <div ng-controller="productCtrl">   
+      <div class="logo-sweet">
+        <%= image_tag "Sweet-street-logo.png" %>
+          <span>Welcome To Sweet Street
+          </span><br>
+        <div>""</div>      
+      </div>
+        
+        <center><h3 class="product-header">Popcorn - Candy - Tropical Sno Shaved Ice - Chocolate Dipped Strawberries - and so much MORE!</h3></center><br />
+   
+      <section class="slider">
+        <div class="container-fluid">
+          <div id="main-carousel" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper For Slides Starts -->
+            <div class="carousel-inner">
+
+              <div class="item active">
+                <center><a href="/aboutus"><%= image_tag "Chocolate-Popcorn-Tin2.png" %></a></center>                
+              </div>
+
+              <div class="item">
+                <center><%= image_tag "caramel-apples.png" %></center>
+              </div>
+
+              <div class="item">
+                <center><%= image_tag "t61.png" %></center>
+              </div>
+
+              <div class="item">
+                <center><%= image_tag "shaved-collage.png" %></center>
+              </div>
+
+              <div class="item">
+                <center><%= image_tag "popcorn-tin-1.png" %></center>
+              </div>
+
+              <div class="item">
+                <center><br><%= image_tag "choc-dip-strawberry3.png" %></center>
+              </div>
+
+              <div class="item">
+                <center><br><%= image_tag "Retro-Popcorn.png" %></center>
+              </div>
+
+            </div>
+            <!-- Wrapper For Slides Ends -->
+            <!-- Controls Starts -->
+              <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            <!-- Controls Ends -->
+          </div>        
+        </div>
+      </section>
+
+      <div id="reviews">
+
+        <table class="table table-striped table-bordered table-responsive">
+          <thead>
+            <tr>
+              <th class="bg-color">Review</th>
+              <th class="bg-color">Rating</th>
+              <th class="bg-color">Reviewer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="review in reviews track by $index" ng-if="positive(review.text)">
+            <td>{{ review.text }}</td>
+            <td>{{ review.rating }}</td>
+            <td>{{ review.reviewer }}</td>
+            </tr>
+          </div>
+        </table>
+
+          <label>Review:</label>
+          <input ng-model="newReviewText">
+          <label>Rating (1 - 5):</label>
+          <input ng-model="newReviewRating">
+          <label>Name:</label>
+          <input ng-model="newReviewName">
+          <button ng-click="addReview(newReviewText,newReviewRating, newReviewName)">Add Review</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <!-- Slider Section Ends -->
+    <!-- 3 Column Banners Starts -->
+    

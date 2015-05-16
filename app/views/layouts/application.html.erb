@@ -6,13 +6,167 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<div ng-app="app">
+    <div ng-controller="productCtrl"> 
 <body>
 <% flash .each do |name, message| %>
   <div class="alert alert-<%= name %> alert-dismissable" role="alert">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
     <%= message %>
   </div>
-<%= yield %>
+<% end %>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
+      <a class="navbar-brand" href="/products">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="">Link<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li> -->
+        <% if user_signed_in? %>
+          <li><a href="/users/sign_out" >Wholesale Sign Out</a></li>
+          <% else %>
+          <li><a href="/users/sign_in" >Wholesale Sign in</a></li>
+          <li><a href="/users/sign_up">Wholesale Sign up</a></li>
+        <% end %>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">           
+            <li><a href="">Popcorn<img src="/assets/animated-popcorn.gif" alt="HTML5 Icon" style="width:75px;height:40px"></a></li>
+              <ul><a href="">Tins</a></ul> 
+              <ul><a href="">Bags</a></ul>         
+            <li><a href="">Truffles</a></li>           
+            <li><a href="" >Chocolate Dipped Strawberries<img src="/assets/Choc-dip-strawberry.jpg" alt="HTML5 Icon" style="width:35px;height:40px"></a></li>
+
+            <li><a href="">Chewy candy</a></li>
+            <li><a href="">Sour candy</a></li>
+            <li><a href="">Retro candy</a></li>
+            <li><a href="">Chewy candy</a></li>
+            <li><a href="">Nuts</a></li>
+            <li><a href="">Chocolate candies</a></li>
+            <li><a href="">Caramel Apples<img src="/assets/caramel-apple.jpg" alt="HTML5 Icon" style="width:35px;height:50px"></a></li>
+            <li><a href="">Candy Bars<img src="/assets/kitkat.png" alt="HTML5 Icon" style="width:70px;height:35px"></a></li>
+            
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Links <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% if user_signed_in? %>
+            <li><a href="/users/edit">Update my Account Info</a></li>
+            <% end %>
+            <% if user_signed_in? && current_user.admin? %>
+            <li><a href="/admins">Administration</a></li>
+            <% end %>
+              <% if user_signed_in? && current_user.ws_cust? %>
+                <li><a href="/reservations/new" class="glyphicon glyphicon-thumbs-up"> Make an Order</a></li>
+                <li><a href="/users/<%= current_user.id %>">View my Orders</a></li>
+                <li>
+                  <a href="#">
+                    <i class="glyphicon glyphicon-shopping-cart" title="Shopping Cart"></i>
+                      <span class="hidden-sm hidden-xs">
+                        Shopping Cart
+                      </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-crosshairs" title="Checkout"></i>
+                    <span class="hidden-sm hidden-xs">
+                        Checkout
+                    </span>
+                  </a>
+                </li>
+              <% end %>
+          </ul>
+        </li>
+        <li><a href="/aboutus">Festivals</a><br /></li>
+        <li><a data-toggle="modal" data-target="#myModal">
+              Hours
+            </a>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Hours of Operation ------------ Phone # 815-932-4010</h4>
+              </div>
+              <div>
+                <img src="/assets/Sweet-street-logo.png" class="modalLogo" >
+              </div>
+              <div class="modal-body">
+               Monday     10am - 8pm<br>
+               Tuesday    10am - 8pm<br>
+               Wednesday  10am - 8pm<br>
+               Thursday   10am - 8pm<br>
+               Friday     10am - 8pm<br>
+               Saturday   10am - 8pm<br>
+               Sunday     Noon - 5pm
+              </div>
+              <div class="modal-footer">
+              <p class="modalFoot">"We Make Sweet Memories!"</p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </li>
+
+        <li><a href="mailto:relroy5499@gmail.com?subject=Inquiry">Contact Us</a><br /></li>
+        <li><a href="/aboutus">About Us</a><br /></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<%= yield %>
+<footer>
+      <!-- Container -->
+      <div class="container">
+        <!-- Footer Content -->
+          <!-- Paragraph -->
+          <p class="pull-left">Copyright &copy; <%= Time.new.year %> Sweet Street 
+          <strong>"We Make Sweet Memories!"</strong></p>
+            <!-- List -->
+          <ul class="list-inline pull-right">
+            <% if user_signed_in? %>
+              <li><a href="/users/sign_out">Admin Sign Out</a></li>
+              <% else %>
+              <li><a href="/users/sign_in">Admin Sign in</a></li>
+              <!-- <li><a href="/users/sign_up">Admin Sign up</a></li> -->
+              <% end %>
+          </ul>
+          <!-- Clearfix -->
+          <div class="clearfix"></div>
+      </div>
+    </footer>
 </body>
+</div>
+</div>
 </html>

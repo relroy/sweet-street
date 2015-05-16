@@ -1,0 +1,88 @@
+.ng-enter, .ng-move{
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+ 
+.ng-leave{
+  -webkit-animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  -o-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
+body {
+    background-image: url("brickwall_@2X.png");
+    background-repeat: repeat;       
+}
+
+.logo-sweet{
+ border-left: 20px solid #392914;
+ border-right: 20px solid #392914;
+ border-top: 20px solid #59462E;
+ border-bottom: 20px solid #59462E;
+ padding-top: 30px;
+ padding-left: 90px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-image: url("store-pic-1.jpg");
+  font-family: Papyrus,fantasy;
+  font-size: 425%
+
+}
+.logo-sweet span{
+  background-color: #CC8EA5;
+  border-left: 10px solid #59462E;
+ border-right: 10px solid #59462E;
+ border-top: 10px solid #392914;
+ border-bottom: 10px solid #392914;
+  padding: 5px;
+  padding-top: 15px;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+#memories span{
+color: white;
+ margin-left: 470px;
+ margin-top: 40px;
+}
+.product-header{
+  font-family: Papyrus,fantasy;
+}
+.bg-color{
+  background-color: #59462E;
+  font-family: Papyrus,fantasy;
+  color: white;
+}
+#hoursInfo{
+  color: black;
+  text-align: center;
+}
+.modalLogo{
+  position: absolute;
+  margin-left: 175px;
+  margin-top: 15px;
+
+}
+
+.modalFoot{
+  text-align: left;
+  font-family: Papyrus,fantasy;
+}
+.about_info{
+  text-align: right;
+  margin-left: 750px;
+  margin-top: -500px;
+  text-align: justify;
+}
+.store-pic img{
+  width: 700px;
+}
+.animated-popcorn{
+  transform: scale(0.6, 0.6);
+-ms-transform: scale(0.6, 0.6);
+-webkit-transform: scale(0.6, 0.6);
+margin-top: 50px;
+}

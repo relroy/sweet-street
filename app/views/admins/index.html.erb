@@ -1,0 +1,10 @@
+<div class="container-fluid">
+
+<h1>Welcome to the admins page</h1>
+
+<% @products.each do |product| %>
+  <%= product.name %>
+  $<%= product.price %>
+  <% end %>
+
+</div>

@@ -11,7 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221184752) do
+ActiveRecord::Schema.define(version: 20150423032938) do
+
+  create_table "one_gallons", force: true do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 6, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 6, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "six_half_gallons", force: true do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 6, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "three_half_gallons", force: true do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 6, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "two_gallons", force: true do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 6, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -25,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150221184752) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin",                  default: false
+    t.boolean  "ws_cust",                default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
