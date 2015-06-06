@@ -4,4 +4,18 @@ class AdminsController < ApplicationController
     
   end
 
+  def new
+    @product = Product.new
+    
+    
+  end
+
+  def create  
+
+  end
+
+  def update
+    
+  end
+
 end

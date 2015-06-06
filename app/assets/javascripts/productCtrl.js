@@ -44,10 +44,6 @@
       return review.indexOf("stupid") == -1;
     };
 
-    $scope.hours = function() {
-      $scope.hours = "HOURS: Monday - Thursday 10am - 8pm and Sunday Noon - 5pm"
-   
-  };
 
     window.scope = $scope;
   }); 

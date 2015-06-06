@@ -1,13 +1,28 @@
 Rails.application.routes.draw do
+  
+  
+
+  get 'chewy_flavors/show'
+
+  # get "search" => "products#search"
+
   root "products#index"
 
   get "aboutus" => "products#aboutus"
+
+  get 'storepic' => "products#storepic"
 
   devise_for :users
 
   resources :products
 
   resources :admins
+
+  resources :popcorn_flavors
+
+  get "festivals" => "products#festivals"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

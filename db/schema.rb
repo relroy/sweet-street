@@ -11,9 +11,93 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423032938) do
+ActiveRecord::Schema.define(version: 20150525180539) do
 
-  create_table "one_gallons", force: true do |t|
+  create_table "bags", force: true do |t|
+    t.string   "name"
+    t.integer  "size_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "candy_bars", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "caramel_apples", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "chewy_candies", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "chocolate_candies", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "chocolate_dip_strawberries", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gift_cards", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gifts", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nuts", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "one", force: true do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 6, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "popcorn_flavors", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.decimal  "sm_bag",             precision: 6, scale: 2
+    t.decimal  "lg_bag",             precision: 6, scale: 2
+    t.decimal  "one_gal_tin",        precision: 6, scale: 2
+    t.decimal  "two_gal_tin",        precision: 6, scale: 2
+    t.decimal  "three_and_half_tin", precision: 6, scale: 2
+    t.decimal  "six_and_half_tin",   precision: 6, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo"
+  end
+
+  create_table "prices", force: true do |t|
     t.string   "name"
     t.decimal  "price",      precision: 6, scale: 2
     t.datetime "created_at"
@@ -22,26 +106,62 @@ ActiveRecord::Schema.define(version: 20150423032938) do
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.decimal  "price",      precision: 6, scale: 2
+    t.string   "photo"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "six_half_gallons", force: true do |t|
+  create_table "retro_candies", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "six_half", force: true do |t|
     t.string   "name"
     t.decimal  "price",      precision: 6, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "three_half_gallons", force: true do |t|
+  create_table "sizes", force: true do |t|
+    t.string   "name"
+    t.integer  "price_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sour_candies", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "three_half", force: true do |t|
     t.string   "name"
     t.decimal  "price",      precision: 6, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "two_gallons", force: true do |t|
+  create_table "tins", force: true do |t|
+    t.string   "name"
+    t.integer  "size_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "truffles", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "two", force: true do |t|
     t.string   "name"
     t.decimal  "price",      precision: 6, scale: 2
     t.datetime "created_at"

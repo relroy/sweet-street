@@ -3,13 +3,40 @@
     <div ng-controller="productCtrl">   
       <div class="logo-sweet">
         <%= image_tag "Sweet-street-logo.png" %>
-          <span>Welcome To Sweet Street
-          </span><br>
-        <div>""</div>      
-      </div>
         
-        <center><h3 class="product-header">Popcorn - Candy - Tropical Sno Shaved Ice - Chocolate Dipped Strawberries - and so much MORE!</h3></center><br />
-   
+          <a id="box-link" href="/storepic"></a>
+          <span>Welcome To Sweet Street
+          </span>
+        
+          <p class="video" ><iframe width="450" height="270" src="https://www.youtube.com/embed/aOcdaMEVNtw" frameborder="3" allowfullscreen></iframe></p><br>
+        <div>""</div>
+
+      </div>
+      
+        <!-- search begins -->
+        <%#= form_tag("/search", method: "get") do %>
+        <%#= label_tag(:q, "Search for:") %>
+        <%#= text_field_tag(:q) %>
+        <%#= submit_tag("Search") %>
+        <%# end %>
+        <!-- search ends -->
+
+
+        <!-- <center><h3 class="product-header">Popcorn - Candy - Tropical Sno Shaved Ice - Chocolate Dipped Strawberries - and so much MORE!</h3></center> -->
+
+         <div class="container-fluid">
+        <% @products.each do |p| %>
+        <div class="col-md-3 col-sm-3 col-xs-12 bor">
+        <h4 class="product-header"><a href="/products/<%=p.id%>"><%= p.name %></h4>
+        <p class='img-thumbnail'><img src='<%= p.photo %>'  height="170" width="180" ></a></p>
+
+        </div>
+        <% end %>
+      </div>
+
+
+        
+    
       <section class="slider">
         <div class="container-fluid">
           <div id="main-carousel" class="carousel slide" data-ride="carousel">
@@ -88,7 +115,9 @@
 
     </div>
   </div>
+
 </div>
+
 
     <!-- Slider Section Ends -->
     <!-- 3 Column Banners Starts -->

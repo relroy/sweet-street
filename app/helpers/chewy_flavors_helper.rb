@@ -1,0 +1,2 @@
+module ChewyFlavorsHelper
+end

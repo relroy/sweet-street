@@ -1,0 +1,32 @@
+<%= form_for @product do |f| %>
+
+  <div class ="row">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Product</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :name %>
+        <%= f.text_field :name, :required => true %>
+      </div>
+  </div>
+  <div class="panel-heading">
+      <h3 class="panel-title">Product</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :photo %>
+        <%= f.file_field :photo, :required => true %>
+      </div>
+  </div>
+  <div class="panel-heading">
+      <h3 class="panel-title">Product</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :description %>
+        <%= f.text_field :description, :required => true %>
+      </div>
+  </div>
+  
+  
+  <%= f.submit %>
+<% end %>
