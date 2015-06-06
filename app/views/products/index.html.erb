@@ -29,6 +29,10 @@
         <div class="col-md-3 col-sm-3 col-xs-12 bor">
         <h4 class="product-header"><a href="/products/<%=p.id%>"><%= p.name %></h4>
         <p class='img-thumbnail'><img src='<%= p.photo %>'  height="170" width="180" ></a></p>
+          <% if user_signed_in? && current_user.admin? %>
+          <button><%= link_to 'EDIT Product', edit_product_path(p.id) %></button>
+            <a data-confirm="Are you sure?" data-method="delete" href="/products/<%= p.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Product</button></a>
+          <% end %>
 
         </div>
         <% end %>
