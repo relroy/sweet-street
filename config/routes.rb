@@ -20,6 +20,12 @@ Rails.application.routes.draw do
 
   resources :popcorn_flavors
 
+  resources :ws_popcorn_flavors
+
+  resources :users
+
+  resources :carted_products
+
   get "festivals" => "products#festivals"
 
 

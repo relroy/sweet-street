@@ -1,29 +1,7 @@
 <div class="container-fluid">
-<h1 class="show-header"><%= @popcorn_choice.name %> Popcorn</h1>
-<p class="logo-popcorn-show"><%= image_tag "t61.png" %></p>
-<p class="logo-popcorn-show"><%= image_tag "Sweet-street-logo.png" %></p>
-<table class="table table-striped table-bordered table-responsive">
-  <thead>
-    <tr>
-      <th class="bg-primary">Small Bag</th><br>
-      <th class="bg-primary">Large Bag</th><br>
-      <th class="bg-primary">1 Gallon Tin</th><br>
-      <th class="bg-primary">2 Gallon Tin</th><br>
-      <th class="bg-primary">3 1/2 Gallon Tin</th><br>
-      <th class="bg-primary">6 1/2 Gallon Tin</th><br>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$<%= @popcorn_choice.sm_bag %></td>
-      <td>$<%= @popcorn_choice.lg_bag %></td>
-      <td>$<%= @popcorn_choice.one_gal_tin %></td>
-      <td>$<%= @popcorn_choice.two_gal_tin %></td>
-      <td>$<%= @popcorn_choice.three_and_half_tin %></td>
-      <td>$<%= @popcorn_choice.six_and_half_tin %></td>
-    </tr>
-  </tbody>
-</table>
+<h1 class="show-header"><%= @popcorn_choice.name %> Popcorn</h1><br>
+<p class="logo-popcorn-show"><img src="<%= @popcorn_choice.photo %>"></p>
+<p class="logo-popcorn-show"><%= image_tag "Sweet-street-logo.png" %></p><br><br>
+<h4 class="show-header"><%= @popcorn_choice.description %></h4>
 
 </div>

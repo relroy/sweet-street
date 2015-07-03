@@ -5,11 +5,13 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if user_signed_in? && current_user.admin?
+    @product = Product.new 
+    end
   end
 
   def create
-    @product = Product.create(product_params)
+    @product = Product.create(product_params) 
     redirect_to '/products'
     
   end
@@ -54,7 +56,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    return params.require(:product).permit(:name, :photo, :description,:id)
+    return params.require(:product).permit(:name, :photo, :description, :special, :id)
 
   end
 

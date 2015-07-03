@@ -1,7 +1,15 @@
 <div class="container-fluid">
+  <% if user_signed_in? && current_user.admin? %>
 
-<h1>Welcome to the admins page</h1>
+<h1>Admins page</h1>
+<button><a href="/products/new">Add a Product</a></button>
+<button><a href="/products">Edit or Delete Products</a></button><br>
+<button><a href="/popcorn_flavors/new">Add a Popcorn Flavor</a></button>
+<button><a href="/popcorn_flavors">Edit or Delete a Popcorn Flavor</a></button><br>
+<button><a href="/ws_popcorn_flavors/new">Add a Wholesale Popcorn Flavor</a></button>
+<button><a href="/ws_popcorn_flavors">Edit or Delete a Wholesale Popcorn Flavor</a></button><br>
+<button><a href="/users">Edit a Users Information</a></button>
 
 
-
+<% end %>
 </div>

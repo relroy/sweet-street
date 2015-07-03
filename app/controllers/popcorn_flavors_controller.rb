@@ -35,7 +35,7 @@ class PopcornFlavorsController < ApplicationController
   private
 
   def popcorn_params
-    return params.require(:popcorn_flavor).permit(:name, :photo, :sm_bag, :lg_bag, :one_gal_tin, :two_gal_tin, :three_and_half_tin, :six_and_half_tin,:id)
+    return params.require(:popcorn_flavor).permit(:name, :photo, :sm_bag, :lg_bag, :one_gal_tin, :two_gal_tin, :three_and_half_tin, :six_and_half_tin,:description,:id)
     
   end
 

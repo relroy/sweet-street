@@ -1,7 +1,19 @@
 <div class="container-fluid">
-
-  <% @popcorn_flavors.each do |flavor| %>
-  <p><%= flavor.name %></p>
-  <% end %>
-
-</div>
+<h1>Popcorn Flavors</h1>
+   
+  <table class="table table-striped table-bordered table-responsive">
+    <thead>
+      <tr>
+        <th class="bg-primary">Flavor</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @popcorn_flavors.each do |flavor| %>
+      <tr>
+        <td><a href="/popcorn_flavors/<%= flavor.id %>"><%= flavor.name %></a><br><% if current_user.admin %><button><a href="/popcorn_flavors/<%= flavor.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/products/<%= flavor.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Product</button></a><% end %><img src="<%= flavor.photo %>" height="65"></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+<div>

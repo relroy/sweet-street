@@ -1,0 +1,26 @@
+<div class="container-fluid">
+<%= form_for @user do |f| %>
+
+  <div class ="row">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Email</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+  </div>
+  <div class="panel-heading">
+    <h3 class="panel-title">Check box below for Whole Sale Customer</h3>
+  </div>
+    <div class="panel-body">
+        <%= f.label :ws_cust %>
+        <%= f.check_box :ws_cust %>
+    </div>
+ 
+  
+  
+  <%= f.submit %>
+<% end %>
+</div>
