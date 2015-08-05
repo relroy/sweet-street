@@ -1,5 +1,5 @@
 <div class="container-fluid">
-<%= form_for @popcorn_flavor do |f| %>
+<%= form_for @ws_products do |f| %>
 
   <div class ="row">
 
@@ -15,7 +15,7 @@
       <h3 class="panel-title">Change Photo?</h3>
     </div>
       <div class="panel-body">
-        <h4></h4><%= image_tag @popcorn_flavor.photo , class: "img-responsive" %>
+        <h4></h4><%= image_tag @ws_product.photo , class: "img-responsive" %>
         <%= f.label :photo %>
         <%= f.file_field :photo, :required => true %>
       </div>

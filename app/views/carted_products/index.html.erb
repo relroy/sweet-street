@@ -1,0 +1,9 @@
+<div class = "container-fluid">
+  <h1>Here are your current products on order:</h1>
+
+  
+  <% @carted_products.each do |carted_product| %>
+
+  <%= carted_product.order.id %>
+  <% end %>
+</div>

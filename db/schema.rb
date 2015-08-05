@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150630005956) do
   create_table "carted_products", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "product_id"
+    t.integer  "ws_product_id"
     t.integer  "order_id"
     t.integer  "quantity"
     t.integer  "sm_bag_qty"
@@ -210,7 +210,7 @@ ActiveRecord::Schema.define(version: 20150630005956) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "ws_popcorn_flavors", force: true do |t|
+  create_table "ws_products", force: true do |t|
     t.string   "name"
     t.string   "photo"
     t.integer  "product_id"

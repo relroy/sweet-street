@@ -1,4 +1,4 @@
-class WSPopcornFlavor < ActiveRecord::Base
+class WSProduct < ActiveRecord::Base
   mount_uploader :photo, ProductPhotoUploader
 
   has_many :carted_products
