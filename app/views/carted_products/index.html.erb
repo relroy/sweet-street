@@ -2,8 +2,47 @@
   <h1>Here are your current products on order:</h1>
 
   
-  <% @carted_products.each do |carted_product| %>
-
-  <%= carted_product.order.id %>
+  <table class="table table-striped table-bordered table-responsive">
+    <thead>
+      <tr>
+        <th class="bg-primary">Name</th>
+        <th class="bg-primary">Small</th>
+        <th class="bg-primary">Large</th>
+        <th class="bg-primary">1 Gal Tin</th>
+        <th class="bg-primary">2 Gal Tin</th>
+        <th class="bg-primary">3.5 Gal Tin</th>
+        <th class="bg-primary">6.5 Gal Tin</th>
+        <th class="bg-primary">Total Product Price</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @carted_products.each do |each_product| %>
+      <tr>
+        <td><%= each_product.ws_product.name  %></td>
+        <td><strong><%= each_product.sm_bag_qty %></strong> </td>
+        <td><strong><%= each_product.lg_bag_qty  %></strong></td>
+        <td><strong><%= each_product.one_gal_tin_qty %></strong></td>
+        <td><strong><%= each_product.two_gal_tin_qty %></strong></td>
+        <td><strong><%= each_product.three_half_tin_qty %></strong></td>
+        <td><strong><%= each_product.six_half_tin_qty %></strong></td>          
+        <td><strong>$<%= each_product.sub_total %></strong></td>
+      </tr>
   <% end %>
+    </tbody>
+  </table>
+  <% @order_sub_total = 0 %>
+  <% @carted_products.each do |each_product| %>
+    <% @order_sub_total += each_product.sub_total %>
+  <% end %>
+  <div class="cptotal"><strong><h3>Total = <%= number_to_currency @order_sub_total %></h3></strong></div>
+    <div class="cptotal2"><%= form_for @order do |f| %>
+  <button><%= f.submit "Complete Purchase" %></button>
+<% end %></div><br>
+
+
+
+
+  
+
+  
 </div>

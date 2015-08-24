@@ -10,9 +10,12 @@ class CartedProductsController < ApplicationController
     redirect_to "/ws_products"
   end
   def index
-
+    if 
     @order = Order.find_by(:user_id => current_user.id, :status => "cart")
     @carted_products = @order.carted_products
+    else
+    redirect_to "/"
+    end
     ws_product_id = params[:id]
   end
 

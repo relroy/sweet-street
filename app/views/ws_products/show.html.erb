@@ -1,6 +1,6 @@
 <div class="container-fluid">
-<h1 class="show-header"><%= @ws_popcorn_choice.name %> Wholesale Popcorn</h1><br>
-<p class="logo-popcorn-show"><img src="<%= @ws_popcorn_choice.photo %>"></p>
+<h1 class="show-header"><%= @ws_product.name %> Wholesale Popcorn</h1><br>
+<p class="logo-popcorn-show"><img src="<%= @ws_product.photo %>"></p>
 <p class="logo-popcorn-show"><%= image_tag "Sweet-street-logo.png" %></p>
 <table class="table table-striped table-bordered table-responsive">
   <thead>
@@ -16,12 +16,12 @@
   </thead>
   <tbody>
     <tr>
-      <td>$<%= @ws_popcorn_choice.sm_bag %></td>
-      <td>$<%= @ws_popcorn_choice.lg_bag %></td>
-      <td>$<%= @ws_popcorn_choice.one_gal_tin %></td>
-      <td>$<%= @ws_popcorn_choice.two_gal_tin %></td>
-      <td>$<%= @ws_popcorn_choice.three_and_half_tin %></td>
-      <td>$<%= @ws_popcorn_choice.six_and_half_tin %></td>
+      <td>$<%= @ws_product.sm_bag %></td>
+      <td>$<%= @ws_product.lg_bag %></td>
+      <td>$<%= @ws_product.one_gal_tin %></td>
+      <td>$<%= @ws_product.two_gal_tin %></td>
+      <td>$<%= @ws_product.three_and_half_tin %></td>
+      <td>$<%= @ws_product.six_and_half_tin %></td>
     </tr>
   </tbody>
 </table>

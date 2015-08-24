@@ -70,16 +70,17 @@
         <!-- search ends -->
 
         <!-- <center><h3 class="product-header">Popcorn - Candy - Tropical Sno Shaved Ice - Chocolate Dipped Strawberries - and so much MORE!</h3></center> -->
-
+        <% if user_signed_in? && current_user.admin? %> 
           <button type="button" class="btn btn-success"><a href="/products/new"><h5>ADD A NEW Product</h5></a></button>
+          <% end %>
          <div class="container-fluid">
         <% @products.each do |p| %>
         <div class="col-md-3 col-sm-3 col-xs-12 bor">
         <h4 class="product-header">
-          <a href="/products/<%=p.id%>"><%= p.name %></a></h4>
+          <a href="/products/<%=p.id%>"><%= p.name %></h4>
             
         <p class='img-thumbnail'><% if p.special? %>
-          <div class="special"><a href=""><%= image_tag "specials.png" %></a></div>
+          <div class="special"><a href=""><%= image_tag "specials.png" %></a></a></div>
             
             <% end %>
           <img src='<%= p.photo %>'  height="170" width="auto" ></a></p>

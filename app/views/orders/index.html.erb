@@ -1,7 +1,9 @@
 <div class = "container-fluid">
   <h1>Here are your orders!</h1>
-  <%# @orders.each do |order| %>
-  <p>$<%#= order.sub_total %></p>
-  <%# end %>
+  <% @orders.each do |order| %>
+  <p>on <%= order.created_at.strftime("%A, %D, %I:%M %p") %></p>
+  <p>Total = <%= number_to_currency order.sub_total %></p>
+  
+  <% end %>
   
 </div>
