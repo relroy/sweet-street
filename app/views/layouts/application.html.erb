@@ -15,7 +15,7 @@
     <%= message %>
   </div>
 <% end %>
-<nav class="navbar navbar-inverse">
+<nav class="navbar-color">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -25,10 +25,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
       <a class="navbar-brand" href="/products">Home</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -38,8 +36,9 @@
         
           <li><a href="/carted_products">
             <i class="glyphicon glyphicon-shopping-cart" title="My Cart"></i>
-                <span class="hidden-sm hidden-xs">Shopping Cart</span></a>
+                <span class="hidden-sm hidden-xs">Shopping Cart </span></a>
           </li>
+
        
           <li><a href="/orders">My History</a></li>
           <% end %>
@@ -104,7 +103,7 @@
 <%= yield %>
 <footer>
       <!-- Container -->
-      <div class="container">
+      <div class="container-fluid">
         <!-- Footer Content -->
         <div>
         
@@ -121,10 +120,10 @@
             <li><a href="/admins">Administration</a></li>
             <% end %>
             <% if user_signed_in? %>
-              <li><a href="/users/sign_out" >Wholesale Sign Out</a></li>
+              <li><a href="/users/sign_out" >Sign Out</a></li>
             <% else %>
             <li><a href="/users/sign_in" >Wholesale Sign in</a></li>
-            <li><a href="/users/sign_up">Wholesale Sign up</a></li>
+            <li><a href="/users/sign_up">Wholesale Inquiry</a></li>
             <% end %>
           </ul>
           <!-- Clearfix -->

@@ -1,6 +1,20 @@
 <div class="container-fluid">
+  <head>
+    <link rel="stylesheet" href="animate.min.css">
+  </head>
   <div ng-app="app">
-    <div ng-controller="productCtrl">   
+    <div ng-controller="productCtrl"> 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% @layouts.each do |l| %>
+        <% if user_signed_in? && current_user.admin? %> 
+        <button><%= link_to 'EDIT Layout', edit_layout_path(l.id) %><%= l.photo %></button>
+        <% end %>
+        <% if l.active %>
+        <p class="animated slideInRight " ><img src='<%= l.photo %>'></p>
+        <% end %>
+        <% end %>
+        
+    </div><!-- /.navbar-collapse -->  
       <div class="logo-sweet">
         <%= image_tag "Sweet-street-logo.png" %>
         
@@ -8,7 +22,7 @@
           <span>Welcome To Sweet Street
           </span>
         
-          <p class="video" ><iframe width="450" height="270" src="https://www.youtube.com/embed/aOcdaMEVNtw" frameborder="3" allowfullscreen></iframe></p><br>
+          <p class="video" ><iframe width="450" height="270" src="https://www.youtube.com/embed/aOcdaMEVNtw" frameborder="3" allowfullscreen ></iframe></p><br>
         <div>""</div>
 
       </div>
@@ -39,6 +53,11 @@
               <div class="item">
                 <center><%= image_tag "popcorn-tin-1.png" %></center>
               </div>
+
+              <div class="item">
+                <center><%= image_tag "cotton-candy2.png" %></center>
+              </div>
+
 
               <div class="item">
                 <center><br><%= image_tag "choc-dip-strawberry3.png" %></center>
@@ -76,7 +95,7 @@
          <div class="container-fluid">
         <% @products.each do |p| %>
         <div class="col-md-3 col-sm-3 col-xs-12 bor">
-        <h4 class="product-header">
+        <h4 id="product-header">
           <a href="/products/<%=p.id%>"><%= p.name %></h4>
             
         <p class='img-thumbnail'><% if p.special? %>
@@ -84,8 +103,6 @@
             
             <% end %>
           <img src='<%= p.photo %>'  height="170" width="auto" ></a></p>
-
-          
          
           <% if user_signed_in? && current_user.admin? %>
           <button><%= link_to 'EDIT Product', edit_product_path(p.id) %></button>

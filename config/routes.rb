@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   
 
   get 'chewy_flavors/show'
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'storepic' => "products#storepic"
 
-  devise_for :users
+  resources :layouts
 
   resources :products
 

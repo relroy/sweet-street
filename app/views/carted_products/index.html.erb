@@ -19,13 +19,13 @@
   <% @carted_products.each do |each_product| %>
       <tr>
         <td><%= each_product.ws_product.name  %></td>
-        <td><strong><%= each_product.sm_bag_qty %></strong> </td>
-        <td><strong><%= each_product.lg_bag_qty  %></strong></td>
-        <td><strong><%= each_product.one_gal_tin_qty %></strong></td>
-        <td><strong><%= each_product.two_gal_tin_qty %></strong></td>
-        <td><strong><%= each_product.three_half_tin_qty %></strong></td>
-        <td><strong><%= each_product.six_half_tin_qty %></strong></td>          
-        <td><strong>$<%= each_product.sub_total %></strong></td>
+        <td><strong><center><%= each_product.sm_bag_qty %></center></strong> </td>
+        <td><strong><center><%= each_product.lg_bag_qty  %></center></strong></td>
+        <td><strong><center><%= each_product.one_gal_tin_qty %></center></strong></td>
+        <td><strong><center><%= each_product.two_gal_tin_qty %></center></strong></td>
+        <td><strong><center><%= each_product.three_half_tin_qty %></center></strong></td>
+        <td><strong><center><%= each_product.six_half_tin_qty %></center></strong></td>          
+        <td><strong><center><center><%= number_to_currency each_product.sub_total %></center></strong></td>
       </tr>
   <% end %>
     </tbody>

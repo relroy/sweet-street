@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   has_many :carted_products
   has_many :ws_products, :through => :carted_products
    belongs_to :user
+   
 
    def sub_total
     sub_total = 0
@@ -56,4 +57,6 @@ class Order < ActiveRecord::Base
   def total
     total = sub_total
   end
+
+  
 end

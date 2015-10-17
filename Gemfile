@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'quiet_assets'
 gem 'bootstrap-sass'
-
+gem 'seed_dump', '~> 3.2.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

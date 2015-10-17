@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
 
     @order = Order.find(params[:id])
     @order.update(:status => "purchased", :total => @order.total)
+    UserMailer.order_submission(@order).deliver
     flash[:info] = "Succesfully Submitted."
     redirect_to @order
   end

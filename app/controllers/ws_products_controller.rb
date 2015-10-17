@@ -2,6 +2,10 @@ class WsProductsController < ApplicationController
   def index   
     @ws_products = WsProduct.all
     @carted_product = CartedProduct.new
+    if 
+    @order = Order.find_by(:user_id => current_user.id, :status => "cart")
+    @carted_products = @order.carted_products
+    end
   end
 
   def show

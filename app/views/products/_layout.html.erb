@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <%= form_for @layout do |f| %>
+
+  <div class ="row">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Layout</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :text %>
+        <%= f.text_field :text %>
+      </div>
+  </div>
+
+  <div class="panel-heading">
+    <h3 class="panel-title">Photo</h3>
+  </div>
+    <div class="panel-body">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+      <%= image_tag @layout.photo_url , class: "img-responsive" %>
+    </div>
+  
+  <%= f.submit %>
+<% end %>
+</div>

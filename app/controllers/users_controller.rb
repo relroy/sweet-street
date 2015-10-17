@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     # @users = User.search(params[:search])
     # @users = @users.sort_by do |i|
     #   i[:group_id] 
+
     @users = User.all
     
     else render :file => "/public/404.html", :status => 404
@@ -17,8 +18,7 @@ class UsersController < ApplicationController
   end
 
   def create
-   @user = User.new(params[:user])
-     
+   @user = User.create(params[:user])
     
   end
 

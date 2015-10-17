@@ -14,3 +14,9 @@
  *= require_tree .
  *= require_self
  */
+.navbar-color{
+  background-color: #CC8EA5;
+  border: 5px;
+  border-style: dotted solid dashed;
+  border-color: #59462E;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <%= image_tag attachments['sweet_logo.png'].url -%>
+  </head>
+  <body>
+    <h1>You have a new Wholesale inquiry!</h1>
+    <p>
+      <%= @first_name %> <%= @last_name %> from:<br>
+      <%= @business %><br>
+      <%= @address %>
+      <%= @city %>, <%= @state %><br>
+      <%= @zip_code %><br>
+      <h3><%= @phone %></h3>
+      <br>
+    </p>
+    
+    <h3>Please respond as soon as possible!</h3>
+  </body>
+</html>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630005956) do
+ActiveRecord::Schema.define(version: 20151008183126) do
 
   create_table "bags", force: true do |t|
     t.string   "name"
@@ -81,6 +81,26 @@ ActiveRecord::Schema.define(version: 20150630005956) do
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "layouts", force: true do |t|
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",       default: false
+    t.string   "christmas"
+    t.string   "easter"
+    t.string   "thanksgiving"
+    t.string   "july_4"
+    t.string   "halloween"
+    t.string   "mothers"
+    t.string   "fathers"
+    t.string   "secretaries"
+    t.string   "valentines"
+    t.string   "sweetest"
+    t.string   "gandparents"
+    t.string   "bosses"
+    t.string   "newyears"
   end
 
   create_table "nuts", force: true do |t|
@@ -193,11 +213,19 @@ ActiveRecord::Schema.define(version: 20150630005956) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "business"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.string   "phone"
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "created_at"
+    t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -213,7 +241,6 @@ ActiveRecord::Schema.define(version: 20150630005956) do
   create_table "ws_products", force: true do |t|
     t.string   "name"
     t.string   "photo"
-    t.integer  "product_id"
     t.decimal  "sm_bag",             precision: 6, scale: 2
     t.decimal  "lg_bag",             precision: 6, scale: 2
     t.decimal  "one_gal_tin",        precision: 6, scale: 2
