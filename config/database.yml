@@ -48,7 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
   database: sweet-street_production
-  username: sweet-street
-  password: <%= ENV['SWEET-STREET_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pull: 5
