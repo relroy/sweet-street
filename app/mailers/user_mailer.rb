@@ -52,4 +52,12 @@ class UserMailer < ActionMailer::Base
     attachments.inline['sweet_logo.png'] = File.read('app/assets/images/sweet-logo.png')
     mail to: @admin, subject: "New Order!"
   end
+
+  def order_confirmation(order)
+    
+    @order = order
+    attachments.inline['sweet_logo.png'] = File.read('app/assets/images/sweet-logo.png')
+    mail to: @order.user.email, subject: "Your order confirmation for Sweet Street!"
+  end
+
 end

@@ -1,0 +1,16 @@
+<div class= "container-fluid" >
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <%= image_tag attachments['sweet_logo.png'].url -%>
+  </head>
+  <body>
+    <h1>Thank you for your order!</h1>
+    <h3>Your order total charged to your card was <%= number_to_currency @order.total %></h3>
+    
+    
+    <p>We will get your order processed as soon as possible and have it ready for you.</p>
+  </body>
+</html>
+</div>

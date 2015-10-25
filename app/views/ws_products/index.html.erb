@@ -8,7 +8,7 @@
 
 <div class="carted_length">
   <% if @carted_products %>
-  <h3>Items in cart: <%= @carted_products.length %></h3>
+  <h3>Your total so far: <%= number_to_currency @order.total %></h3>
   <% end %>
 </div>
    

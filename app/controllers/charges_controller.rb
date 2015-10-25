@@ -26,6 +26,10 @@ def create
 
   @order.update(:status => "purchased", :total => @order.total)
 
+  UserMailer.order_submission(@order).deliver
+  UserMailer.order_confirmation(@order).deliver
+    flash[:info] = "Succesfully Submitted."
+
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to charges_path

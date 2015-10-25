@@ -1,7 +1,7 @@
 <div class = "container-fluid">
-  <h1>Here is your order and cost:</h1>
+  <h1>Here is your order and cost: <%= number_to_currency @order.total %></h1>
   
-  <center><h3 class="bg-green"> Here is your order and cost: YOUR TOTAL COST <%= number_to_currency @order.total %></h3></center>
+  <center><h3 class="bg-green">ORDER</h3></center>
   <table class="table table-striped table-bordered table-responsive">
    <thead>
     <tr>
