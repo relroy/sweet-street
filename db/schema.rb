@@ -87,20 +87,7 @@ ActiveRecord::Schema.define(version: 20151008183126) do
     t.string   "photo"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "active",       default: false
-    t.string   "christmas"
-    t.string   "easter"
-    t.string   "thanksgiving"
-    t.string   "july_4"
-    t.string   "halloween"
-    t.string   "mothers"
-    t.string   "fathers"
-    t.string   "secretaries"
-    t.string   "valentines"
-    t.string   "sweetest"
-    t.string   "gandparents"
-    t.string   "bosses"
-    t.string   "newyears"
+    t.boolean  "active",     default: false
   end
 
   create_table "nuts", force: true do |t|

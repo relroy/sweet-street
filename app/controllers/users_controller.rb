@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+
   def index
     if user_signed_in? && current_user.admin?
     # @users = User.search(params[:search])
@@ -35,11 +37,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update({:ws_cust => params[:ws_cust], :email => params[:email]})
-    flash[:info] = "Update Complete"
-    redirect_to "/users"
-    
+    if user_signed_in? && current_user.admin?
+      @user = User.find(params[:id])
+      @user.update({:ws_cust => params[:ws_cust], :phone => params[:phone],:address => params[:address],:city => params[:city],:state => params[:state],:zip_code => params[:zip_code],:email => params[:email]})
+      flash[:info] = "Update Complete"
+      redirect_to "/users"
+    end  
   end
 
   def destroy

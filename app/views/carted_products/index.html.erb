@@ -35,9 +35,11 @@
     <% @order_sub_total += each_product.sub_total %>
   <% end %>
   <div class="cptotal"><strong><h3>Total = <%= number_to_currency @order_sub_total %></h3></strong></div>
-    <div class="cptotal2"><%= form_for @order do |f| %>
-  <button><%= f.submit "Complete Purchase" %></button>
-<% end %></div><br>
+    <div class="cptotal2">
+      <button><a href="/orders/<%= @order.id %>">Confirm and PAY</a></button>
+    </div>
+
+    <br>
 
 
 
