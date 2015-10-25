@@ -1,15 +1,18 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    @layouts = Layout.all
     
   end
 
   def new
-    @product = Product.new
+    if user_signed_in? && current_user.admin?
+    @product = Product.new 
+    end
   end
 
   def create
-    @product = Product.create(product_params)
+    @product = Product.create(product_params) 
     redirect_to '/products'
     
   end
@@ -22,14 +25,16 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    flash[:success] = "Your Product is updated!"
+    # flash[:success] = "Your Product is updated!"
     redirect_to '/products'
     
   end
 
   def show
     @product = Product.find(params[:id])
+  end
 
+  def destroy
     
   end
 
@@ -54,7 +59,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    return params.require(:product).permit(:name, :photo, :description,:id)
+    return params.require(:product).permit(:name, :photo, :description, :special, :id)
 
   end
 

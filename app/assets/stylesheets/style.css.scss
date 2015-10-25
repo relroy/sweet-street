@@ -141,7 +141,7 @@ color: white;
   margin-top: -229px;
 }
 .treats{
-  width: 500px;
+  width: 700px;
   position: absolute;
   margin-top: -478px;
   margin-left: 400px;
@@ -150,3 +150,23 @@ color: white;
   -o-animation: fadeIn 2s;
   animation: fadeIn 2s;
 }
+#trailer:hover{
+  -webkit-transform: scale(1.7,1.7);
+    -moz-transform:scale(1.7,1.7);
+    opacity: 1.7;
+    -webkit-opacity: 1.7;
+    -moz-opacity: 1.7;
+}
+.special{
+  position: absolute;
+    left: 30px;
+    top: 50px;
+    z-index: +1;
+}
+.item img{
+  height: 200px;
+}
+.panel-body img{
+  height: 100px;
+}
+

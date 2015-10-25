@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525180539) do
+ActiveRecord::Schema.define(version: 20151008183126) do
 
   create_table "bags", force: true do |t|
     t.string   "name"
@@ -32,6 +32,20 @@ ActiveRecord::Schema.define(version: 20150525180539) do
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "carted_products", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "ws_product_id"
+    t.integer  "order_id"
+    t.integer  "quantity"
+    t.integer  "sm_bag_qty"
+    t.integer  "lg_bag_qty"
+    t.integer  "one_gal_tin_qty"
+    t.integer  "two_gal_tin_qty"
+    t.integer  "three_half_tin_qty"
+    t.integer  "six_half_tin_qty"
   end
 
   create_table "chewy_candies", force: true do |t|
@@ -69,6 +83,13 @@ ActiveRecord::Schema.define(version: 20150525180539) do
     t.datetime "updated_at"
   end
 
+  create_table "layouts", force: true do |t|
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",     default: false
+  end
+
   create_table "nuts", force: true do |t|
     t.string   "name"
     t.integer  "product_id"
@@ -83,8 +104,17 @@ ActiveRecord::Schema.define(version: 20150525180539) do
     t.datetime "updated_at"
   end
 
+  create_table "orders", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+    t.integer  "user_id"
+    t.decimal  "total",      precision: 7, scale: 2
+  end
+
   create_table "popcorn_flavors", force: true do |t|
     t.string   "name"
+    t.string   "photo"
     t.integer  "product_id"
     t.decimal  "sm_bag",             precision: 6, scale: 2
     t.decimal  "lg_bag",             precision: 6, scale: 2
@@ -94,7 +124,7 @@ ActiveRecord::Schema.define(version: 20150525180539) do
     t.decimal  "six_and_half_tin",   precision: 6, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo"
+    t.string   "description"
   end
 
   create_table "prices", force: true do |t|
@@ -108,6 +138,7 @@ ActiveRecord::Schema.define(version: 20150525180539) do
     t.string   "name"
     t.string   "photo"
     t.text     "description"
+    t.boolean  "special",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -169,6 +200,14 @@ ActiveRecord::Schema.define(version: 20150525180539) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "business"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.string   "phone"
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
@@ -185,5 +224,18 @@ ActiveRecord::Schema.define(version: 20150525180539) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "ws_products", force: true do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.decimal  "sm_bag",             precision: 6, scale: 2
+    t.decimal  "lg_bag",             precision: 6, scale: 2
+    t.decimal  "one_gal_tin",        precision: 6, scale: 2
+    t.decimal  "two_gal_tin",        precision: 6, scale: 2
+    t.decimal  "three_and_half_tin", precision: 6, scale: 2
+    t.decimal  "six_and_half_tin",   precision: 6, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

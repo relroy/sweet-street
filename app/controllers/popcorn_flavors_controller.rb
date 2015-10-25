@@ -27,7 +27,7 @@ class PopcornFlavorsController < ApplicationController
   def update
     @popcorn_flavor = PopcornFlavor.find(params[:id])
     @popcorn_flavor.update(popcorn_params)
-    flash[:success] = "Your Popcorn Flavor is updated!"
+    # flash[:success] = "Your Popcorn Flavor is updated!"
     redirect_to '/popcorn_flavors'
     
   end
@@ -35,7 +35,7 @@ class PopcornFlavorsController < ApplicationController
   private
 
   def popcorn_params
-    return params.require(:popcorn_flavor).permit(:name, :photo, :sm_bag, :lg_bag, :one_gal_tin, :two_gal_tin, :three_and_half_tin, :six_and_half_tin,:id)
+    return params.require(:popcorn_flavor).permit(:name, :photo, :sm_bag, :lg_bag, :one_gal_tin, :two_gal_tin, :three_and_half_tin, :six_and_half_tin,:description,:id)
     
   end
 

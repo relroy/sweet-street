@@ -1,0 +1,50 @@
+<div class = "container-fluid">
+  <h1>Here are your current products on order:</h1>
+
+  
+  <table class="table table-striped table-bordered table-responsive">
+    <thead>
+      <tr>
+        <th class="bg-primary">Name</th>
+        <th class="bg-primary">Small</th>
+        <th class="bg-primary">Large</th>
+        <th class="bg-primary">1 Gal Tin</th>
+        <th class="bg-primary">2 Gal Tin</th>
+        <th class="bg-primary">3.5 Gal Tin</th>
+        <th class="bg-primary">6.5 Gal Tin</th>
+        <th class="bg-primary">Total Product Price</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @carted_products.each do |each_product| %>
+      <tr>
+        <td><%= each_product.ws_product.name  %></td>
+        <td><strong><center><%= each_product.sm_bag_qty %></center></strong> </td>
+        <td><strong><center><%= each_product.lg_bag_qty  %></center></strong></td>
+        <td><strong><center><%= each_product.one_gal_tin_qty %></center></strong></td>
+        <td><strong><center><%= each_product.two_gal_tin_qty %></center></strong></td>
+        <td><strong><center><%= each_product.three_half_tin_qty %></center></strong></td>
+        <td><strong><center><%= each_product.six_half_tin_qty %></center></strong></td>          
+        <td><strong><center><center><%= number_to_currency each_product.sub_total %></center></strong></td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+  <% @order_sub_total = 0 %>
+  <% @carted_products.each do |each_product| %>
+    <% @order_sub_total += each_product.sub_total %>
+  <% end %>
+  <div class="cptotal"><strong><h3>Total = <%= number_to_currency @order_sub_total %></h3></strong></div>
+    <div class="cptotal2">
+      <button><a href="/orders/<%= @order.id %>">Confirm and PAY</a></button>
+    </div>
+
+    <br>
+
+
+
+
+  
+
+  
+</div>

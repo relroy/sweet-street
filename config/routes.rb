@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   
+  resources :users
+
 
   get 'chewy_flavors/show'
 
@@ -12,13 +15,22 @@ Rails.application.routes.draw do
 
   get 'storepic' => "products#storepic"
 
-  devise_for :users
+  resources :layouts
 
   resources :products
 
   resources :admins
 
   resources :popcorn_flavors
+
+  resources :ws_products
+
+
+  resources :carted_products
+
+  resources :orders
+
+  resources :charges
 
   get "festivals" => "products#festivals"
 

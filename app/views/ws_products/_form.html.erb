@@ -1,0 +1,55 @@
+<div class="container-fluid">
+<%= form_for @ws_product do |f| %>
+
+  <div class ="row">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Popcorn</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :name %>
+        <%= f.text_field :name, :required => true %>
+      </div>
+  </div>
+  <div class="panel-heading">
+      <h3 class="panel-title">Change Photo?</h3>
+    </div>
+      <div class="panel-body">
+        <h4></h4><%= image_tag @ws_product.photo , class: "img-responsive" %>
+        <%= f.label :photo %>
+        <%= f.file_field :photo, :required => true %>
+      </div>
+  </div>
+  <div class="panel-heading">
+      <h3 class="panel-title">Prices</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :Small_bag %> $
+        <%= f.text_field :sm_bag, :required => true %>
+      </div>
+      <div class="panel-body">
+        <%= f.label :Large_bag %>
+        <%= f.text_field :lg_bag, :required => true %>
+      </div>
+      <div class="panel-body">
+        <%= f.label :One_Gallon_Tin %>
+        <%= f.text_field :one_gal_tin, :required => true %>
+      </div>
+      <div class="panel-body">
+        <%= f.label :Two_Gallon_Tin %>
+        <%= f.text_field :two_gal_tin, :required => true %>
+      </div>
+      <div class="panel-body">
+        <%= f.label :Three_and_a_half_Gallon_Tin %>
+        <%= f.text_field :three_and_half_tin, :required => true %>
+      </div>
+      <div class="panel-body">
+        <%= f.label :Six_and_a_half_Gallon_Tin %>
+        <%= f.text_field :six_and_half_tin, :required => true %>
+      </div>
+  </div>
+  
+  
+  <%= f.submit %>
+<% end %>
+</div>

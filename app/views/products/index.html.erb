@@ -1,6 +1,20 @@
 <div class="container-fluid">
+  <head>
+    <link rel="stylesheet" href="animate.min.css">
+  </head>
   <div ng-app="app">
-    <div ng-controller="productCtrl">   
+    <div ng-controller="productCtrl"> 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% @layouts.each do |l| %>
+        <% if user_signed_in? && current_user.admin? %> 
+        <button><%= link_to 'EDIT Layout', edit_layout_path(l.id) %><%= l.photo %></button>
+        <% end %>
+        <% if l.active %>
+        <p class="animated slideInRight " ><img src='<%= l.photo %>'></p>
+        <% end %>
+        <% end %>
+        
+    </div><!-- /.navbar-collapse -->  
       <div class="logo-sweet">
         <%= image_tag "Sweet-street-logo.png" %>
         
@@ -8,35 +22,11 @@
           <span>Welcome To Sweet Street
           </span>
         
-          <p class="video" ><iframe width="450" height="270" src="https://www.youtube.com/embed/aOcdaMEVNtw" frameborder="3" allowfullscreen></iframe></p><br>
+          <p class="video" ><iframe width="450" height="270" src="https://www.youtube.com/embed/aOcdaMEVNtw" frameborder="3" allowfullscreen ></iframe></p><br>
         <div>""</div>
 
       </div>
       
-        <!-- search begins -->
-        <%#= form_tag("/search", method: "get") do %>
-        <%#= label_tag(:q, "Search for:") %>
-        <%#= text_field_tag(:q) %>
-        <%#= submit_tag("Search") %>
-        <%# end %>
-        <!-- search ends -->
-
-
-        <!-- <center><h3 class="product-header">Popcorn - Candy - Tropical Sno Shaved Ice - Chocolate Dipped Strawberries - and so much MORE!</h3></center> -->
-
-         <div class="container-fluid">
-        <% @products.each do |p| %>
-        <div class="col-md-3 col-sm-3 col-xs-12 bor">
-        <h4 class="product-header"><a href="/products/<%=p.id%>"><%= p.name %></h4>
-        <p class='img-thumbnail'><img src='<%= p.photo %>'  height="170" width="180" ></a></p>
-
-        </div>
-        <% end %>
-      </div>
-
-
-        
-    
       <section class="slider">
         <div class="container-fluid">
           <div id="main-carousel" class="carousel slide" data-ride="carousel">
@@ -44,8 +34,9 @@
             <div class="carousel-inner">
 
               <div class="item active">
-                <center><a href="/aboutus"><%= image_tag "Chocolate-Popcorn-Tin2.png" %></a></center>                
+                <center><a href="/popcorn_flavors"><%= image_tag "Chocolate-Popcorn-Tin2.png" %></a></center>                
               </div>
+              <!-- 473 -->
 
               <div class="item">
                 <center><%= image_tag "caramel-apples.png" %></center>
@@ -62,6 +53,11 @@
               <div class="item">
                 <center><%= image_tag "popcorn-tin-1.png" %></center>
               </div>
+
+              <div class="item">
+                <center><%= image_tag "cotton-candy2.png" %></center>
+              </div>
+
 
               <div class="item">
                 <center><br><%= image_tag "choc-dip-strawberry3.png" %></center>
@@ -84,8 +80,41 @@
           </div>        
         </div>
       </section>
+        <!-- search begins -->
+        <%#= form_tag("/search", method: "get") do %>
+        <%#= label_tag(:q, "Search for:") %>
+        <%#= text_field_tag(:q) %>
+        <%#= submit_tag("Search") %>
+        <%# end %>
+        <!-- search ends -->
 
-      <div id="reviews">
+        <!-- <center><h3 class="product-header">Popcorn - Candy - Tropical Sno Shaved Ice - Chocolate Dipped Strawberries - and so much MORE!</h3></center> -->
+        <% if user_signed_in? && current_user.admin? %> 
+          <button type="button" class="btn btn-success"><a href="/products/new"><h5>ADD A NEW Product</h5></a></button>
+          <% end %>
+         <div class="container-fluid">
+        <% @products.each do |p| %>
+        <div class="col-md-3 col-sm-3 col-xs-12 bor">
+        <h4 id="product-header">
+          <a href="/products/<%=p.id%>"><%= p.name %></h4>
+            
+        <p class='img-thumbnail'><% if p.special? %>
+          <div class="special"><a href=""><%= image_tag "specials.png" %></a></a></div>
+            
+            <% end %>
+          <img src='<%= p.photo %>'  height="140" width="auto" ></a></p>
+         
+          <% if user_signed_in? && current_user.admin? %>
+          <button><%= link_to 'EDIT Product', edit_product_path(p.id) %></button>
+            <a data-confirm="Are you sure?" data-method="delete" href="/products/<%= p.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Product</button></a>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+        
+    
+
+      <!-- <div id="reviews">
 
         <table class="table table-striped table-bordered table-responsive">
           <thead>
@@ -111,7 +140,7 @@
           <label>Name:</label>
           <input ng-model="newReviewName">
           <button ng-click="addReview(newReviewText,newReviewRating, newReviewName)">Add Review</button>
-      </div>
+      </div> -->
 
     </div>
   </div>

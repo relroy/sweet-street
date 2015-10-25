@@ -15,7 +15,7 @@
     <%= message %>
   </div>
 <% end %>
-<nav class="navbar navbar-inverse">
+<nav class="navbar-color">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -25,76 +25,30 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
       <a class="navbar-brand" href="/products">Home</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="">Link<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li> -->
-        <% if user_signed_in? %>
-          <li><a href="/users/sign_out" >Wholesale Sign Out</a></li>
-          <% else %>
-          <li><a href="/users/sign_in" >Wholesale Sign in</a></li>
-          <li><a href="/users/sign_up">Wholesale Sign up</a></li>
-        <% end %>
         
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">           
-            <li><a href="">Popcorn<img src="/assets/animated-popcorn.gif" alt="HTML5 Icon" style="width:75px;height:40px"></a></li>
-              <ul><a href="">Tins</a></ul> 
-              <ul><a href="">Bags</a></ul>         
-            <li><a href="">Truffles</a></li>           
-            <li><a href="" >Chocolate Dipped Strawberries<img src="/assets/Choc-dip-strawberry.jpg" alt="HTML5 Icon" style="width:35px;height:40px"></a></li>
+          <% if user_signed_in? && current_user.ws_cust? %>
+          <li><a href="/ws_products">See Products available</a></li>        
+        
+          <li><a href="/carted_products">
+            <i class="glyphicon glyphicon-shopping-cart" title="My Cart"></i>
+                <span class="hidden-sm hidden-xs">Shopping Cart/ Checkout </span></a>
+          </li>
 
-            <li><a href="">Chewy candy</a></li>
-            <li><a href="">Sour candy</a></li>
-            <li><a href="">Retro candy</a></li>
-            <li><a href="">Chewy candy</a></li>
-            <li><a href="">Nuts</a></li>
-            <li><a href="">Chocolate candies</a></li>
-            <li><a href="">Caramel Apples<img src="/assets/caramel-apple.jpg" alt="HTML5 Icon" style="width:35px;height:50px"></a></li>
-            <li><a href="">Candy Bars<img src="/assets/kitkat.png" alt="HTML5 Icon" style="width:70px;height:35px"></a></li>
-            
-          </ul>
-        </li>
+       
+          <!-- <li><a href="/orders">My History</a></li> -->
+          <% end %>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Links <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <% if user_signed_in? %>
-            <li><a href="/users/edit">Update my Account Info</a></li>
-            <% end %>
-            <% if user_signed_in? && current_user.admin? %>
-            <li><a href="/admins">Administration</a></li>
-            <% end %>
-              <% if user_signed_in? && current_user.ws_cust? %>
-                <li><a href="/reservations/new" class="glyphicon glyphicon-thumbs-up"> Make an Order</a></li>
-                <li><a href="/users/<%= current_user.id %>">View my Orders</a></li>
-                <li>
-                  <a href="#">
-                    <i class="glyphicon glyphicon-shopping-cart" title="Shopping Cart"></i>
-                      <span class="hidden-sm hidden-xs">
-                        Shopping Cart
-                      </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-crosshairs" title="Checkout"></i>
-                    <span class="hidden-sm hidden-xs">
-                        Checkout
-                    </span>
-                  </a>
-                </li>
-              <% end %>
-          </ul>
-        </li>
+        
+        
+        <!-- this is where the boolean is needed to activate a special -->
+        
         <li><a href="/festivals">Festivals</a><br /></li>
         <li><a data-toggle="modal" data-target="#myModal">
               Hours
@@ -121,7 +75,7 @@
               </div>
               <div class="modal-footer">
               <p class="modalFoot">"We Make Sweet Memories!"</p>
-              
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
@@ -149,25 +103,34 @@
 <%= yield %>
 <footer>
       <!-- Container -->
-      <div class="container">
+      <div class="container-fluid">
         <!-- Footer Content -->
+        <div>
+        
+        </div>
           <!-- Paragraph -->
           <p class="pull-left">Copyright &copy; <%= Time.new.year %> Sweet Street 
-          <strong>"We Make Sweet Memories!"</strong></p>
+          <strong>"We Make Sweet Memories!"</strong></p>&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-camera">Take Pictures!</span>
             <!-- List -->
           <ul class="list-inline pull-right">
+            <% if user_signed_in? && current_user.ws_cust? %>
+            <li><a href="/users/edit">Update my Account Info</a></li>
+            <% end %>
+            <% if user_signed_in? && current_user.admin? %>
+            <li><a href="/admins">Administration</a></li>
+            <% end %>
             <% if user_signed_in? %>
-              <li><a href="/users/sign_out">Admin Sign Out</a></li>
-              <% else %>
-              <li><a href="/users/sign_in">Admin Sign in</a></li>
-              <!-- <li><a href="/users/sign_up">Admin Sign up</a></li> -->
-              <% end %>
+              <li><a href="/users/sign_out" >Sign Out</a></li>
+            <% else %>
+            <li><a href="/users/sign_in" >Wholesale Sign in</a></li>
+            <li><a href="/users/sign_up">Wholesale Inquiry</a></li>
+            <% end %>
           </ul>
           <!-- Clearfix -->
           <div class="clearfix"></div>
       </div>
     </footer>
-</body>
+</body><br>
 </div>
 </div>
 </html>

@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <% if user_signed_in? && current_user.ws_cust? %>
+<h1>Popcorn Flavors/ Wholesale Prices</h1>
+<h3>Please add your items by each product line.</h3>
+<% if current_user.admin? %>
+<button type="button" class="btn btn-success"><a href="/ws_products/new"><h5>ADD A NEW Product</h5></a></button>
+<% end %>
+
+<div class="carted_length">
+  <% if @carted_products %>
+  <h3>Your total so far: <%= number_to_currency @order.total %></h3>
+  <% end %>
+</div>
+   
+  <table class="table table-striped table-bordered table-responsive">
+    <thead>
+      <tr>
+        <th class="bg-primary">Flavor</th>
+        <th class="bg-primary">Sm Bag</th>
+        <th class="bg-primary">Lg Bag</th>
+        <th class="bg-primary">One Gal Tin</th>
+        <th class="bg-primary">Two Gal Tin</th>
+        <th class="bg-primary">3 1/2 Gal Tin</th>
+        <th class="bg-primary">6 1/2 Gal Tin</th>
+        <th class="bg-primary"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @ws_products.each do |product| %>
+      <tr>
+        <td><a href="/ws_products/<%= product.id %>"><%= product.name %></a><br><% if current_user.admin %><button><a href="/ws_products/<%= product.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/ws_products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Product</button></a><% end %>&nbsp;&nbsp;&nbsp;<img src="<%= product.photo %>" height="65"></td>
+        <%= form_for @carted_product do |f| -%>
+        <td>$<%= product.sm_bag %><br><%= f.label :sm_bag_qty %><br>
+        <%= f.text_field  :sm_bag_qty, :size => 3 %>
+        <%= f.hidden_field :ws_product_id, value: product.id %>
+        </td>
+        <td>$<%= product.lg_bag %><br><%= f.label :lg_bag_qty %><br>
+        <%= f.text_field  :lg_bag_qty, :size => 3 %>
+        <%= f.hidden_field :ws_product_id, value: product.id %>
+        </td>
+        <td>$<%= product.one_gal_tin %><br><%= f.label :one_gal_tin_qty %><br>
+        <%= f.text_field  :one_gal_tin_qty, :size => 3 %>
+        <%= f.hidden_field :ws_product_id, value: product.id %>
+        </td>
+        <td>$<%= product.two_gal_tin %><br><%= f.label :two_gal_tin_qty %><br>
+        <%= f.text_field  :two_gal_tin_qty, :size => 3 %>
+        <%= f.hidden_field :ws_product_id, value: product.id %>
+        </td>
+        <td>$<%= product.three_and_half_tin %><br><%= f.label :three_half_tin_qty %><br>
+        <%= f.text_field  :three_half_tin_qty, :size => 3 %>
+        <%= f.hidden_field :ws_product_id, value: product.id %>
+        </td>
+        <td>$<%= product.six_and_half_tin %><br><%= f.label :six_half_tin_qty %><br>
+        <%= f.text_field  :six_half_tin_qty, :size => 3 %>
+        <%= f.hidden_field :ws_product_id, value: product.id %></td>
+          <td><%= f.submit "ADD To Cart" %>
+        <% end -%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+<div>
