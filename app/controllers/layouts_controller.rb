@@ -25,7 +25,7 @@ class LayoutsController < ApplicationController
   def update
     @layout = Layout.find(params[:id])
     @layout.update(layout_params)
-    flash[:success] = "Your Layout is updated!"
+    # flash[:success] = "Your Layout is updated!"
     redirect_to '/products'
     
   end

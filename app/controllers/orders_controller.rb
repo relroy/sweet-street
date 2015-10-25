@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
     @order.update(:status => "purchased", :total => @order.total)
     UserMailer.order_submission(@order).deliver
     
-    flash[:info] = "Succesfully Submitted."
+    # flash[:info] = "Succesfully Submitted."
     redirect_to @order
   end
 

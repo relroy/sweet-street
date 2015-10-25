@@ -27,7 +27,7 @@ class PopcornFlavorsController < ApplicationController
   def update
     @popcorn_flavor = PopcornFlavor.find(params[:id])
     @popcorn_flavor.update(popcorn_params)
-    flash[:success] = "Your Popcorn Flavor is updated!"
+    # flash[:success] = "Your Popcorn Flavor is updated!"
     redirect_to '/popcorn_flavors'
     
   end
