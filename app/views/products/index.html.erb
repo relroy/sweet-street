@@ -3,18 +3,18 @@
     <link rel="stylesheet" href="animate.min.css">
   </head>
   <div ng-app="app">
-    <!-- <div ng-controller="productCtrl">  -->
-    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-        <%# @layouts.each do |l| %>
-        <%# if user_signed_in? && current_user.admin? %> 
-        <!-- <button><%=# link_to 'EDIT Layout', edit_layout_path(l.id) %><%=# l.photo %></button> -->
-        <%# end %>
-        <%# if l.active %>
-        <!-- <p class="animated slideInRight " ><img src='<%=# l.photo %>'></p> -->
-        <%# end %>
-        <%# end %>
+    <div ng-controller="productCtrl"> 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% @layouts.each do |l| %>
+        <% if user_signed_in? && current_user.admin? %> 
+        <button><%= link_to 'EDIT Layout', edit_layout_path(l.id) %><%= l.photo %></button>
+        <% end %>
+        <% if l.active %>
+        <p class="animated slideInRight " ><img src='<%= l.photo %>'></p>
+        <% end %>
+        <% end %>
         
-    <!-- /.navbar-collapse -->  
+    </div><!-- /.navbar-collapse -->  
       <div class="logo-sweet">
         <%= image_tag "Sweet-street-logo.png" %>
         
