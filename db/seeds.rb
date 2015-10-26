@@ -1,26 +1,18 @@
 User.create!([
-  {business: nil, first_name: nil, last_name: nil, address: nil, city: nil, state: nil, zip_code: nil, phone: nil, email: "relroy5498@gmail.com", encrypted_password: "$2a$10$he3Ehjoyrp8gY.m/B./tx.JJsKMndExCtrxo/4mYVUUx.cHQBuGH6", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-09-03 18:32:10", last_sign_in_at: "2015-08-24 18:55:31", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", admin: false, ws_cust: true},
-  {business: "Oberweis", first_name: "Robert", last_name: "Elroy", address: "840 N Kinzie", city: "Bradley", state: "Illinois", zip_code: "60915", phone: "8159324666", email: "relroy5499@gmail.com", encrypted_password: "$2a$10$nWv7NgId9dcY68cv6C6pOuNcTf8TMzHw0Os4MI9Z5x5XmygjB3Qom", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2015-10-13 00:54:05", last_sign_in_at: "2015-10-07 02:08:36", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", admin: true, ws_cust: true}
+  {business: "Charlies Tree Service", first_name: "Bob", last_name: "Treeman", address: "111 bash", city: "Bradley", state: "IL", zip_code: "60915", phone: "8154236688", email: "relroy5498@gmail.com", encrypted_password: "$2a$10$7upPx.bPRB6E.PGhGHjLZ.WVEtURqVyXviAi7jWri/imv/TJcEaD2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-10-25 18:57:28", last_sign_in_at: "2015-10-24 02:48:39", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", admin: true, ws_cust: true},
+  {business: "Oberweis", first_name: "Robert", last_name: "Elroy", address: "840 N Kinzie", city: "840 N Kinzie", state: "Illinois", zip_code: "60915", phone: "8159324666", email: "relroy5499@gmail.com", encrypted_password: "$2a$10$Xu87jpx0YKLDyC1EridvO.Xb2iMLCQpnYINbdCZ5hg06VlApuTq6W", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2015-10-25 19:10:42", last_sign_in_at: "2015-10-25 18:55:54", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", admin: false, ws_cust: true},
+  {business: "Oberweis", first_name: "Danyell", last_name: "Keller", address: "555 My Way", city: "my town", state: "IL", zip_code: "60666", phone: "8155555555", email: "danyellk83@gmail.com", encrypted_password: "$2a$10$dDONEFwtmRcP0wow./UtD.y1XCW4vYku9fbZRNKlmSM3fy.4xj1BO", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2015-10-25 19:01:02", last_sign_in_at: "2015-10-25 18:39:11", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", admin: false, ws_cust: true}
 ])
 CartedProduct.create!([
-  {ws_product_id: 1, order_id: 76, quantity: nil, sm_bag_qty: 3, lg_bag_qty: nil, one_gal_tin_qty: nil, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil},
-  {ws_product_id: 2, order_id: 76, quantity: nil, sm_bag_qty: nil, lg_bag_qty: 20, one_gal_tin_qty: nil, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil},
-  {ws_product_id: 1, order_id: 77, quantity: nil, sm_bag_qty: 1, lg_bag_qty: nil, one_gal_tin_qty: nil, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil},
-  {ws_product_id: 2, order_id: 78, quantity: nil, sm_bag_qty: nil, lg_bag_qty: nil, one_gal_tin_qty: 3, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil},
-  {ws_product_id: 3, order_id: 79, quantity: nil, sm_bag_qty: nil, lg_bag_qty: nil, one_gal_tin_qty: 5, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil},
-  {ws_product_id: 1, order_id: 80, quantity: nil, sm_bag_qty: nil, lg_bag_qty: nil, one_gal_tin_qty: nil, two_gal_tin_qty: 4, three_half_tin_qty: nil, six_half_tin_qty: nil},
-  {ws_product_id: 3, order_id: 81, quantity: nil, sm_bag_qty: 11, lg_bag_qty: nil, one_gal_tin_qty: nil, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil}
+  {ws_product_id: 1, order_id: 115, quantity: nil, sm_bag_qty: 3, lg_bag_qty: nil, one_gal_tin_qty: nil, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil},
+  {ws_product_id: 2, order_id: 116, quantity: nil, sm_bag_qty: 20, lg_bag_qty: nil, one_gal_tin_qty: nil, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil}
 ])
 Layout.create!([
   {photo: "christmas-banner2.png", active: true}
 ])
 Order.create!([
-  {status: "purchased", user_id: 45, total: "85.77"},
-  {status: "purchased", user_id: 45, total: "1.99"},
-  {status: "purchased", user_id: 45, total: "89.97"},
-  {status: "purchased", user_id: 45, total: "149.95"},
-  {status: "purchased", user_id: 45, total: "183.96"},
-  {status: "purchased", user_id: 45, total: "21.89"}
+  {status: "purchased", user_id: 50, total: "5.97"},
+  {status: "purchased", user_id: 50, total: "39.8"}
 ])
 PopcornFlavor.create!([
   {name: "White Cheeze", photo: "white_cheddar.png", product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: "Smothered in White Cheddar! Yum!"},
@@ -41,7 +33,7 @@ PopcornFlavor.create!([
   {name: "Caramel Chewy", photo: "5_C_S.jpg", product_id: nil, sm_bag: "2.22", lg_bag: "3.33", one_gal_tin: "4.44", two_gal_tin: "5.55", three_and_half_tin: "44.66", six_and_half_tin: "100.0", description: nil}
 ])
 Product.create!([
-  {name: "Popcorns", photo: "choc-drizzled.png", description: "We have a full line of delicious Popcorns to please all! This week we have Popcorn bags on sale for $1.99 for small or $2.99 for large.", special: false},
+  {name: "Popcorns", photo: "choc-drizzled.png", description: "We have a full line of delicious Popcorns to please all! ", special: false},
   {name: "Chewy Candies", photo: "chews.jpg", description: "It'll take you time to chew through our many chewy candies to select from!", special: false},
   {name: "Retro Candies", photo: "frooties.jpeg", description: "Remember when these were popular? We are bringing them back!", special: false},
   {name: "Sour Candies", photo: "sourcandy.jpg", description: "See if these make your eyes cringe!", special: false},
