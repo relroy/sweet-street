@@ -34,6 +34,8 @@ gem 'quiet_assets'
 gem 'bootstrap-sass'
 gem 'seed_dump', '~> 3.2.2'
 gem 'stripe'
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
