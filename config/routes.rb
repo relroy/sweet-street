@@ -18,8 +18,6 @@ Rails.application.routes.draw do
 
   resources :admins
 
-  resources :popcorn_flavors
-
   resources :ws_products
 
 
