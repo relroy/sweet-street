@@ -13,27 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151008183126) do
 
-  create_table "bags", force: true do |t|
-    t.string   "name"
-    t.integer  "size_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "candy_bars", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "caramel_apples", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "carted_products", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,60 +27,11 @@ ActiveRecord::Schema.define(version: 20151008183126) do
     t.integer  "six_half_tin_qty"
   end
 
-  create_table "chewy_candies", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "chocolate_candies", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "chocolate_dip_strawberries", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "gift_cards", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "gifts", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "layouts", force: true do |t|
     t.string   "photo"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active",     default: false
-  end
-
-  create_table "nuts", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "one", force: true do |t|
-    t.string   "name"
-    t.decimal  "price",      precision: 6, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "orders", force: true do |t|
@@ -127,74 +57,11 @@ ActiveRecord::Schema.define(version: 20151008183126) do
     t.string   "description"
   end
 
-  create_table "prices", force: true do |t|
-    t.string   "name"
-    t.decimal  "price",      precision: 6, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "products", force: true do |t|
     t.string   "name"
     t.string   "photo"
     t.text     "description"
     t.boolean  "special",     default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "retro_candies", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "six_half", force: true do |t|
-    t.string   "name"
-    t.decimal  "price",      precision: 6, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sizes", force: true do |t|
-    t.string   "name"
-    t.integer  "price_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sour_candies", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "three_half", force: true do |t|
-    t.string   "name"
-    t.decimal  "price",      precision: 6, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tins", force: true do |t|
-    t.string   "name"
-    t.integer  "size_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "truffles", force: true do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "two", force: true do |t|
-    t.string   "name"
-    t.decimal  "price",      precision: 6, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end

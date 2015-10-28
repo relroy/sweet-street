@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   
   resources :users
 
-
-  get 'chewy_flavors/show'
-
   # get "search" => "products#search"
 
   root "products#index"
