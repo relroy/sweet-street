@@ -14,24 +14,6 @@ Order.create!([
   {status: "purchased", user_id: 50, total: "21.89"},
   {status: "purchased", user_id: 50, total: "21.89"}
 ])
-PopcornFlavor.create!([
-  {name: "White Cheeze", photo: "white_cheddar.png", product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: "Smothered in White Cheddar! Yum!"},
-  {name: "Chocolate Drizzled Caramel Corn", photo: "choc-drizzled.png", product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: nil},
-  {name: "White Choclate Drizzled Sea Salt Caramel Corn", photo: "wchocdrizzl.png", product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: nil},
-  {name: "Turn Up The Heat", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: nil},
-  {name: "Light My Fire", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: nil},
-  {name: "Avalanche", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: nil},
-  {name: "Caramel Pecan", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: "29.99", two_gal_tin: "49.99", three_and_half_tin: "82.99", six_and_half_tin: nil, description: nil},
-  {name: "Caramel 3 Nut Corner", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: nil},
-  {name: "Milk Chocolate Drizzled Sea Salt Caramel Corn", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: nil, two_gal_tin: nil, three_and_half_tin: nil, six_and_half_tin: nil, description: nil},
-  {name: "Regular", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: "11.99", two_gal_tin: "17.99", three_and_half_tin: "24.99", six_and_half_tin: "32.99", description: nil},
-  {name: "Caramel Corn", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: "15.99", two_gal_tin: "29.99", three_and_half_tin: "39.99", six_and_half_tin: "64.99", description: nil},
-  {name: "Cheese Corn", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: "15.99", two_gal_tin: "29.99", three_and_half_tin: "39.99", six_and_half_tin: "64.99", description: nil},
-  {name: "Mix", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: "15.99", two_gal_tin: "29.99", three_and_half_tin: "39.99", six_and_half_tin: "64.99", description: nil},
-  {name: "Kettle Corn", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: "15.99", two_gal_tin: "29.99", three_and_half_tin: "39.99", six_and_half_tin: "64.99", description: nil},
-  {name: "Crazy Corn", photo: nil, product_id: 1, sm_bag: "0.0", lg_bag: "0.0", one_gal_tin: "19.99", two_gal_tin: "38.99", three_and_half_tin: "51.99", six_and_half_tin: "84.99", description: nil},
-  {name: "Caramel Chewy", photo: "5_C_S.jpg", product_id: nil, sm_bag: "2.22", lg_bag: "3.33", one_gal_tin: "4.44", two_gal_tin: "5.55", three_and_half_tin: "44.66", six_and_half_tin: "100.0", description: nil}
-])
 Product.create!([
   {name: "Popcorns", photo: "choc-drizzled.png", description: "We have a full line of delicious Popcorns to please all! ", special: false},
   {name: "Chewy Candies", photo: "chews.jpg", description: "It'll take you time to chew through our many chewy candies to select from!", special: false},
