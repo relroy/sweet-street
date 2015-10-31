@@ -15,8 +15,8 @@
     <%= message %>
   </div>
 <% end %>
-<nav class="navbar-color">
-  <div class="container-fluid">
+<div class="container-fluid">
+  <nav class="navbar-color">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -61,8 +61,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Hours of Operation ------------ Phone # 815-932-4010</h4>
               </div>
-              <div>
-                <img src="/assets/Sweet-street-logo.png" class="modalLogo" >
+              <div class="modalLogo" >
+                <%= image_tag "Sweet-street-logo.png" %>
               </div>
               <div class="modal-body">
                Monday     10am - 8pm<br>
@@ -97,8 +97,8 @@
         </li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+  </nav>
+</div><!-- /.container-fluid -->
 
 <%= yield %>
 <footer>
