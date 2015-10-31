@@ -5,7 +5,8 @@ gem 'devise'
 gem 'rails', '4.1.6'
 # Use mysql as the database for Active Record
 group :producton do 
-  gem 'pg'  
+  gem 'pg' 
+  gem 'thin' 
 end
 
 group :development do
