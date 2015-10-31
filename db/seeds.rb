@@ -1,7 +1,7 @@
-User.new([
+u = User.new([
   {business: "Charlies Tree Service", first_name: "Bob", last_name: "Treeman", address: "111 bash", city: "Bradley", state: "IL", zip_code: "60915", phone: "8154236688", email: "relroy5498@gmail.com", encrypted_password: "$2a$10$7upPx.bPRB6E.PGhGHjLZ.WVEtURqVyXviAi7jWri/imv/TJcEaD2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: nil, last_sign_in_at: "2015-10-24 02:48:39", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", admin: true, ws_cust: true}
 ])
-  user.save!(validate: false)
+  u.save!(validate: false)
 Layout.create!([
   {photo: "christmas-banner2.png", active: true}
 ])
