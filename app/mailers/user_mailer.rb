@@ -38,7 +38,7 @@ class UserMailer < ActionMailer::Base
     @id = id
     attachments.inline['sweet_logo.png'] = File.read('app/assets/images/sweet-logo.png')
 
-    mail to: 'relroy5499@gmail.com', subject: "New Inquiry!"
+    mail to: @admin, subject: "New Inquiry!"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   def send_admin_email
    
     UserMailer.signin_confirmation(@admin, business, first_name, last_name, address, city, state, zip_code, email, phone, id).deliver
-    puts 'Hi, it works!!!'
+   
   end
 
   def send_user_email
