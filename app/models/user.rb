@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   def send_user_email
 
     UserMailer.new_inquiry(@admin, business, first_name, last_name, address, city, state, zip_code, email, phone, id).deliver
-    puts 'Hi, this works too!!!'
+    
     
   end
 
