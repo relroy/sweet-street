@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
 
-  validates :password, length: { minimum: 6 }, allow_blank: true
+  validates :password, false
   after_create :send_admin_email, :send_user_email
 
-  # after_create :send_admin_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
