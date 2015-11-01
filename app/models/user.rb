@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  validates :password, false
+  
   after_create :send_admin_email, :send_user_email
 
   # Include default devise modules. Others available are:
