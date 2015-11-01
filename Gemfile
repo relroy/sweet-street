@@ -43,6 +43,7 @@ gem 'quiet_assets'
 gem 'bootstrap-sass'
 gem 'seed_dump', '~> 3.2.2'
 gem 'stripe'
+gem "figaro"
 ruby '2.1.3'
 
 # Use ActiveModel has_secure_password
