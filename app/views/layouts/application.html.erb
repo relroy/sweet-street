@@ -35,7 +35,7 @@
           <li><a href="/ws_products">See Products available</a></li>        
         
           <li><a href="/carted_products">
-            <i class="glyphicon glyphicon-shopping-cart" title="My Cart"></i>
+            <i class="cart" title="My Cart"></i>
                 <span class="hidden-sm hidden-xs">Shopping Cart/ Checkout </span></a>
           </li>
 
@@ -110,7 +110,7 @@
         </div>
           <!-- Paragraph -->
           <p class="pull-left">Copyright &copy; <%= Time.new.year %> Sweet Street 
-          <strong>"We Make Sweet Memories!"</strong></p>&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-camera">Take Pictures!</span>
+          <strong>"We Make Sweet Memories!"</strong></p>&nbsp;&nbsp;&nbsp;<span class="pictures">Take Pictures!</span>
             <!-- List -->
           <ul class="list-inline pull-right">
             <% if user_signed_in? && current_user.ws_cust? %>
