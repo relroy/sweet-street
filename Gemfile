@@ -7,13 +7,13 @@ gem 'rails', '4.1.6'
 group :producton do 
   gem 'pg' 
   gem 'thin' 
-  gem 'rails_12factor'
 end
 
 group :development do
   gem 'mysql2'
 end
 
+gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
