@@ -18,12 +18,14 @@ default: &default
  socket: /tmp/mysql.sock
 
 development:
+ <<: *default
  database: sweet-street_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
+ <<: *default
  database: sweet-street_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -42,11 +44,11 @@ test:
 #
 # You can use this database configuration with:
 #
-production:
- url: <%= ENV['DATABASE_URL'] %>
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
- database: sweet-street_production
- adapter: postgresql
- encoding: unicode
- pull: 5
+ production:
+  database: sweet-street_production
+  adapter: postgresql
+  encoding: unicode
+  pull: 5
