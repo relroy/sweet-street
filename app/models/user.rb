@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   
-  after_create :send_admin_email, :send_user_email
+  # after_create :send_admin_email, :send_user_email
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
