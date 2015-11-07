@@ -1,5 +1,5 @@
 User.create!([
-  {business: "Oberweis", first_name: "Robert", last_name: "Elroy", address: "840 N Kinzie", city: "840 N Kinzie", state: "Illinois", zip_code: "60915", phone: "8159324666", email: "relroy5499@gmail.com", encrypted_password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-11-07 15:43:04", last_sign_in_at: "2015-11-07 15:43:04", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", admin: true, ws_cust: true}
+  {business: "Oberweis", first_name: "Robert", last_name: "Elroy", address: "840 N Kinzie", city: "840 N Kinzie", state: "Illinois", zip_code: "60915", phone: "8159324666", email: "relroy5499@gmail.com", encrypted_password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: nil, last_sign_in_at: "2015-11-07 15:43:04", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", admin: true, ws_cust: true}
 ])
 CartedProduct.create!([
   {order_id: 135, quantity: nil, sm_bag_qty: 3, lg_bag_qty: nil, one_gal_tin_qty: nil, two_gal_tin_qty: nil, three_half_tin_qty: nil, six_half_tin_qty: nil, ws_product_id: 1},
