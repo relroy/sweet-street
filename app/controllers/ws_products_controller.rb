@@ -31,20 +31,20 @@ class WsProductsController < ApplicationController
   def update
     @ws_product = WsProduct.find(params[:id])
     @ws_product.update(product_params) 
-     flash[:success] = "Your Whole Sale Product is updated!"
+    # flash[:success] = "Your Whole Sale Product is updated!"
     redirect_to '/ws_products'    
   end
 
   def destroy
     @ws_product = WsProduct.find(params[:id])
     @ws_product.destroy
-     flash[:warning] = "Wholesale Product Deleted"
+    # flash[:warning] = "Wholesale Product Deleted"
      redirect_to "/ws_products"
   end
 
   private 
 
     def product_params
-    return params.require(:ws_product).permit(:name, :photo, :sm_bag_qty, :lg_bag_qty, :one_gal_tin_qty, :two_gal_tin_qty, :two_half_tin_qty, :three_half_tin_qty, :six_half_tin_qty, :ws_product_id, :id)     
+    return params.require(:ws_product).permit(:name, :photo, :sm_bag_qty, :lg_bag_qty, one_gal_tin_qty, :two_gal_tin_qty, :two_half_tin_qty, :three_half_tin_qty, :six_half_tin_qty, :ws_product_id)     
     end
 end
