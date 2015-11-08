@@ -45,6 +45,6 @@ class WsProductsController < ApplicationController
   private 
 
     def product_params
-    return params.require(:ws_product).permit(:name, :photo, :sm_bag_qty, :lg_bag_qty, :one_gal_tin_qty, :two_gal_tin_qty, :two_half_tin_qty, :three_half_tin_qty, :six_half_tin_qty, :ws_product_id)     
+    return params.require(:ws_product).permit(:name, :photo, :sm_bag, :lg_bag, :one_gal_tin, :two_gal_tin, :two_half_tin, :three_and_half_tin, :six_and_half_tin, :ws_product_id, :id)     
     end
 end
