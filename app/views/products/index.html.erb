@@ -105,7 +105,7 @@
           <div class="special"><a href=""><%= image_tag "specials.png" %></a></a></div>
             
             <% end %>
-          <img src='uploads/<%= p.photo %>'  height="140" width="auto" ></a></p>
+          <img src='<%= p.photo %>'  height="140" width="auto" ></a></p>
          
           <% if user_signed_in? && current_user.admin? %>
           <button><%= link_to 'EDIT Product', edit_product_path(p.id) %></button>
