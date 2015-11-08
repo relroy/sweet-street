@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    # flash[:success] = "Your Product is updated!"
+     flash[:success] = "Your Product is updated!"
     redirect_to '/products'
     
   end

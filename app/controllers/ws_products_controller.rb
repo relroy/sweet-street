@@ -31,14 +31,14 @@ class WsProductsController < ApplicationController
   def update
     @ws_product = WsProduct.find(params[:id])
     @ws_product.update(product_params) 
-    # flash[:success] = "Your Whole Sale Product is updated!"
+     flash[:success] = "Your Whole Sale Product is updated!"
     redirect_to '/ws_products'    
   end
 
   def destroy
     @ws_product = WsProduct.find(params[:id])
     @ws_product.destroy
-    # flash[:warning] = "Wholesale Product Deleted"
+     flash[:warning] = "Wholesale Product Deleted"
      redirect_to "/ws_products"
   end
 
