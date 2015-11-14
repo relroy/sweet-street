@@ -44,6 +44,9 @@ gem 'bootstrap-sass'
 gem 'seed_dump', '~> 3.2.2'
 gem 'stripe'
 gem "figaro"
+gem 'aws-sdk', '~> 2'
+gem "fog", "~> 1.3.1"
+
 ruby '2.1.3'
 
 # Use ActiveModel has_secure_password
