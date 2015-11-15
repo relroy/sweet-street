@@ -17,19 +17,19 @@ body {
 }
 
 .logo-sweet{
- width: 1200px;
- height: 500px;
- border-left: 20px solid #392914;
- border-right: 20px solid #392914;
- border-top: 20px solid #59462E;
- border-bottom: 20px solid #59462E;
- padding-top: 30px;
- padding-left: 90px;
+  position: relative;
+  width: 1200px;
+  height: 500px;
+  border-left: 20px solid #392914;
+  border-right: 20px solid #392914;
+  border-top: 20px solid #59462E;
+  border-bottom: 20px solid #59462E;
+  padding-top: 30px;
+  padding-left: 90px;
   margin-left: 5px;
   margin-right: 5px;
-  position: relative;
-   background-image: url("store-pic-1.jpg");
-   background-repeat: no-repeat;
+  background-image: url("store-pic-1.jpg");
+  background-repeat: no-repeat;
 }
 
 #box-link { 
