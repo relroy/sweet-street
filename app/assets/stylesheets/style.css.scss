@@ -17,6 +17,8 @@ body {
 }
 
 .logo-sweet{
+ width: 1200px;
+ height: 500px;
  border-left: 20px solid #392914;
  border-right: 20px solid #392914;
  border-top: 20px solid #59462E;
@@ -26,34 +28,18 @@ body {
   margin-left: 5px;
   margin-right: 5px;
   position: relative;
-  background-image: url("store-pic-1.jpg");
+   background-image: url("store-pic-1.jpg");
    background-repeat: no-repeat;
-  font-family: Papyrus,fantasy;
-  font-size: 225%
 }
 
 #box-link { 
     position: absolute; 
     top: 0px; 
     left: 0px; 
-    width: 730px; 
-    height: 275px; 
+    width: 720px; 
+    height: 500px; 
     background-color: transparent;
      }
-
-.logo-sweet span{
-  background-color: #CC8EA5;
-  border-left: 10px solid #59462E;
- border-right: 10px solid #59462E;
- border-top: 10px solid #392914;
- border-bottom: 10px solid #392914;
-  padding: 5px;
-  padding-top: 15px;
-  -webkit-animation: fadeIn 2s;
-  -moz-animation: fadeIn 2s;
-  -o-animation: fadeIn 2s;
-  animation: fadeIn 2s;
-}
 #memories span{
 color: white;
  margin-left: 470px;
@@ -169,4 +155,15 @@ color: white;
 .panel-body img{
   height: 100px;
 }
-
+.logo{
+  position: absolute;
+    left: 40px;
+    top: 10px;
+    z-index: +1;
+}
+.header-background{
+  position: absolute;
+    left: 30px;
+    top: 50px;
+    z-index: -1;
+}
