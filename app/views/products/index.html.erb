@@ -1,99 +1,107 @@
 <div class="container-fluid">
- 
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <% @layouts.each do |l| %>
-      <% if user_signed_in? && current_user.admin? %> 
-      <button><%= link_to 'EDIT Layout', edit_layout_path(l.id) %><%= l.photo %></button>
-      <% end %>
-      <% if l.active %>
-      <a class="animated slideInRight " ><img src='<%= l.photo %>'></a>
-      <% end %>
-      <% end %>       
-  </div><!-- /.navbar-collapse -->  
 
-    <div class="logo-sweet">       
-      <a id="box-link" href="/storepic"></a>
-      <div class="logo">
-       <%= image_tag "Sweet-street-logo.png" %>
+   
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% @layouts.each do |l| %>
+        <% if user_signed_in? && current_user.admin? %> 
+        <button><%= link_to 'EDIT Layout', edit_layout_path(l.id) %><%= l.photo %></button>
+        <% end %>
+        <% if l.active %>
+        <a class="animated slideInRight " ><img src='<%= l.photo %>'></a>
+        <% end %>
+        <% end %>       
+    </div><!-- /.navbar-collapse -->  
+
+      <div class="logo-sweet">       
+        <a id="box-link" href="/storepic"></a>
+        <div class="logo">
+         <%= image_tag "Sweet-street-logo.png" %>
+        </div>
       </div>
-    </div>
+          
+        
 
-  <section class="slider">
-    <div id="main-carousel" class="carousel slide" data-ride="carousel">
-      <!-- Wrapper For Slides Starts -->
-      <div class="carousel-inner">
+      
+     
+        <section class="slider">
+          <div id="main-carousel" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper For Slides Starts -->
+            <div class="carousel-inner">
 
-        <div class="item active">
-          <center><%= image_tag "Chocolate-Popcorn-Tin2.png" %></a></center>                
-        </div>
-        <!-- 473 -->
+              <div class="item active">
+                <center><%= image_tag "Chocolate-Popcorn-Tin2.png" %></a></center>                
+              </div>
+              <!-- 473 -->
 
-        <div class="item">
-          <center><%= image_tag "caramel-apples.png" %></center>
-        </div>
+              <div class="item">
+                <center><%= image_tag "caramel-apples.png" %></center>
+              </div>
 
-        <div class="item">
-          <center><%= image_tag "pop-banner2.png" %></center>
-        </div>
+              <div class="item">
+                <center><%= image_tag "pop-banner2.png" %></center>
+              </div>
 
-        <div class="item">
-          <center><%= image_tag "lolipops.png" %></center>
-        </div>
+              <div class="item">
+                <center><%= image_tag "lolipops.png" %></center>
+              </div>
 
-        <div class="item">
-          <center><%= image_tag "shaved-collage.png" %></center>
-        </div>
+              <div class="item">
+                <center><%= image_tag "shaved-collage.png" %></center>
+              </div>
 
-        <div class="item">
-          <center><%= image_tag "popcorn-tin-1.png" %></center>
-        </div>
+              <div class="item">
+                <center><%= image_tag "popcorn-tin-1.png" %></center>
+              </div>
 
-        <div class="item">
-          <center><%= image_tag "cotton-candy2.png" %></center>
-        </div>
+              <div class="item">
+                <center><%= image_tag "cotton-candy2.png" %></center>
+              </div>
 
 
-        <div class="item">
-          <center><br><%= image_tag "choc-dip-strawberry3.png" %></center>
-        </div>
+              <div class="item">
+                <center><br><%= image_tag "choc-dip-strawberry3.png" %></center>
+              </div>
 
-        <div class="item">
-          <center><br><%= image_tag "Retro-Popcorn.png" %></center>
-        </div>
+              <div class="item">
+                <center><br><%= image_tag "Retro-Popcorn.png" %></center>
+              </div>
 
-      </div>
-      <!-- Wrapper For Slides Ends -->
-      <!-- Controls Starts -->
-        <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      <!-- Controls Ends -->
-    </div>        
-  </section>
-
-  <% if user_signed_in? && current_user.admin? %> 
-    <button type="button" class="btn btn-success"><a href="/products/new"><h5>ADD A NEW Product</h5></a></button>
-  <% end %>
+            </div>
+            <!-- Wrapper For Slides Ends -->
+            <!-- Controls Starts -->
+              <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            <!-- Controls Ends -->
+          </div>        
+        </section>
+     
+        <% if user_signed_in? && current_user.admin? %> 
+          <button type="button" class="btn btn-success"><a href="/products/new"><h5>ADD A NEW Product</h5></a></button>
+          <% end %>
          
-      <% @products.each do |p| %>
-      <div class="col-md-3 col-sm-3 col-xs-12 bor">
+        <% @products.each do |p| %>
+        <div class="col-md-3 col-sm-3 col-xs-12 bor">
         <h4 id="product-header">
-          <a href="/products/<%=p.id%>"><%= p.name %></h4>           
-            <p class='img-thumbnail'><% if p.special? %>
-              <div class="special"><a href=""><%= image_tag "specials.png" %></a></a>
-              </div>           
-      <% end %>
-       <img src='<%= p.photo %>'  height="140" width="auto" ></a></p>
+          <a href="/products/<%=p.id%>"><%= p.name %></h4>
+            
+        <p class='img-thumbnail'><% if p.special? %>
+          <div class="special"><a href=""><%= image_tag "specials.png" %></a></a></div>
+            
+            <% end %>
+          <img src='<%= p.photo %>'  height="140" width="auto" ></a></p>
          
-        <% if user_signed_in? && current_user.admin? %>
+          <% if user_signed_in? && current_user.admin? %>
           <button><%= link_to 'EDIT Product', edit_product_path(p.id) %></button>
             <a data-confirm="Are you sure?" data-method="delete" href="/products/<%= p.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Product</button></a>
+          <% end %>
+        </div>
         <% end %>
       </div>
-      <% end %>
-        <div class="embed-responsive embed-responsive-16by9" ><iframe class="embed-responsive-item" width="250" height="170" src="https://www.youtube.com/embed/aOcdaMEVNtw" frameborder="0" allowfullscreen ></iframe>
-        </div><br>
+          <div class="embed-responsive embed-responsive-16by9" ><iframe class="embed-responsive-item" width="250" height="170" src="https://www.youtube.com/embed/aOcdaMEVNtw" frameborder="0" allowfullscreen ></iframe>
+          </div><br>
+
 </div>
