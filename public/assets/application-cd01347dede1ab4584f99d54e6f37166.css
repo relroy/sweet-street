@@ -11924,6 +11924,16 @@ button.close {
 #product-header {
   color: red;
 }
+
+/* line 10, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/products.css.scss */
+.jumbotron {
+  background-image: url("store-pic-1.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* line 1, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .ng-enter, .ng-move {
   -webkit-animation: fadeIn 1s;
@@ -11948,6 +11958,9 @@ body {
 
 /* line 19, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .logo-sweet {
+  position: relative;
+  width: 750px;
+  height: 500px;
   border-left: 20px solid #392914;
   border-right: 20px solid #392914;
   border-top: 20px solid #59462E;
@@ -11956,11 +11969,8 @@ body {
   padding-left: 90px;
   margin-left: 5px;
   margin-right: 5px;
-  position: relative;
   background-image: url("store-pic-1.jpg");
-  background-repeat: no-repeat;
-  font-family: Papyrus,fantasy;
-  font-size: 225%;
+  background-repeat: repeat;
 }
 
 /* line 35, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
@@ -11968,70 +11978,55 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 730px;
-  height: 275px;
+  width: 720px;
+  height: 500px;
   background-color: transparent;
 }
 
-/* line 44, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
-.logo-sweet span {
-  background-color: #CC8EA5;
-  border-left: 10px solid #59462E;
-  border-right: 10px solid #59462E;
-  border-top: 10px solid #392914;
-  border-bottom: 10px solid #392914;
-  padding: 5px;
-  padding-top: 15px;
-  -webkit-animation: fadeIn 2s;
-  -moz-animation: fadeIn 2s;
-  -o-animation: fadeIn 2s;
-  animation: fadeIn 2s;
-}
-
-/* line 57, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 43, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 #memories span {
   color: white;
   margin-left: 470px;
   margin-top: 40px;
 }
 
-/* line 62, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 48, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .product-header {
   font-family: Papyrus,fantasy;
 }
 
-/* line 66, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 52, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .product-header span {
   max-width: 50px;
 }
 
-/* line 70, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 56, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .bg-color {
   background-color: #59462E;
   font-family: Papyrus,fantasy;
   color: white;
 }
 
-/* line 75, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 61, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 #hoursInfo {
   color: black;
   text-align: center;
 }
 
-/* line 79, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 65, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .modalLogo {
   position: absolute;
   margin-left: 175px;
   margin-top: 15px;
 }
 
-/* line 86, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 72, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .modalFoot {
   text-align: left;
   font-family: Papyrus,fantasy;
 }
 
-/* line 90, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 76, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .about_info {
   text-align: right;
   margin-left: 750px;
@@ -12039,7 +12034,7 @@ body {
   text-align: justify;
 }
 
-/* line 96, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 82, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .store-pic img {
   width: 700px;
   -webkit-animation: fadeIn 2s;
@@ -12048,7 +12043,7 @@ body {
   animation: fadeIn 2s;
 }
 
-/* line 103, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 89, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .animated-popcorn {
   -webkit-animation: fadeIn 4s;
   -moz-animation: fadeIn 4s;
@@ -12059,18 +12054,18 @@ body {
   margin-top: -210px;
 }
 
-/* line 113, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 99, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .show-header {
   width: 600px;
 }
 
-/* line 116, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 102, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .logo-popcorn-show {
   float: left;
   margin-top: -25px;
 }
 
-/* line 120, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 106, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .thumb {
   background-color: #CC8EA5;
   border-left: 5px solid #59462E;
@@ -12081,7 +12076,7 @@ body {
   width: 170px;
 }
 
-/* line 129, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 115, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .festival-pics {
   -webkit-animation: fadeIn 2s;
   -moz-animation: fadeIn 2s;
@@ -12092,14 +12087,14 @@ body {
   padding-top: 70px;
 }
 
-/* line 138, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 124, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .video {
   position: absolute;
   margin-left: 638px;
   margin-top: -229px;
 }
 
-/* line 143, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 129, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .treats {
   width: 700px;
   position: absolute;
@@ -12111,7 +12106,7 @@ body {
   animation: fadeIn 2s;
 }
 
-/* line 153, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 139, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 #trailer:hover {
   -webkit-transform: scale(1.7, 1.7);
   -moz-transform: scale(1.7, 1.7);
@@ -12120,7 +12115,7 @@ body {
   -moz-opacity: 1.7;
 }
 
-/* line 160, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 146, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .special {
   position: absolute;
   left: 30px;
@@ -12128,14 +12123,28 @@ body {
   z-index: +1;
 }
 
-/* line 166, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 152, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .item img {
   height: 200px;
 }
 
-/* line 169, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+/* line 155, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .panel-body img {
   height: 100px;
+}
+
+/* line 158, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+.logo {
+  position: absolute;
+  left: 40px;
+  top: 10px;
+  z-index: +1;
+}
+
+/* line 164, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
+.header-background {
+  position: relative;
+  z-index: -1;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
