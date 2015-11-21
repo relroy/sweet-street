@@ -75,14 +75,14 @@
          
         <% @products.each do |p| %>
         <div class="col-md-3 col-sm-3 col-xs-12 bor">
-        <h4 id="product-header">
+        <h4 class="product-header">
           <a href="/products/<%=p.id%>"><%= p.name %></h4>
             
         <p class='img-thumbnail'><% if p.special? %>
           <div class="special"><a href=""><%= image_tag "specials.png" %></a></a></div>
             
             <% end %>
-          <img src='<%= p.photo %>'  height="140" width="auto" ></a></p>
+          <img src='<%= p.photo %>'  height="140" width="auto" class="thumbnail"></a></p>
          
           <% if user_signed_in? && current_user.admin? %>
           <button><%= link_to 'EDIT Product', edit_product_path(p.id) %></button>
