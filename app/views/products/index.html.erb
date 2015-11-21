@@ -7,23 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <div class="container-fluid">
-  <div class="jumbotron">
-      <%= image_tag "Sweet-street-logo.png" %>       
       
-        
-  <p><a class="btn btn-primary btn-lg" href="/aboutus" role="button">Learn About Us</a></p>
-</div>
+  <div class="jumbotron">
+    <%= image_tag "Sweet-street-logo.png" %>            
+    <p><a class="btn btn-primary btn-lg" href="/aboutus" role="button">Learn About Us</a></p>
+  </div>
    
-    <div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <% @layouts.each do |l| %>
-        <% if user_signed_in? && current_user.admin? %> 
-        <button><%= link_to 'EDIT Layout', edit_layout_path(l.id) %><%= l.photo %></button>
-        <% end %>
-        <% if l.active %>
-        <a class="animated slideInRight " ><img src='<%= l.photo %>'></a>
-        <% end %>
-        <% end %>       
-    </div><!-- /.navbar-collapse -->       
         <section class="slider">
           <div id="main-carousel" class="carousel slide" data-ride="carousel">
             <!-- Wrapper For Slides Starts -->

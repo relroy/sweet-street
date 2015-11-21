@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :ws_products
 
+  resources :popcorn_flavors
 
   resources :carted_products
 

@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="col-md-3 col-sm-3 col-xs-12 bor">
+    <% if @popcorn_flavors %>
+      <% @popcorn_flavors.each do |flavor| %>
+        <p><a href="/popcorn_flavors/<%=flavor.id%>"><%= flavor.name %><br>
+        <img src='<%= flavor.photo %>'  height="140" width="auto" ></a></p>
+          <% if user_signed_in? && current_user.admin? %>
+            <button><%= link_to 'EDIT Popcorn Flavor', edit_popcorn_flavor_path(flavor.id) %></button>
+            <a data-confirm="Are you sure?" data-method="delete" href="/popcorn_flavors/<%= flavor.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Popcorn Flavor</button></a>
+          <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  
+</div>
+  <% if user_signed_in? && current_user.admin? %> 
+    <button type="button" class="btn btn-success"><a href="/popcorn_flavors/new"><h5>ADD A NEW Popcorn Flavor</h5></a></button>
+  <% end %>
