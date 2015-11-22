@@ -11929,6 +11929,15 @@ button.close {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* line 16, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/products.css.scss */
+#pic-1, #pic-2 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  margin-right: 10px;
+  float: left;
+}
 /* line 1, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .ng-enter, .ng-move {
   -webkit-animation: fadeIn 1s;
@@ -12072,7 +12081,7 @@ body {
 }
 
 /* line 115, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
-.festival-pics {
+#festival-pics {
   -webkit-animation: fadeIn 2s;
   -moz-animation: fadeIn 2s;
   -o-animation: fadeIn 2s;
@@ -12092,7 +12101,7 @@ body {
 /* line 129, /Users/robertelroy/ruby_projects/sweet-street/app/assets/stylesheets/style.css.scss */
 .treats {
   width: 700px;
-  position: absolute;
+  position: static;
   margin-top: -478px;
   margin-left: 400px;
   -webkit-animation: fadeIn 2s;
