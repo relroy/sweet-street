@@ -112,7 +112,7 @@ color: white;
   height: 180px;
   width: 170px;
 }
-.festival-pics{
+#festival-pics{
   -webkit-animation: fadeIn 2s;
   -moz-animation: fadeIn 2s;
   -o-animation: fadeIn 2s;
@@ -128,7 +128,7 @@ color: white;
 }
 .treats{
   width: 700px;
-  position: absolute;
+  position: static;
   margin-top: -478px;
   margin-left: 400px;
    -webkit-animation: fadeIn 2s;
