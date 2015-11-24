@@ -22,6 +22,9 @@ class UsersController < ApplicationController
 
   def create
    @user = User.create(params[:user])
+   if @user.save
+    flash[:info] = "Successful Inquiry, Please look for an Email soon!"
+      redirect_to "/"
   
     
   end
@@ -42,7 +45,7 @@ class UsersController < ApplicationController
     if user_signed_in? && current_user.admin?
       @user = User.find(params[:id])
       @user.update({:ws_cust => params[:ws_cust], :phone => params[:phone],:address => params[:address],:city => params[:city],:state => params[:state],:zip_code => params[:zip_code],:email => params[:email]})
-      # flash[:info] = "Update Complete"
+       flash[:info] = "Update Complete"
       redirect_to "/users"
     end  
   end
