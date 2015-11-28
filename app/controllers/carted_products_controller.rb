@@ -19,6 +19,29 @@ class CartedProductsController < ApplicationController
     ws_product_id = params[:id]
   end
 
+  def show
+    @carted_product = CartedProduct.find(params[:id])
+  end
+
+  def edit
+    @carted_product = CartedProduct.find(params[:id])
+    
+  end
+
+  def update
+    @carted_product = CartedProduct.find(params[:id])
+    @carted_product.update(carted_product_params) 
+    # flash[:success] = "Your Whole Sale Product is updated!"
+    redirect_to '/ws_products'    
+  end
+
+  def destroy
+    @carted_product = CartedProduct.find(params[:id])
+    @carted_product.destroy
+    # flash[:warning] = "Wholesale Product Deleted"
+     redirect_to "/ws_products"
+  end
+
   def carted_product_params
     return params.require(:carted_product).permit(:ws_product_id, :sm_bag_qty, :lg_bag_qty, :one_gal_tin_qty, :two_gal_tin_qty, :two_half_tin_qty, :three_half_tin_qty, :six_half_tin_qty)
     

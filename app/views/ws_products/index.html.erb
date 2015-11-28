@@ -10,7 +10,7 @@
   <% if @carted_products %>
   <h3>Your total so far: <%= number_to_currency @order.total %></h3>
   <% @carted_products.each do |p| %>
-  <h5><%= p.ws_product.name %>&nbsp;- <%= p.sm_bag_qty * 50 %> bags</h5>
+  <h5><button><a href="/carted_products/<%= p.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= p.id %>" rel="nofollow"><button>Delete Product</button></a><%= p.ws_product.name %>&nbsp;- <%= p.sm_bag_qty * 50 %> bags</h5>
   <% end %>
   <% end %>
 </div>
@@ -33,7 +33,7 @@
       <tr>
         <td><a href="/ws_products/<%= product.id %>"><%= product.name %></a><br><% if current_user.admin %><button><a href="/ws_products/<%= product.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/ws_products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Product</button></a><% end %>&nbsp;&nbsp;&nbsp;<img src="<%= product.photo %>" height="65"></td>
         <%= form_for @carted_product do |f| -%>
-        <td><%= number_to_currency product.sm_bag %><br><%= f.label :sm_bag_qty %> Price is for multiples of 50<br>
+        <td><%= number_to_currency product.sm_bag %><br><%= f.label :sm_bag_qty %> <b><u>Price is for multiples of 50 bags!</u></b><br>
         <%= f.text_field  :sm_bag_qty, :size => 3 %>
         <%= f.hidden_field :ws_product_id, value: product.id %>
         </td>
