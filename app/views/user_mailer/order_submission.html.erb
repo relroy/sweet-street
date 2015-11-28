@@ -15,7 +15,26 @@
       <br>
     </p>
 
-    <a href="http://sweet-street.herokuapp.com/orders/<%= @order.id %>">Please Click to see order!</a>
+  <h3>ORDER</h3>
+  <table>
+   <thead>
+    <tr>
+      <th>Name</th>&nbsp;&nbsp;
+      <th>Small Bag</th>
+    </tr>
+   </thead>
+   <tbody>
+
+  <% @order.carted_products.each do |carted_product| %>
+    <tr>
+  <td><%= carted_product.ws_product.name %></td>&nbsp;&nbsp;
+  <center><td><%= carted_product.sm_bag_qty * 50 %></td></center>
+  <% end %>
+  </tr>
+  </tbody>
+  </table>
+
+    <a href="http://sweet-street.herokuapp.com/orders/<%= @order.id %>">Please Click to see order online! You must be logged on to see the order.</a>
     
     <h4>Please make this order for me and deliver it when you can!</h4>
     <h4>Thank you! <%= @order.user.first_name %> <%= @order.user.last_name %></h4>
