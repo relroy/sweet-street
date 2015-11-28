@@ -3,7 +3,7 @@ class CartedProduct < ActiveRecord::Base
   belongs_to :ws_product
   belongs_to :order
 
-  validates_numericality_of :sm_bag_qty, :greater_than=> 49
+  validates_numericality_of :sm_bag_qty, :less_than=> 10
 
   def sub_total
     sub_total = 0

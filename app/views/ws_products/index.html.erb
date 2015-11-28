@@ -30,7 +30,7 @@
       <tr>
         <td><a href="/ws_products/<%= product.id %>"><%= product.name %></a><br><% if current_user.admin %><button><a href="/ws_products/<%= product.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/ws_products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Product</button></a><% end %>&nbsp;&nbsp;&nbsp;<img src="<%= product.photo %>" height="65"></td>
         <%= form_for @carted_product do |f| -%>
-        <td>$<%= product.sm_bag %><br><%= f.label :sm_bag_qty %> Price for multiples of 50<br>
+        <td><%= number_to_currency product.sm_bag %><br><%= f.label :sm_bag_qty %> Price is for multiples of 50<br>
         <%= f.text_field  :sm_bag_qty, :size => 3 %>
         <%= f.hidden_field :ws_product_id, value: product.id %>
         </td>
