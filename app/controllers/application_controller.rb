@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def index
+    @order = Order.find_by(:user_id => current_user.id, :status => "cart")
+  end
+
  
   def not_found
   raise ActionController::RoutingError.new('Not Found')

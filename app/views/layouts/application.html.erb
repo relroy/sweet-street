@@ -34,11 +34,11 @@
         
           <% if user_signed_in? && current_user.ws_cust? %>
           <li><a href="/ws_products">Products available</a></li>        
-        
-          <li><a href="/carted_products">
-            <i class="cart" title="My Cart"></i>
-                <span class="glyphicon glyphicon-shopping-cart">Shopping Cart</span></a>
+            <% if @order %>
+          <li><a href="/orders/<%= @order.id %>">
+            <i class="glyphicon glyphicon-shopping-cart" title="My Cart"></i>Shopping Cart</a>
           </li>
+            <% end %>
 
        
           <!-- <li><a href="/orders">My History</a></li> -->
