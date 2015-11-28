@@ -9,6 +9,9 @@
 <div class="carted_length">
   <% if @carted_products %>
   <h3>Your total so far: <%= number_to_currency @order.total %></h3>
+  <% @carted_products.each do |p| %>
+  <h5><%= p.ws_product.name %>&nbsp;- <%= p.sm_bag_qty * 50 %> bags</h5>
+  <% end %>
   <% end %>
 </div>
    
