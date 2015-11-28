@@ -10,7 +10,8 @@
   <% if @carted_products %>
   <h3>Your total so far: <%= number_to_currency @order.total %></h3>
   <% @carted_products.each do |p| %>
-  <h5><button><a href="/carted_products/<%= p.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= p.id %>" rel="nofollow"><button>Delete Product</button></a><%= p.ws_product.name %>&nbsp;- <%= p.sm_bag_qty * 50 %> bags</h5>
+  <h5><button><a href="/carted_products/<%= p.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= p.id %>" rel="nofollow"><button>Delete Product</button></a><%= p.ws_product.name %>&nbsp;- <%= p.sm_bag_qty * 50 %> bags
+    <center><button class="glyphicon glyphicon-shopping-cart"><a href="/carted_products">Go To Cart</a></button></center></h5>
   <% end %>
   <% end %>
 </div>

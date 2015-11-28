@@ -7,11 +7,11 @@
       <tr>
         <th class="bg-primary">Name</th>
         <th class="bg-primary">Small</th>
-        <th class="bg-primary">Large</th>
+        <!-- <th class="bg-primary">Large</th>
         <th class="bg-primary">1 Gal Tin</th>
         <th class="bg-primary">2 Gal Tin</th>
         <th class="bg-primary">3.5 Gal Tin</th>
-        <th class="bg-primary">6.5 Gal Tin</th>
+        <th class="bg-primary">6.5 Gal Tin</th> -->
         <th class="bg-primary">Total Product Price</th>
       </tr>
     </thead>
@@ -19,13 +19,13 @@
   <% @carted_products.each do |each_product| %>
       <tr>
         <td><%= each_product.ws_product.name  %></td>
-        <td><strong><center><button><a href="/carted_products/<%= each_product.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= each_product.id %>" rel="nofollow"><button>Delete Product</button>&nbsp;&nbsp;<%= each_product.sm_bag_qty * 50 %></center></strong> </td>
-        <td><strong><center><%= each_product.lg_bag_qty  %></center></strong></td>
+        <td><strong><button><a href="/carted_products/<%= each_product.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= each_product.id %>" rel="nofollow"><button>Delete Product</button>&nbsp;&nbsp;<%= each_product.sm_bag_qty * 50 %></strong> </td>
+       <!--  <td><strong><center><%= each_product.lg_bag_qty  %></center></strong></td>
         <td><strong><center><%= each_product.one_gal_tin_qty %></center></strong></td>
         <td><strong><center><%= each_product.two_gal_tin_qty %></center></strong></td>
         <td><strong><center><%= each_product.three_half_tin_qty %></center></strong></td>
-        <td><strong><center><%= each_product.six_half_tin_qty %></center></strong></td>          
-        <td><strong><center><center><%= number_to_currency each_product.sub_total %></center></strong></td>
+        <td><strong><center><%= each_product.six_half_tin_qty %></center></strong></td> -->          
+        <td><strong><%= number_to_currency each_product.sub_total %></strong></td>
       </tr>
   <% end %>
     </tbody>
