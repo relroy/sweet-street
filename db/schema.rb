@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121180843) do
+ActiveRecord::Schema.define(version: 20151129215405) do
 
   create_table "carted_products", force: true do |t|
     t.datetime "created_at"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20151121180843) do
     t.integer  "three_half_tin_qty"
     t.integer  "six_half_tin_qty"
     t.integer  "ws_product_id"
+  end
+
+  create_table "holidays", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "start_date"
+    t.datetime "end_time"
+    t.string   "name"
   end
 
   create_table "layouts", force: true do |t|

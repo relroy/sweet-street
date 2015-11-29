@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   resources :charges
 
+  resources :holidays
+
   get "festivals" => "products#festivals"
 
 
