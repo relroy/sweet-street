@@ -1,0 +1,38 @@
+<div class="container-fluid">
+<%= form_for @christmas_item do |f| %>
+
+  <div class ="row">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Christmas Item</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :name %>
+        <%= f.text_field :name, :required => true %>
+      </div>
+  </div>
+  <div class="panel-heading">
+      <h3 class="panel-title">Photo</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :photo %>
+        <%= f.file_field :photo %> 
+        <% if @christmas_item.photo %>
+        <%= image_tag @christmas_item.photo_url , class: "img-responsive" %>
+        <% end %>
+      </div>
+  </div>
+  <div class="panel-heading">
+      <h3 class="panel-title">Description</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :description %>
+        <%= f.text_field :description, :required => true %>
+      </div>
+  </div>
+  </div>
+  
+  
+  <%= f.submit %>
+<% end %>
+</div>

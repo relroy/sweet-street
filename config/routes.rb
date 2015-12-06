@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'christmas_items/index'
+
+  get 'christmas_items/show'
+
+  get 'christmas_items/new'
+
   devise_for :users
   
   resources :users
@@ -29,6 +35,30 @@ Rails.application.routes.draw do
   resources :charges
 
   resources :holidays
+
+  resources :christmas_items
+
+  resources :thanksgiving_items
+
+  resources :easter_items
+
+  resources :valentines_items
+
+  resources :sweetest_day_items
+
+  resources :mothers_day_items
+
+  resources :fathers_day_items
+
+  resources :grand_parents_day_items
+
+  resources :independence_day_items
+
+  resources :st_patricks_day_items
+
+  resources :new_years_items
+
+  resources :halloween_items
 
   get "festivals" => "products#festivals"
 
