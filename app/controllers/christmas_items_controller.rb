@@ -36,7 +36,7 @@ class ChristmasItemsController < ApplicationController
 
   private
 
-  def product_params
+  def item_params
     return params.require(:christmas_item).permit(:name, :photo, :description, :id)
 
   end
