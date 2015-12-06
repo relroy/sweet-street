@@ -8,7 +8,10 @@ class ChristmasItemsController < ApplicationController
   end
 
   def new
+    if user_signed_in? && current_user.admin?
     @christmas_item = ChristmasItem.new
+    else render :file => "/public/404.html", :status => 404
+    end
   end
 
   def create

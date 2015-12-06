@@ -15,6 +15,7 @@ class WsProductsController < ApplicationController
   def new
     if user_signed_in? && current_user.admin?
     @ws_product = WsProduct.new 
+    else render :file => "/public/404.html", :status => 404
     end
   end
 
@@ -24,8 +25,10 @@ class WsProductsController < ApplicationController
   end
 
   def edit
+    if user_signed_in? && current_user.admin?
     @ws_product = WsProduct.find(params[:id])
-    
+    else render :file => "/public/404.html", :status => 404
+    end
   end
 
   def update

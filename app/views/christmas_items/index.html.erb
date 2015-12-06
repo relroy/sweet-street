@@ -1,11 +1,11 @@
 <div class = "container-fluid" >
-<h1>Christmas Items</h1>
+  <h1>Christmas Items</h1>
 
 <% @christmas_items.each do |item| %>
-<div class="col-md-3 col-sm-3 col-xs-12 bor">
-<%= item.name %>
-<img src='<%= item.photo %>'  height="140" width="auto" class="thumbnail">
-<%= item.description %>
+  <div class="col-md-3 col-sm-3 col-xs-12 bor">
+    <p><%= item.name %></p>
+    <p><img src='<%= item.photo %>'  height="140" width="auto" class="thumbnail"></p>
+    <p><%= item.description %></p>
 <% end %>
-</div>
+  </div>
 </div>
