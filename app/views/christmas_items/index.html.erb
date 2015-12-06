@@ -1,2 +1,8 @@
-<h1>ChristmasItems#index</h1>
-<p>Find me in app/views/christmas_items/index.html.erb</p>
+<div class = "container-fluid" >
+<h1>Christmas Items</h1>
+
+<% @christmas_items.each do |item| %>
+<%= item.name %>
+<%= item.description %>
+<% end %>
+</div>
