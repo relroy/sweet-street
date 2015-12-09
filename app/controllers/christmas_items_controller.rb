@@ -31,7 +31,7 @@ class ChristmasItemsController < ApplicationController
   end
 
   def destroy
-    @christmas_item.find(params[:id])
+    @christmas_item = ChristmasItem.find(params[:id])
     @christmas_item.destroy
     flash[:warning] = "Your item has been deleted!"
     redirect_to "/christmas_items"

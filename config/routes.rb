@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
   
+  get 'thanksgiving_items/_form'
+
+  get 'thanksgiving_items/create'
+
+  get 'thanksgiving_items/new'
+
+  get 'thanksgiving_items/edit'
+
+  get 'thanksgiving_items/index'
+
+  get 'thanksgiving_items/show'
+
   get 'christmas_items/index'
 
   get 'christmas_items/show'

@@ -71,7 +71,7 @@
      
         <% if user_signed_in? && current_user.admin? %> 
           <button type="button" class="btn btn-success"><a href="/products/new"><h5>ADD A NEW Product</h5></a></button>
-          <% end %>
+        <% end %>
          
         <% @products.each do |p| %>
         <div class="col-md-3 col-sm-3 col-xs-12 bor">

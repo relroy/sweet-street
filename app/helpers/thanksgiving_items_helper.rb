@@ -1,0 +1,2 @@
+module ThanksgivingItemsHelper
+end
