@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'easter_items/_form'
+
   get 'thanksgiving_items/_form'
 
   get 'thanksgiving_items/create'
@@ -71,6 +73,10 @@ Rails.application.routes.draw do
   resources :new_years_items
 
   resources :halloween_items
+
+  resources :professional_assistant_items
+
+  resources :teacher_appreciation_items
 
   get "festivals" => "products#festivals"
 
