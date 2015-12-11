@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   
+  get 'valentines_items/index'
+
+  get 'valentines_items/show'
+
+  get 'valentines_items/new'
+
+  get 'valentines_items/create'
+
+  get 'valentines_items/edit'
+
+  get 'valentines_items/update'
+
+  get 'valentines_items/destroy'
+
+  get 'valentines_items/_form'
+
   get 'easter_items/_form'
 
   get 'thanksgiving_items/_form'
