@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   
+  get 'sweetest_day_items/index'
+
+  get 'sweetest_day_items/show'
+
+  get 'sweetest_day_items/new'
+
+  get 'sweetest_day_items/create'
+
+  get 'sweetest_day_items/edit'
+
+  get 'sweetest_day_items/update'
+
+  get 'sweetest_day_items/destroy'
+
+  get 'sweetest_day_items/_form'
+
   get 'valentines_items/index'
 
   get 'valentines_items/show'

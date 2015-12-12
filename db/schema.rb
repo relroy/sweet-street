@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211233251) do
+ActiveRecord::Schema.define(version: 20151212145735) do
 
   create_table "carted_products", force: true do |t|
     t.datetime "created_at"
@@ -80,6 +80,14 @@ ActiveRecord::Schema.define(version: 20151211233251) do
     t.string   "photo"
     t.text     "description"
     t.boolean  "special",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sweetest_day_items", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "photo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

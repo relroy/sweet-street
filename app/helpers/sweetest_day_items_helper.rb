@@ -1,0 +1,2 @@
+module SweetestDayItemsHelper
+end
