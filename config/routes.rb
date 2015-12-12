@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   
+  get 'mothers_day_items/index'
+
+  get 'mothers_day_items/show'
+
+  get 'mothers_day_items/new'
+
+  get 'mothers_day_items/create'
+
+  get 'mothers_day_items/edit'
+
+  get 'mothers_day_items/update'
+
+  get 'mothers_day_items/destroy'
+
+  get 'mothers_day_items/_form'
+
   get 'sweetest_day_items/index'
 
   get 'sweetest_day_items/show'
