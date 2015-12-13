@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151212151819) do
+ActiveRecord::Schema.define(version: 20151213024747) do
 
   create_table "carted_products", force: true do |t|
     t.datetime "created_at"
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(version: 20151212151819) do
   end
 
   create_table "easter_items", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fathers_day_items", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "grand_parents_day_items", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "photo"

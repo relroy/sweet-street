@@ -1,5 +1,37 @@
 Rails.application.routes.draw do
   
+  get 'grand_parents_day_items/index'
+
+  get 'grand_parents_day_items/show'
+
+  get 'grand_parents_day_items/new'
+
+  get 'grand_parents_day_items/create'
+
+  get 'grand_parents_day_items/edit'
+
+  get 'grand_parents_day_items/update'
+
+  get 'grand_parents_day_items/destroy'
+
+  get 'grand_parents_day_items/_form'
+
+  get 'fathers_day_items/index'
+
+  get 'fathers_day_items/show'
+
+  get 'fathers_day_items/new'
+
+  get 'fathers_day_items/create'
+
+  get 'fathers_day_items/edit'
+
+  get 'fathers_day_items/update'
+
+  get 'fathers_day_items/destroy'
+
+  get 'fathers_day_items/_form'
+
   get 'mothers_day_items/index'
 
   get 'mothers_day_items/show'
