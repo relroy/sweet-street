@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   
+  get 'independence_day_items/index'
+
+  get 'independence_day_items/show'
+
+  get 'independence_day_items/new'
+
+  get 'independence_day_items/create'
+
+  get 'independence_day_items/edit'
+
+  get 'independence_day_items/update'
+
+  get 'independence_day_items/destroy'
+
+  get 'independence_day_items/_form'
+
   get 'grand_parents_day_items/index'
 
   get 'grand_parents_day_items/show'
