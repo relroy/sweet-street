@@ -1,0 +1,2 @@
+module TeacherAppreciationItemsHelper
+end

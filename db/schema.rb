@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213045431) do
+ActiveRecord::Schema.define(version: 20151213054805) do
 
   create_table "carted_products", force: true do |t|
     t.datetime "created_at"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20151213045431) do
   end
 
   create_table "grand_parents_day_items", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "halloween_items", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "photo"
@@ -124,6 +132,14 @@ ActiveRecord::Schema.define(version: 20151213045431) do
     t.datetime "updated_at"
   end
 
+  create_table "professional_assistant_items", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "st_patricks_day_items", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -133,6 +149,14 @@ ActiveRecord::Schema.define(version: 20151213045431) do
   end
 
   create_table "sweetest_day_items", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teacher_appreciation_items", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "photo"

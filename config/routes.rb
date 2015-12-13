@@ -2,6 +2,54 @@ Rails.application.routes.draw do
   
   
 
+  get 'teacher_appreciation_items/index'
+
+  get 'teacher_appreciation_items/show'
+
+  get 'teacher_appreciation_items/new'
+
+  get 'teacher_appreciation_items/create'
+
+  get 'teacher_appreciation_items/edit'
+
+  get 'teacher_appreciation_items/update'
+
+  get 'teacher_appreciation_items/destroy'
+
+  get 'teacher_appreciation_items/_form'
+
+  get 'professional_assistant_items/index'
+
+  get 'professional_assistant_items/show'
+
+  get 'professional_assistant_items/new'
+
+  get 'professional_assistant_items/create'
+
+  get 'professional_assistant_items/edit'
+
+  get 'professional_assistant_items/update'
+
+  get 'professional_assistant_items/destroy'
+
+  get 'professional_assistant_items/_form'
+
+  get 'halloween_items/new'
+
+  get 'halloween_items/_form'
+
+  get 'halloween_items/edit'
+
+  get 'halloween_items/index'
+
+  get 'halloween_items/show'
+
+  get 'halloween_items/create'
+
+  get 'halloween_items/update'
+
+  get 'halloween_items/destroy'
+
   get 'new_years_items/index'
 
   get 'new_years_items/show'
