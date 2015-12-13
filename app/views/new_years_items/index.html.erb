@@ -1,0 +1,19 @@
+<div class = "container-fluid" >
+  <h1>New Years Items</h1>
+
+  <% if user_signed_in? && current_user.admin? %> 
+    <button type="button" class="btn btn-success"><a href="/new_years_items/new"><h5>ADD A NEW New Years Item</h5></a></button>
+  <% end %>
+
+<% @new_years_items.each do |item| %>
+  <div class="col-md-3 col-sm-3 col-xs-12 bor">
+    <p><%= item.name %></p>
+    <p><img src='<%= item.photo %>'  height="140" width="auto" class="thumbnail"></p>
+    <p><%= item.description %></p>
+      <% if user_signed_in? && current_user.admin? %>
+        <button><%= link_to 'EDIT Product', edit_new_years_item_path(item.id) %></button>
+        <a data-confirm="Are you sure?" data-method="delete" href="/new_years_items/<%= item.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete New Years Item</button></a>
+      <% end %>
+  </div>
+<% end %>
+</div>

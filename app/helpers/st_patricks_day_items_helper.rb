@@ -1,0 +1,2 @@
+module StPatricksDayItemsHelper
+end

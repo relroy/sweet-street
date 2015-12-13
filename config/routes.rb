@@ -1,120 +1,22 @@
 Rails.application.routes.draw do
   
-  get 'independence_day_items/index'
+  
 
-  get 'independence_day_items/show'
+  get 'new_years_items/index'
 
-  get 'independence_day_items/new'
+  get 'new_years_items/show'
 
-  get 'independence_day_items/create'
+  get 'new_years_items/new'
 
-  get 'independence_day_items/edit'
+  get 'new_years_items/create'
 
-  get 'independence_day_items/update'
+  get 'new_years_items/edit'
 
-  get 'independence_day_items/destroy'
+  get 'new_years_items/update'
 
-  get 'independence_day_items/_form'
+  get 'new_years_items/destroy'
 
-  get 'grand_parents_day_items/index'
-
-  get 'grand_parents_day_items/show'
-
-  get 'grand_parents_day_items/new'
-
-  get 'grand_parents_day_items/create'
-
-  get 'grand_parents_day_items/edit'
-
-  get 'grand_parents_day_items/update'
-
-  get 'grand_parents_day_items/destroy'
-
-  get 'grand_parents_day_items/_form'
-
-  get 'fathers_day_items/index'
-
-  get 'fathers_day_items/show'
-
-  get 'fathers_day_items/new'
-
-  get 'fathers_day_items/create'
-
-  get 'fathers_day_items/edit'
-
-  get 'fathers_day_items/update'
-
-  get 'fathers_day_items/destroy'
-
-  get 'fathers_day_items/_form'
-
-  get 'mothers_day_items/index'
-
-  get 'mothers_day_items/show'
-
-  get 'mothers_day_items/new'
-
-  get 'mothers_day_items/create'
-
-  get 'mothers_day_items/edit'
-
-  get 'mothers_day_items/update'
-
-  get 'mothers_day_items/destroy'
-
-  get 'mothers_day_items/_form'
-
-  get 'sweetest_day_items/index'
-
-  get 'sweetest_day_items/show'
-
-  get 'sweetest_day_items/new'
-
-  get 'sweetest_day_items/create'
-
-  get 'sweetest_day_items/edit'
-
-  get 'sweetest_day_items/update'
-
-  get 'sweetest_day_items/destroy'
-
-  get 'sweetest_day_items/_form'
-
-  get 'valentines_items/index'
-
-  get 'valentines_items/show'
-
-  get 'valentines_items/new'
-
-  get 'valentines_items/create'
-
-  get 'valentines_items/edit'
-
-  get 'valentines_items/update'
-
-  get 'valentines_items/destroy'
-
-  get 'valentines_items/_form'
-
-  get 'easter_items/_form'
-
-  get 'thanksgiving_items/_form'
-
-  get 'thanksgiving_items/create'
-
-  get 'thanksgiving_items/new'
-
-  get 'thanksgiving_items/edit'
-
-  get 'thanksgiving_items/index'
-
-  get 'thanksgiving_items/show'
-
-  get 'christmas_items/index'
-
-  get 'christmas_items/show'
-
-  get 'christmas_items/new'
+  get 'new_years_items/_form'
 
   devise_for :users
   
