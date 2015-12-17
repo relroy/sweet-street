@@ -2,7 +2,7 @@
   <h1>Valentines Items</h1>
 
   <% if user_signed_in? && current_user.admin? %> 
-    <button type="button" class="btn btn-success"><a href="/valentines_items/new"><h5>ADD A NEW Christmas Item</h5></a></button>
+    <button type="button" class="btn btn-success"><a href="/valentines_items/new"><h5>ADD A NEW Valentines Item</h5></a></button>
   <% end %>
 
 <% @valentines_items.each do |item| %>
