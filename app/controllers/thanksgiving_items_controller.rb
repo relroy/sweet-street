@@ -17,7 +17,7 @@ class ThanksgivingItemsController < ApplicationController
 
   def create
     @thanksgiving_item = ThanksgivingItem.create(item_params) 
-    redirect_to '/christmas_items'  
+    redirect_to '/thanksgiving_items'  
   end
 
   def edit
@@ -28,7 +28,7 @@ class ThanksgivingItemsController < ApplicationController
     @thanksgiving_item = ThanksgivingItem.find(params[:id])
     @thanksgiving_item.update(item_params)
     flash[:success] = "Item has been Updated!"
-    redirect_to "/christmas_items"
+    redirect_to "/thanksgiving_items"
   end
 
   def destroy

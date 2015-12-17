@@ -2,7 +2,7 @@
   <h1>Thanksgiving Items</h1>
 
   <% if user_signed_in? && current_user.admin? %> 
-    <button type="button" class="btn btn-success"><a href="/christmas_items/new"><h5>ADD A NEW Thanksgiving Item</h5></a></button>
+    <button type="button" class="btn btn-success"><a href="/thanksgiving_items/new"><h5>ADD A NEW Thanksgiving Item</h5></a></button>
   <% end %>
 
 <% @thanksgiving_items.each do |item| %>
