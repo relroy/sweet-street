@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  
 
   devise_for :users
   
@@ -59,6 +58,10 @@ Rails.application.routes.draw do
   resources :professional_assistant_items
 
   resources :teacher_appreciation_items
+
+  resources :boss_day_items
+
+  resources :corporate_items
 
   get "festivals" => "products#festivals"
 
