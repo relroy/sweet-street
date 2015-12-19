@@ -1,0 +1,2 @@
+module CorporateItemsHelper
+end
