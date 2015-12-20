@@ -74,13 +74,14 @@ color: white;
   font-family: Papyrus,fantasy;
 }
 .about_info{
-  text-align: right;
+  text-align: bottom;
   margin-left: 750px;
   margin-top: -690px;
   text-align: justify;
 }
-.store-pic img{
-  
+.thumbnail img{
+  max-height: 230px;
+  float: left;
   -webkit-animation: fadeIn 2s;
   -moz-animation: fadeIn 2s;
   -o-animation: fadeIn 2s;
