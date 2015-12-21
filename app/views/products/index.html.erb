@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <div class="container-fluid">
+
+  <% @layouts.each do |layout| %>
+  <% if layout.active? %>
+  <%= layout.photo_url %>
+  <% end %>
+  <% end %>
       
   <div class="jumbotron">
     <%= image_tag "Sweet-street-logo.png" %>            
