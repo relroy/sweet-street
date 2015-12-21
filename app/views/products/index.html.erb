@@ -10,7 +10,7 @@
 
   <% @layouts.each do |layout| %>
   <% if layout.active? %>
-  <img scr= "<%= layout.photo %>" >
+  <img scr= "<%= layout.photo %>" height="140" width="auto" class="thumbnail">
   <% end %>
   <% end %>
       
