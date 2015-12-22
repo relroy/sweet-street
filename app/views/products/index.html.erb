@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <div class="container-fluid">
+      
+  <div class="jumbotron">
   <div>
     <% @layouts.each do |l| %>
     <% if l.active %>
@@ -14,8 +16,6 @@
     <% end %>
     <% end %>
   </div>
-      
-  <div class="jumbotron">
     <%= image_tag "Sweet-street-logo.png" %>            
     <p><a class="btn btn-primary btn-lg" href="/aboutus" role="button">Learn About Us</a></p>
   </div>
