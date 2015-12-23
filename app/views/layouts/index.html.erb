@@ -1,6 +1,6 @@
 <div class= "container-fluid">
-  <h1>Hello World</h1>
+  <h1>Banners</h1>
   <% @layouts.each do |l| %>
-  <p><a href="/layouts/<%= l.id %>/edit" ><img scr= "<%= l.photo %>" ></a></p>
+  <a href="/layouts/<%= l.id %>/edit" ><p><img scr= '<%= l.photo_url %>' height="80" width="100%" ></p></a>
   <% end %>
 </div>
