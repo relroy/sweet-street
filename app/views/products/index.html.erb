@@ -10,7 +10,7 @@
   <div class= "banner">
     <% @layouts.each do |l| %>
     <% if l.active %>
-    <p><img src= '<%= l.photo_url %>' height="5%" width="100%" ></p>
+    <p><a href="/holidays"><img src= '<%= l.photo_url %>' height="100%" width="100%" ></a></p>
     <% end %>
     <% end %>
   </div>
