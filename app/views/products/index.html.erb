@@ -7,10 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <div class="container-fluid">
-  <div>
+  <div class= "banner">
     <% @layouts.each do |l| %>
     <% if l.active %>
-    <h1><img src= '<%= l.photo_url %>' height="80" width="100%" ></h1>
+    <p><img src= '<%= l.photo_url %>' height="80" width="100%" ></p>
     <% end %>
     <% end %>
   </div>
