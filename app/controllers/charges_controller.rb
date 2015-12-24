@@ -28,7 +28,7 @@ def create
 
   UserMailer.order_submission(@order).deliver
   UserMailer.order_confirmation(@order).deliver
-    # flash[:info] = "Succesfully Submitted."
+    flash[:info] = "Succesfully Submitted."
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
