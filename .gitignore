@@ -15,8 +15,8 @@
 /log/*.log
 /tmp
 
-# Ignore application configuration
+Ignore application configuration
 /config/application.yml
 
- Ignore application configuration
+Ignore application configuration
 /application.env
