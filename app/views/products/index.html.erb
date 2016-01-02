@@ -32,7 +32,7 @@
                <% @products.each do |p| %>
 
               <div class="item">
-                <center class="thumbnail"><a href="/products/<%= p.id %>"><%= p.name %><img src='<%= p.photo %>'  height="120" width="auto" ></a></center>
+                <center><a href="/products/<%= p.id %>"><%= p.name %><img src='<%= p.photo %>'  height="120" width="auto" class="thumbnail"></a></center>
               </div>
 
             <% end %>
