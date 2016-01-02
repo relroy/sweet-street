@@ -29,39 +29,13 @@
                 <center><%= image_tag "Chocolate-Popcorn-Tin2.png" %></a></center>                
               </div>
               <!-- 473 -->
+               <% @products.each do |p| %>
 
               <div class="item">
-                <center><%= image_tag "caramel-apples.png" %></center>
+                <center><img src='<%= p.photo %>'  height="120" width="auto" class="thumbnail"></a></p></center>
               </div>
 
-              <div class="item">
-                <center><%= image_tag "pop-banner2.png" %></center>
-              </div>
-
-              <div class="item">
-                <center><%= image_tag "lolipops.png" %></center>
-              </div>
-
-              <div class="item">
-                <center><%= image_tag "shaved-collage.png" %></center>
-              </div>
-
-              <div class="item">
-                <center><%= image_tag "popcorn-tin-1.png" %></center>
-              </div>
-
-              <div class="item">
-                <center><%= image_tag "cotton-candy2.png" %></center>
-              </div>
-
-
-              <div class="item">
-                <center><br><%= image_tag "choc-dip-strawberry3.png" %></center>
-              </div>
-
-              <div class="item">
-                <center><br><%= image_tag "Retro-Popcorn.png" %></center>
-              </div>
+            
 
             </div>
             <!-- Wrapper For Slides Ends -->
