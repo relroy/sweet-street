@@ -10,7 +10,7 @@
       from: <%= @order.user.business %><br>
       <%= @order.user.address %>
       <%= @order.user.city %>, <%= @order.user.state %> <%= @order.user.zip_code %> <br>
-      <%= @order.user.phone %><br>
+      <a href="tel:+1-815-932-4010"><%= @order.user.phone %></a><br>
       for a total of <%= number_to_currency @order.total %>
       <br>
     </p>
