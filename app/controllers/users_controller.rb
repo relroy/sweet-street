@@ -10,8 +10,7 @@ class UsersController < ApplicationController
     @users = User.all
     
     else render :file => "/public/404.html", :status => 404
-    end
-    
+    end   
   end
 
   def new
@@ -22,11 +21,10 @@ class UsersController < ApplicationController
 
   def create
    @user = User.create(params[:user])
-   if @user.save
-    flash[:info] = "Successful Inquiry, Please look for an Email soon!"
+    if @user.save
+      flash[:info] = "Successful Inquiry, Please look for an Email soon!"
       redirect_to "/"
-  
-    
+    end  
   end
 
   def show

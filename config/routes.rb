@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :users
 
   devise_for :users
   
-  resources :users
 
   # get "search" => "products#search"
 
