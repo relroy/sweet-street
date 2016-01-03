@@ -2,15 +2,16 @@
   <table class="table table-striped table-bordered table-responsive">
     <thead>
       <tr>
+        <th class="bg-primary">Name</th>
         <th class="bg-primary">Business</th>
-       
         <th class="bg-primary">Signed in last on on</th> 
       </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
       <tr>
-        <td><a href="/users/<%= user.id %>/edit"><%= user.first_name %><%= user.last_name %><%= user.business %>&nbsp;&nbsp;&nbsp;<% if user.ws_cust? %> WS CUST<% end %></a>&nbsp;&nbsp;&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/users/<%= user.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete User?</button></a></td>
+        <td><a href="/users/<%= user.id %>/edit"><%= user.first_name %><%= user.last_name %></td>
+          <td><%= user.business %>&nbsp;&nbsp;&nbsp;<% if user.ws_cust? %> WS CUST<% end %></a>&nbsp;&nbsp;&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/users/<%= user.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete User?</button></a></td>
         
         <td><%= user.last_sign_in_at.strftime("%A, %d %b %Y %l:%M %p") %></td>
       </tr>
