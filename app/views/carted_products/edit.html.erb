@@ -1,8 +1,8 @@
 <div class="container-fluid" >
-<h1>Please edit your amount. Remember that each 1 is a multiple of <strong>50 bags!</strong></h1>
+<h1>Please edit your amount.</strong></h1>
   <h4><%= @carted_product.ws_product.name %></h4>
 <%= form_for @carted_product do |f| -%>
-  <td><%= f.label :sm_bag_qty %> <b><u>Price is for multiples of 50 bags!</u></b><br>
+  <td><%= f.label :sm_bag_qty %><br>
   <%= f.text_field  :sm_bag_qty, :size => 3 %>
   <%= f.submit %>
   <a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= @carted_product.id %>" rel="nofollow"><button>Delete Product</button>

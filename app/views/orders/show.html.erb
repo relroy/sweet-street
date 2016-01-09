@@ -20,7 +20,7 @@
   <% @order.carted_products.each do |carted_product| %>
     <tr>
   <td><%= carted_product.ws_product.name %></td>
-  <td><%= carted_product.sm_bag_qty * 50 %></td>
+  <td><%= carted_product.sm_bag_qty %></td>
   <td><strong><button><a href="/carted_products/<%= carted_product.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= carted_product.id %>" rel="nofollow"><button>Delete Product</button></strong> </td>
   <!-- <td><%= carted_product.lg_bag_qty %></td>
   <td><%= carted_product.one_gal_tin_qty %></td>

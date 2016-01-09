@@ -6,7 +6,10 @@ class CartedProductsController < ApplicationController
       @order = Order.create(:status => "cart", :user_id => current_user.id)
     end
     CartedProduct.create(carted_product_params.merge({:order_id => @order.id}))
-    # flash[:success] = "Added to cart."
+    @order = Order.find_by(:status => "cart", :user_id => current_user.id)
+    if @order.carted_products.count < 50
+     flash[:success] = "You need to order in multples of 50 bags."
+   end
     redirect_to "/ws_products"
   end
   def index

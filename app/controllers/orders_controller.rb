@@ -10,6 +10,11 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    if @order.carted_products.count < 50
+     flash[:alert] = "You must order in total quantities of 50"
+     redirect_to :back
+    end
     
   end
 
