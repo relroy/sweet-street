@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <% if user_signed_in? && current_user.ws_cust? %>
 <h1>Popcorn Flavors/ Wholesale Prices</h1>
-<h3>Please add your items by each product line. Keep in mind that you MUST order in quantities of 50 bags. These may be broken into different flavors as long as there are 50 bags or 100 bags, etc.</h3>
+<h3>Please add your items by each product line. Keep in mind that you MUST order in quantities of 50 bags. These may be broken into different flavors as long as there are 50 bags or 100 bags, etc. I you see a message at the top of your screen you probably do not have the correct amount required to go to your cart to finish the order.</h3>
 <% if current_user.admin? %>
 <button type="button" class="btn btn-success"><a href="/ws_products/new"><h5>ADD A NEW Wholesale Product</h5></a></button>
 <% end %>
