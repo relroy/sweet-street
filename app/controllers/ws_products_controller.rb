@@ -5,6 +5,10 @@ class WsProductsController < ApplicationController
     if 
     @order = Order.find_by(:user_id => current_user.id, :status => "cart")
     @carted_products = @order.carted_products
+    $total_carted_products = 0
+    @carted_products.each do |carted_product|
+      $total_carted_products += carted_product.sm_bag_qty
+    end
     end
   end
 

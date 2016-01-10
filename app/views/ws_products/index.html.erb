@@ -8,7 +8,7 @@
 
 <div class="carted_length">
   <% if @carted_products %>
-  <h3>Your total so far: <%= number_to_currency @order.total %> for <%= @order.carted_products.count %></h3>
+  <h3>Your total so far: <%= number_to_currency @order.total %> for <%= $total_carted_products %> items.</h3>
     <% if @order.carted_products %>
   <% @carted_products.each do |p| %>
   <h5><button><a href="/carted_products/<%= p.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= p.id %>" rel="nofollow"><button class="glyphicon glyphicon-trash">&nbsp;Delete Product</button></a><%= p.ws_product.name %>&nbsp;- <%= p.sm_bag_qty %> bags
