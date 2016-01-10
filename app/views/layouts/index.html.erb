@@ -4,6 +4,8 @@
   <% if l.active? %>
   <h3>ACTIVE</h3>
   <a href="/layouts/<%= l.id %>/edit" ><p><img src= '<%= l.photo_url %>' height="90" width="100%" ></p></a>
+  <% else %>
+  <a href="/layouts/<%= l.id %>/edit" ><p><img src= '<%= l.photo_url %>' height="90" width="100%" ></p></a>
   <% end %>
   <% end %>
 </div>
