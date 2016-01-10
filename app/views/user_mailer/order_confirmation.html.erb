@@ -23,7 +23,7 @@
       <% @order.carted_products.each do |carted_product| %>
       <tr>
         <td><%= carted_product.ws_product.name %></td>&nbsp;&nbsp;
-        <center><td><%= carted_product.sm_bag_qty * 50 %></td></center>
+        <center><td><%= carted_product.sm_bag_qty %></td></center>
       <% end %>
       </tr>
      </tbody>
