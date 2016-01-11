@@ -3,7 +3,7 @@
   <% @layouts.each do |l| %>
   <% if l.active? %>
   <div class= "active_layout" >
-  <h3>ACTIVE</h3>
+  <center><h3>ACTIVE</h3></center>
   <a href="/layouts/<%= l.id %>/edit" ><p><img src= '<%= l.photo_url %>' height="90" width="100%" ></p></a>
   </div>
   <% else %>
