@@ -2,8 +2,10 @@
   <h1>Banners</h1>
   <% @layouts.each do |l| %>
   <% if l.active? %>
+  <div class= "active_layout" >
   <h3>ACTIVE</h3>
   <a href="/layouts/<%= l.id %>/edit" ><p><img src= '<%= l.photo_url %>' height="90" width="100%" ></p></a>
+  </div>
   <% else %>
   <a href="/layouts/<%= l.id %>/edit" ><p><img src= '<%= l.photo_url %>' height="90" width="100%" ></p></a>
   <% end %>
