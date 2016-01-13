@@ -24,7 +24,7 @@ class WsProductsController < ApplicationController
   end
 
   def create
-    @ws_product = WsProduct.create(product_params) 
+        @ws_product = WsProduct.create(product_params) 
     redirect_to '/ws_products'   
   end
 

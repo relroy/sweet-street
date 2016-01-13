@@ -8,7 +8,7 @@
 
 <div class="carted_length">
   <% if @carted_products %>
-  <h3>Your total so far: <%= number_to_currency @order.total %> for <%= $total_carted_products %> bags of popcorn.</h3>
+  <h3>Your total so far: <%= number_to_currency @order.total %> for <%= $total_carted_products %> bags of popcorn.</h3><% if $total_carted_products < 50 %><h3>You need <%= 50 - $total_carted_products %> more bags to go to your cart.</h3><% elsif $total_carted_products > 50 && $total_carted_products < 100 %><h3>You need <%= 100 - $total_carted_products %> more bags to go to your cart.</h3><% end %>
     <% if @order.carted_products %>
   <% @carted_products.each do |p| %>
   <h5><button><a href="/carted_products/<%= p.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= p.id %>" rel="nofollow"><button class="glyphicon glyphicon-trash">&nbsp;Delete Product</button></a><%= p.ws_product.name %>&nbsp;- <%= p.sm_bag_qty %> bags
@@ -59,7 +59,7 @@
         <!-- <td>$<%= product.six_and_half_tin %><br><%= f.label :six_half_tin_qty %><br> -->
         <%#= f.text_field  :six_half_tin_qty, :size => 3 %>
         <%#= f.hidden_field :ws_product_id, value: product.id %></td>
-          <td><%= f.submit "ADD To Cart" %>
+          <td><%= f.submit "Update Cart" %>
         <% end -%></td>
       </tr>
       <% end %>
