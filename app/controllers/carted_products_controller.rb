@@ -6,13 +6,12 @@ class CartedProductsController < ApplicationController
       @order = Order.create(:status => "cart", :user_id => current_user.id)
     end
      @order = Order.find_by(:user_id => current_user.id, :status => "cart")
-     @carted_products = @order.carted_products
-     @carted_products.each do |each_product|
-       if each_product.ws_product_id?
-         flash[:warning] = "This is your new quantity for this item!"
-         each_product.destroy
-       end
-     end
+    # @carted_products = @order.carted_products
+    # @carted_products.each do |each_product|
+      # if each_product.exists?
+        # flash[:warning] = "Item exists, please update you quantity of this item"
+      # end
+    # end
     CartedProduct.create(carted_product_params.merge({:order_id => @order.id}))
     @order = Order.find_by(:status => "cart", :user_id => current_user.id)
     redirect_to "/ws_products"
