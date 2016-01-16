@@ -102,12 +102,12 @@
 </div><!-- /.container-fluid -->
 
 <%= yield %>
-</body><br>
-<footer>
+
+<div class= "foot" >
+  <footer>
       <!-- Container -->
-      <div class="container-fluid">
+    <div class="container-fluid">
         <!-- Footer Content -->
-        <div>
         
           <!-- Paragraph -->
           <p class="pull-left">Copyright &copy; <%= Time.new.year %> Sweet Street 
@@ -130,11 +130,10 @@
             <li><a href="/users/sign_up">Wholesale Inquiry</a></li>
             <% end %>
           </ul>
-        </div>
           <!-- Clearfix -->
           <div class="clearfix"></div>
-      </div>
-    </footer>
+    </div>
+  </footer>
 </div>
-</div>
+</body>
 </html>
