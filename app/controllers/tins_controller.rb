@@ -40,7 +40,7 @@ class TinsController < ApplicationController
   private
 
   def item_params
-    return params.require(:tin).permit(:name, :photo, :description, :id)
+    return params.require(:tin).permit(:name, :photo, :description, :description2, :description3, :description4, :description5, :description6, :id)
 
   end
 end

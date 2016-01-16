@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116200730) do
+ActiveRecord::Schema.define(version: 20160116214248) do
 
   create_table "boss_day_items", force: true do |t|
     t.string   "name"
@@ -194,6 +194,11 @@ ActiveRecord::Schema.define(version: 20160116200730) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo"
+    t.string   "description2"
+    t.string   "description3"
+    t.string   "description4"
+    t.string   "description5"
+    t.string   "description6"
   end
 
   create_table "users", force: true do |t|
