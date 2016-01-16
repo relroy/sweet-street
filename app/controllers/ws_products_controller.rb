@@ -1,4 +1,6 @@
 class WsProductsController < ApplicationController
+
+
   def index   
     @ws_products = WsProduct.all
     @carted_product = CartedProduct.new
@@ -8,6 +10,7 @@ class WsProductsController < ApplicationController
     $total_carted_products = 0
     @carted_products.each do |carted_product|
       $total_carted_products += carted_product.sm_bag_qty
+      
     end
     end
   end

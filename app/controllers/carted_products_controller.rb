@@ -5,16 +5,17 @@ class CartedProductsController < ApplicationController
     else
       @order = Order.create(:status => "cart", :user_id => current_user.id)
     end
-     @order = Order.find_by(:user_id => current_user.id, :status => "cart")
-    # @carted_products = @order.carted_products
-    # @carted_products.each do |each_product|
-      # if each_product.exists?
-        # flash[:warning] = "Item exists, please update you quantity of this item"
-      # end
-    # end
     CartedProduct.create(carted_product_params.merge({:order_id => @order.id}))
-    @order = Order.find_by(:status => "cart", :user_id => current_user.id)
     redirect_to "/ws_products"
+      # @order = Order.find_by(:user_id => current_user.id, :status => "cart")
+      # @carted_products = @order.carted_products
+      # @carted_products.each do |each_product|
+      #   if each_product.ws_product_id?
+      #     flash[:warning] = "Item exists, please update you quantity of this item"
+      #     each_product.sm_bag_qty.destroy
+      #     redirect_to "/ws_products"
+      #   end
+      # end
   end
   def index
     if 
@@ -31,13 +32,13 @@ class CartedProductsController < ApplicationController
   end
 
   def edit
-    @carted_product = CartedProduct.find(params[:id])
-    
+    @carted_product = CartedProduct.find(params[:id])    
   end
 
   def update
     @carted_product = CartedProduct.find(params[:id])
     @carted_product.update(carted_product_params) 
+    @order = Order.find_by(:user_id => current_user.id, :status => "cart")
     # flash[:success] = "Your Whole Sale Product is updated!"
     redirect_to '/ws_products'    
   end

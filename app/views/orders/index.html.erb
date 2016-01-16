@@ -1,10 +1,28 @@
 <div class = "container-fluid">
   <h1>Here are your orders!</h1>
-  <% @orders.each do |order| %>
-  
-  <p>on <%= order.created_at.strftime("%A, %D, %I:%M %p") %></p>
-  <p>Total = <%= number_to_currency order.sub_total %></p>
-  
+
+  <h3>ORDER</h3>
+  <table class="table table-striped table-bordered table-responsive">
+   <thead>
+    <tr>
+      <th>Date Order Placed</th>
+      <th>Total Paid</th>
+      <th>Name</th>&nbsp;&nbsp;
+      <th>Small Bag</th>
+    </tr>
+   </thead>
+   <tbody>
+  <% @orders.each do |order| %>  
+    <% order.carted_products.each do |carted_product| %>
+      <tr>
+        <td><%= order.created_at.strftime("%A, %D, %I:%M %p") %></td>
+        <td><%= number_to_currency order.sub_total %></td>
+        <td><%= carted_product.ws_product.name %></td>
+        <td><%= carted_product.sm_bag_qty %></td>
+    <% end %>
   <% end %>
+      </tr>
+  </tbody>
+  </table>
   
 </div>

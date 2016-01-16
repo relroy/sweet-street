@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     if user_signed_in? && current_user.admin?
       @orders = Order.all
     else
-      @orders = Order.where(:status => "purchased")
+      @orders = Order.where(:status => "purchased", :user_id => current_user.id)
     end   
   end
 
