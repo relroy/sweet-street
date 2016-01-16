@@ -1,6 +1,7 @@
 class TinsController < ApplicationController
    def index
     @tins = Tin.all
+    @tins.sort
   end
 
   def show
