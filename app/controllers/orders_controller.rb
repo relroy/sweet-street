@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
+
     if user_signed_in? && current_user.admin?
       @orders = Order.all
     else
