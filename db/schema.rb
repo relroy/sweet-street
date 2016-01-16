@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219162843) do
+ActiveRecord::Schema.define(version: 20160116195822) do
 
   create_table "boss_day_items", force: true do |t|
     t.string   "name"
@@ -26,13 +26,13 @@ ActiveRecord::Schema.define(version: 20151219162843) do
     t.datetime "updated_at"
     t.integer  "order_id"
     t.integer  "quantity"
+    t.integer  "ws_product_id"
     t.integer  "sm_bag_qty"
     t.integer  "lg_bag_qty"
     t.integer  "one_gal_tin_qty"
     t.integer  "two_gal_tin_qty"
     t.integer  "three_half_tin_qty"
     t.integer  "six_half_tin_qty"
-    t.integer  "ws_product_id"
   end
 
   create_table "christmas_items", force: true do |t|
@@ -184,6 +184,13 @@ ActiveRecord::Schema.define(version: 20151219162843) do
     t.string   "name"
     t.string   "description"
     t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tins", force: true do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
