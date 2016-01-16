@@ -63,5 +63,13 @@ class OrdersController < ApplicationController
     redirect_to @order
   end
 
+  def destroy
+    @order = Order.find(params[:id])
+     @order.destroy
+     flash[:warning] = "Order Deleted"
+     redirect_to "/orders"
+    
+  end
+
 
 end

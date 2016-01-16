@@ -16,7 +16,11 @@
    <tbody>
     <% order.carted_products.each do |carted_product| %>
       <tr>
+        <% if user_signed_in? && current_user.admin? %>
+        <td><a data-confirm="Are you sure?" data-method="delete" href="/orders/<%= order.id %>" rel="nofollow"><button class="glyphicon glyphicon-trash">&nbsp;Delete order</button></a><%= order.user.first_name %> <%= order.user.last_name %> from <%= order.user.business %></td>
+        <% else %>
         <td><%= order.user.first_name %> <%= order.user.last_name %> from <%= order.user.business %></td>
+        <% end %>
         <td><%= order.created_at.strftime("%A, %D, %I:%M %p") %></td>
         <td><%= number_to_currency order.sub_total %></td>
         <td><%= carted_product.ws_product.name %></td>
