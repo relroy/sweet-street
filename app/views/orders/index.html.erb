@@ -2,19 +2,21 @@
   <h1>Here are your orders!</h1>
 
   <h3>ORDER</h3>
+  <% @orders.each do |order| %>  
   <table class="table table-striped table-bordered table-responsive">
    <thead>
     <tr>
-      <th>Date Order Placed</th>
-      <th>Total Paid</th>
-      <th>Name</th>&nbsp;&nbsp;
-      <th>Small Bag</th>
+      <th class= "bg-primary" >Name</th>
+      <th class= "bg-primary" >Date Order Placed</th>
+      <th class= "bg-primary" >Total Paid</th>
+      <th class= "bg-primary" >Name</th>&nbsp;&nbsp;
+      <th class= "bg-primary" >Small Bag</th>
     </tr>
    </thead>
    <tbody>
-  <% @orders.each do |order| %>  
     <% order.carted_products.each do |carted_product| %>
       <tr>
+        <td><%= order.user.first_name %> <%= order.user.last_name %> from <%= order.user.business %></td>
         <td><%= order.created_at.strftime("%A, %D, %I:%M %p") %></td>
         <td><%= number_to_currency order.sub_total %></td>
         <td><%= carted_product.ws_product.name %></td>

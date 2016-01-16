@@ -2,13 +2,14 @@
   <% if user_signed_in? && current_user.admin? %>
 
 <h1>Admins page</h1>
-<button><a href="/products/new">Add a Product</a></button>
+<button><a href="/products/new">Add a Product</a></button><br>
 <button><a href="/products">Edit or Delete Products</a></button><br>
 <button><a href="/popcorn_flavors">Edit or Delete a Popcorn Flavor</a></button><br>
-<button><a href="/ws_products/new">Add a Wholesale Popcorn Flavor</a></button>
+<button><a href="/ws_products/new">Add a Wholesale Popcorn Flavor</a></button><br>
 <button><a href="/ws_products">Edit or Delete a Wholesale Popcorn Flavor</a></button><br>
-<button><a href="/users">Edit a Users Information</a></button>
-<button><a href="/layouts">Edit Layouts</a></button>
+<button><a href="/users">Edit a Users Information</a></button><br>
+<button><a href="/layouts">Edit Layouts</a></button><br>
+<button><a href="/orders">Order History</a></button>
 
 
 <% end %>
