@@ -7,11 +7,6 @@ class ApplicationController < ActionController::Base
 
   def index
     @order = Order.find_by(:user_id => current_user.id, :status => "cart")
-    if user_signed_in? && current_user.admin?
-      @orders = Order.all
-    else
-      @orders = Order.where(:status => "purchased", :user_id => current_user.id)
-    end   
   end
 
  
