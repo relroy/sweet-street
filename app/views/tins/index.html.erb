@@ -4,10 +4,9 @@
   <% if user_signed_in? && current_user.admin? %> 
     <button type="button" class="btn btn-success"><a href="/tins/new"><h5>ADD A NEW Popcorn Tin</h5></a></button>
   <% end %>
-<% if @tins %>
 <% @tins.each do |item| %>
   <div class="col-md-3 col-sm-3 col-xs-12 bor">
-    <center><h1><%= item.name %></h1>
+    <h1><%= item.name %></h1>
     <p><img src='<%= item.photo %>'  height="140" width="auto" class="thumbnail"></p>
     <h4><%= item.description %></h4>
     <h4><%= item.description2 %></h4>
@@ -17,8 +16,7 @@
     <h4><%= item.description6 %></h4>
     <% if user_signed_in? && current_user.admin? %>
       <button><%= link_to 'EDIT Tin', edit_tin_path(item.id) %></button>
-      <a data-confirm="Are you sure?" data-method="delete" href="/tins/<%= item.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Tin</button></a></center>
-    <% end %>
+      <a data-confirm="Are you sure?" data-method="delete" href="/tins/<%= item.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Tin</button></a>
     <% end %>
   </div>
 <% end %>
