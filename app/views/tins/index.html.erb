@@ -9,12 +9,12 @@
   <div class="col-md-3 col-sm-3 col-xs-12 bor">
     <center><h1><%= item.name %></h1>
     <p><img src='<%= item.photo %>'  height="140" width="auto" class="thumbnail"></p>
-    <h3><%= item.description %></h3>
-    <h3><%= item.description2 %></h3>
-    <h3><%= item.description3 %></h3>
-    <h3><%= item.description4 %></h3>
-    <h3><%= item.description5 %></h3>
-    <h3><%= item.description6 %></h3>
+    <h5><%= item.description %></h5>
+    <h5><%= item.description2 %></h5>
+    <h5><%= item.description3 %></h5>
+    <h5><%= item.description4 %></h5>
+    <h5><%= item.description5 %></h5>
+    <h5><%= item.description6 %></h5>
     <% if user_signed_in? && current_user.admin? %>
       <button><%= link_to 'EDIT Tin', edit_tin_path(item.id) %></button>
       <a data-confirm="Are you sure?" data-method="delete" href="/tins/<%= item.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Tin</button></a></center>
