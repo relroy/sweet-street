@@ -65,6 +65,8 @@ end
 
   resources :corporate_items
 
+  resources :tins
+
   get "festivals" => "products#festivals"
 
 

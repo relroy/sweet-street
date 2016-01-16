@@ -1,0 +1,2 @@
+class TinsController < ApplicationController
+end
