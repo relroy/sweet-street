@@ -8,22 +8,22 @@
   <div class="col-md-3 col-sm-3 col-xs-12 bor">
     <h1><%= item.name %></h1>
     <p><img src='<%= item.photo %>'  height="140" width="auto" class="thumbnail"></p>
-    <p><%= item.description %></p>
-    <p><%= item.description2 %></p>
-    <p><%= item.description3 %></p>
-    <p><%= item.description4 %></p>
-    <p><%= item.description5 %></p>
+    <b><p><%= item.description %></p></b>
+    <b><p><%= item.description2 %></p></b>
+    <b><p><%= item.description3 %></p></b>
+    <b><p><%= item.description4 %></p></b>
+    <b><p><%= item.description5 %></p></b>
     <b><p><%= item.description6 %></p></b>
     <!-- <p><%= item.description7 %></p> -->
-    <p><%= item.description8 %></p>
-    <p><%= item.description9 %></p>
-    <b><p><%= item.description10 %></p></b>
-    <p><%= item.description11 %></p>
-    <p><%= item.description12 %></p>
-    <p><%= item.description13 %></p>
-    <p><%= item.description14 %></p>
-    <p><%= item.description15 %></p>
-    <p><%= item.description16 %></p>
+    <b><p><%= item.description8 %></p></b>
+    <b><p><%= item.description9 %></p></b>
+    <b><b><p><%= item.description10 %></p></b>
+    <b><p><%= item.description11 %></p></b>
+    <b><p><%= item.description12 %></p></b>
+    <b><p><%= item.description13 %></p></b>
+    <b><p><%= item.description14 %></p></b>
+    <b><p><%= item.description15 %></p></b>
+    <b><p><%= item.description16 %></p></b>
     <% if user_signed_in? && current_user.admin? %>
       <button><%= link_to 'EDIT Tin', edit_tin_path(item.id) %></button>
       <a data-confirm="Are you sure?" data-method="delete" href="/tins/<%= item.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Tin</button></a>
