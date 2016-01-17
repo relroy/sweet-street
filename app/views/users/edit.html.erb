@@ -35,7 +35,7 @@
     <%= email_field_tag :email, @user.email, :required => true %>
   </div>
   <br>
-  <% if user_signed_in && current_user.admin? %>
+  <% if user_signed_in? && current_user.admin? %>
   <div class="field">
     <%= label_tag :Wholesale_Customer %><br />
     <%= check_box_tag :ws_cust, true, false %>  MUST BE Checked to be active! Keep unchecked to make inactive.
