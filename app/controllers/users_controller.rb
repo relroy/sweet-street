@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if user_signed_in?
+    if user_signed_in? && current_user.ws_cust?
       @user = User.find(params[:id])
       else render :file => "/public/404.html", :status => 404
     end
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.update({:ws_cust => params[:ws_cust], :phone => params[:phone],:address => params[:address],:city => params[:city],:state => params[:state],:zip_code => params[:zip_code],:email => params[:email]})
        flash[:info] = "Update Complete"
-      redirect_to "/users"
+      redirect_to "/"
     end  
   end
 
