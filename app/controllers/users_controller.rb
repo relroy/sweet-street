@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if user_signed_in? && current_user.ws_cust? || current_user.admin?
+    if user_signed_in? && current_user.ws_cust?
       @user = User.find(params[:id])
       @user.update({:ws_cust => params[:ws_cust], :phone => params[:phone],:address => params[:address],:city => params[:city],:state => params[:state],:zip_code => params[:zip_code],:email => params[:email]})
        flash[:info] = "Update Complete"
