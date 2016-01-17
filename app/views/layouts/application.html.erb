@@ -119,7 +119,7 @@
           
             <!-- List -->
           <ul class="list-inline pull-right">
-            <% if user_signed_in? && current_user.ws_cust? %>
+            <% if user_signed_in? %>
             <li><a href="/users/<%= current_user.id %>/edit">Update my Account Info</a></li>
             <% end %>
             <% if user_signed_in? && current_user.admin? %>
