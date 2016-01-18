@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
   #   en.user_mailer.signin_confirmation.subject
   #
   def signin_confirmation(admin, business, first_name, last_name, address, city, state, zip_code, email, phone, id)
-    @admin = 'relroy5499@gmail.com'
+    @admin = 'sweetst592@gmail.com'
     @business = business
     @first_name = first_name
     @last_name = last_name
@@ -25,7 +25,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def new_inquiry(admin, business, first_name, last_name, address, city, state, zip_code, email, phone, id)
-    @admin = 'relroy5499@gmail.com'
+    @admin = 'sweetst592@gmail.com'
     @business = business
     @first_name = first_name
     @last_name = last_name
@@ -47,7 +47,7 @@ class UserMailer < ActionMailer::Base
   #   en.user_mailer.order_submission.subject
   #
   def order_submission(order)
-    @admin = 'relroy5499@gmail.com'
+    @admin = 'sweetst592@gmail.com'
     @order = order
     attachments.inline['sweet_logo.png'] = File.read('app/assets/images/sweet-logo.png')
     mail to: @admin, subject: "New Order!"
