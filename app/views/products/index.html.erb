@@ -19,40 +19,40 @@
     <%= image_tag "Sweet-street-logo.png" %>            
     <p><a class="btn btn-primary btn-lg" href="/aboutus" role="button">Learn About Us</a></p>
   </div>
+    <section class="slider">
+      <div id="main-carousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper For Slides Starts -->
+        <div class="carousel-inner">
+
+          <div class="item active">
+            <center><a href="/popcorn_flavors"><p>Popcorn Flavors</p><p><%= image_tag "Chocolate-Popcorn-Tin2.png" %></p></a></center>                
+          </div>
+          <!-- 473 -->
+           <% @products.each do |p| %>
+
+          <div class="item">
+            <center><a href="/products/<%= p.id %>"><%= p.name %><img src='<%= p.photo %>'  height="120" width="auto" class="thumbnail"></a></center>
+          </div>
+
+        <% end %>
+
+        </div>
+        <!-- Wrapper For Slides Ends -->
+        <!-- Controls Starts -->
+          <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        <!-- Controls Ends -->
+      </div>        
+    </section>
 
   </div>
     <div class="embed-responsive embed-responsive-16by9" ><iframe class="embed-responsive-item" width="250" height="170" src="https://www.youtube.com/embed/aOcdaMEVNtw" frameborder="0" allowfullscreen ></iframe>
   </div>
    
-        <section class="slider">
-          <div id="main-carousel" class="carousel slide" data-ride="carousel">
-            <!-- Wrapper For Slides Starts -->
-            <div class="carousel-inner">
-
-              <div class="item active">
-                <center><a href="/popcorn_flavors"><p>Popcorn Flavors</p><p><%= image_tag "Chocolate-Popcorn-Tin2.png" %></p></a></center>                
-              </div>
-              <!-- 473 -->
-               <% @products.each do |p| %>
-
-              <div class="item">
-                <center><a href="/products/<%= p.id %>"><%= p.name %><img src='<%= p.photo %>'  height="120" width="auto" class="thumbnail"></a></center>
-              </div>
-
-            <% end %>
-
-            </div>
-            <!-- Wrapper For Slides Ends -->
-            <!-- Controls Starts -->
-              <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-              <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
-            <!-- Controls Ends -->
-          </div>        
-        </section>
      
         <% if user_signed_in? && current_user.admin? %> 
           <button type="button" class="btn btn-success"><a href="/products/new"><h5>ADD A NEW Product</h5></a></button>
