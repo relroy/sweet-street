@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116221722) do
+ActiveRecord::Schema.define(version: 20160119192250) do
 
   create_table "boss_day_items", force: true do |t|
     t.string   "name"
@@ -220,18 +220,19 @@ ActiveRecord::Schema.define(version: 20160116221722) do
     t.string   "state"
     t.string   "zip_code"
     t.string   "phone"
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                                          default: "",    null: false
+    t.string   "encrypted_password",                             default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                                  default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.boolean  "admin",                  default: false
-    t.boolean  "ws_cust",                default: false
+    t.boolean  "admin",                                          default: false
+    t.boolean  "ws_cust",                                        default: false
+    t.decimal  "shipping",               precision: 6, scale: 2
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
