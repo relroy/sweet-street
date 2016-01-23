@@ -1,5 +1,5 @@
 <div class = "container-fluid">
-  <h1>Here is your order and cost: <%= number_to_currency @order.total %> + <%= number_to_currency @order.shipping_total %> Shipping </h1>
+  <h2>Here is your order and cost: </h2><h1><%= number_to_currency @order.total %> + <%= number_to_currency @order.shipping_total %> Shipping </h1>
     <h2><%= @order.user.business %> <%= @order.user.address %> in <%=@order.user.city %>, <%=@order.user.state %> <%=@order.user.zip_code %></h2>
   
   <center><h3 class="bg-green">ORDER</h3></center>
