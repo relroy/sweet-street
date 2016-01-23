@@ -32,16 +32,19 @@
       <ul class="nav navbar-nav">
         
           <% if user_signed_in? && current_user.ws_cust? %>
-          <li><a href="/ws_products">Order Wholesale</a></li>        
+          <li><a href="/ws_products">Order Wholesale</a></li>
             <% if @order %>
-          <li><a href="/orders/<%= @order.id %>">
-            <i class="glyphicon glyphicon-shopping-cart" title="My Cart"></i>Shopping Cart</a>
+              <li><a href="/orders/<%= @order.id %>">
+              <i class="glyphicon glyphicon-shopping-cart" title="My Cart"></i>Shopping Cart</a>
           </li>
+            <% end %>
+          <% end %>
+          <% if user_signed_in? && current_user.fundraiser? %>
+          <li><a href="/ws_products">Order My Fundraiser Products</a></li>        
             <% end %>
 
        
           <!-- <li><a href="/orders">My History</a></li> -->
-          <% end %>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">

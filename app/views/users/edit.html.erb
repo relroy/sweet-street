@@ -40,6 +40,12 @@
     <%= label_tag :Wholesale_Customer %><br />
     <%= check_box_tag :ws_cust, true, false %>  MUST BE Checked to be active! Keep unchecked to make inactive.
   </div>
+    <br>
+  <div class="field">
+    <%= label_tag :fundraiser %><br />
+    <%= check_box_tag :fundraiser, true, false %>  MUST BE Checked to be active! Keep unchecked to make inactive.
+  </div>
+    <br>
   <div class="field">
     <%= label_tag :shipping_cost %><br />
     <%= text_field_tag :shipping, @user.shipping, :required => true %>
