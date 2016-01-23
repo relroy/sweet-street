@@ -9,7 +9,7 @@ end
 def create
   # Amount in cents
   @order = Order.find_by(status: "cart", user_id: current_user.id)
-
+  @user = User.find_by(id: current_user.id)
   
 
   customer = Stripe::Customer.create(
@@ -19,12 +19,12 @@ def create
 
   charge = Stripe::Charge.create(
     :customer    => customer.id,
-    :amount      => (@order.total * 100).to_i,
+    :amount      => ((@order.total * 100) + (@order.shipping_total * 100)).to_i,
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )
 
-  @order.update(:status => "purchased", :total => @order.total)
+  @order.update(:status => "purchased", :total => (@order.total + @user.shipping))
 
   UserMailer.order_submission(@order).deliver
   UserMailer.order_confirmation(@order).deliver

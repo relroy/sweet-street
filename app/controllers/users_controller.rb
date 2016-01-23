@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def update
     if user_signed_in?
       @user = User.find(params[:id])
-      @user.update({:ws_cust => params[:ws_cust], :phone => params[:phone],:address => params[:address],:city => params[:city],:state => params[:state],:zip_code => params[:zip_code],:email => params[:email]})
+      @user.update({:ws_cust => params[:ws_cust], :phone => params[:phone], :shipping => params[:shipping],:address => params[:address],:city => params[:city],:state => params[:state],:zip_code => params[:zip_code],:email => params[:email]})
        flash[:info] = "Update Complete"
       redirect_to "/"
     end  

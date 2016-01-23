@@ -1,5 +1,6 @@
 <div class = "container-fluid">
-  <h1>Here is your order and cost: <%= number_to_currency @order.total %> for <%= @order.user.business %> <%= @order.user.address %> in <%=@order.user.city %>, <%=@order.user.state %> <%=@order.user.zip_code %></h1>
+  <h1>Here is your order and cost: <%= number_to_currency @order.total %> + <%= number_to_currency @order.shipping_total %> Shipping </h1>
+    <h2><%= @order.user.business %> <%= @order.user.address %> in <%=@order.user.city %>, <%=@order.user.state %> <%=@order.user.zip_code %></h2>
   
   <center><h3 class="bg-green">ORDER</h3></center>
   <table class="table table-striped table-bordered table-responsive">
@@ -32,7 +33,7 @@
   </tbody>
   </table>
   <%= form_tag charges_path do %>
-    <div id="pay-button"><script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-image="/assets/sweet-logo.png" style="width: 100px height: 100px" data-description="Sweet Street" data-amount="<%= (@order.total * 100).to_i %>" data-email="<%= current_user.email %>"></script>
+    <div id="pay-button"><script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-image="/assets/sweet-logo.png" style="width: 100px height: 100px" data-description="Sweet Street" data-amount="<%= (@order.total * 100) + (@order.shipping_total * 100).to_i %>" data-email="<%= current_user.email %>"></script>
       <i class="glyphicon glyphicon-credit-card" title="My Cart"></i>
     </div>
   <% end %>
