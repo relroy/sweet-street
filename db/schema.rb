@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119192250) do
+ActiveRecord::Schema.define(version: 20160123193218) do
 
   create_table "boss_day_items", force: true do |t|
     t.string   "name"
@@ -233,6 +233,7 @@ ActiveRecord::Schema.define(version: 20160119192250) do
     t.boolean  "admin",                                          default: false
     t.boolean  "ws_cust",                                        default: false
     t.decimal  "shipping",               precision: 6, scale: 2
+    t.boolean  "fundraiser",                                     default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
