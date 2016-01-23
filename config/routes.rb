@@ -67,6 +67,8 @@ end
 
   resources :tins
 
+  resources :fundraiser_items
+
   get "festivals" => "products#festivals"
 
 

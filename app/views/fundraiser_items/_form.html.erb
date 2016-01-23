@@ -1,0 +1,35 @@
+<div class="container-fluid">
+<%= form_for @fundraiser do |f| %>
+
+  <div class ="row">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Fundraising Product</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :name %>
+        <%= f.text_field :name, :required => true %>
+      </div>
+  </div>
+  <div class="panel-heading">
+      <h3 class="panel-title">Change Photo?</h3>
+    </div>
+      <div class="panel-body">
+        <h4></h4><%= image_tag @fundraiser_item.photo , class: "img-responsive" %>
+        <%= f.label :photo %>
+        <%= f.file_field :photo %>
+      </div>
+  </div>
+  <div class="panel-heading">
+      <h3 class="panel-title">Price</h3>
+    </div>
+      <div class="panel-body">
+        <%= f.label :sm_bag %>
+        <%= f.text_field :sm_bag, :required => true %>
+      </div>
+  </div>
+  
+  
+  <%= f.submit %>
+<% end %>
+</div>

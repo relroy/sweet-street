@@ -16,7 +16,7 @@ class ValentinesItemsController < ApplicationController
 
   def create
     @valentines_item = ValentinesItem.create(item_params) 
-    redirect_to '/christmas_items'  
+    redirect_to '/valentines_items'  
   end
 
   def edit
