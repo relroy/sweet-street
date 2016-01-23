@@ -11,7 +11,7 @@
       <%= @order.user.address %>
       <%= @order.user.city %>, <%= @order.user.state %> <%= @order.user.zip_code %> <br>
       <a href="tel:+1-<%= @order.user.phone %>"><%= @order.user.phone %></a><br>
-      for a total of <%= (number_to_currency @order.total + number_to_currency @order.shipping_total) %>
+      for a total of <%= ((number_to_currency @order.total) + (number_to_currency @order.shipping_total)) %>
       <br>
     </p>
 
