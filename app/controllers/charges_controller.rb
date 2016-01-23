@@ -19,7 +19,7 @@ def create
 
   charge = Stripe::Charge.create(
     :customer    => customer.id,
-    :amount      => ((@order.total * 100) + (@order.shipping_total * 100)).to_i,
+    :amount      => (@order.total_with_shipping * 100).to_i,
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )
