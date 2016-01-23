@@ -82,6 +82,11 @@ class Order < ActiveRecord::Base
     end
       return shipping_total
   end
+  def total_with_shipping
+    total_with_shipping = (order.shipping_total + order.total)
+    return total_with_shipping
+    
+  end
 
   
 end
