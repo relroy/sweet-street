@@ -32,7 +32,7 @@
       <ul class="nav navbar-nav">
         
           <% if user_signed_in? && current_user.ws_cust? %>
-          <li><a href="/ws_products">Products available</a></li>        
+          <li><a href="/ws_products">Order Wholesale</a></li>        
             <% if @order %>
           <li><a href="/orders/<%= @order.id %>">
             <i class="glyphicon glyphicon-shopping-cart" title="My Cart"></i>Shopping Cart</a>

@@ -18,6 +18,13 @@
   <div class="jumbotron">
     <%= image_tag "Sweet-street-logo.png" %>            
     <p><a class="btn btn-primary btn-lg" href="/aboutus" role="button">Learn About Us</a></p>
+    <div class="ws_callout">
+      <% if user_signed_in? && current_user.ws_cust? %>
+      <p><a href="/ws_products" ><%= image_tag "ws-callout.png" %></a></p>
+      <% else %>
+      <p><a href="/users/sign_up" ><%= image_tag "ws-callout.png" %></a></p>
+      <% end %>
+    </div>
   </div>
     <section class="slider">
       <div id="main-carousel" class="carousel slide" data-ride="carousel">
