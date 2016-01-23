@@ -2,7 +2,7 @@ class FundraiserItemsController < ApplicationController
   
 
    def index   
-    @fundraiser_items = Fundraiser.all
+    @fundraiser_items = FundraiserItem.all
     @carted_product = CartedProduct.new
     if 
     @order = Order.find_by(:user_id => current_user.id, :status => "cart")
@@ -16,37 +16,37 @@ class FundraiserItemsController < ApplicationController
   end
 
   def show
-    @fundraiser_item = Fundraiser.find(params[:id])
+    @fundraiser_item = FundraiserItem.find(params[:id])
   end
 
   def new
     if user_signed_in? && current_user.admin?
-    @fundraiser_item = Fundraiser.new 
+    @fundraiser_item = FundraiserItem.new 
     else render :file => "/public/404.html", :status => 404
     end
   end
 
   def create
-        @fundraiser_item = Fundraiser.create(product_params) 
+        @fundraiser_item = FundraiserItem.create(product_params) 
     redirect_to '/fundraiser_items'   
   end
 
   def edit
     if user_signed_in? && current_user.admin?
-    @fundraiser_item = Fundraiser.find(params[:id])
+    @fundraiser_item = FundraiserItem.find(params[:id])
     else render :file => "/public/404.html", :status => 404
     end
   end
 
   def update
-    @fundraiser_item = Fundraiser.find(params[:id])
+    @fundraiser_item = FundraiserItem.find(params[:id])
     @fundraiser_item.update(product_params) 
     # flash[:success] = "Your Whole Sale Product is updated!"
     redirect_to '/fundraiser_items'    
   end
 
   def destroy
-    @fundraiser_item = Fundraiser.find(params[:id])
+    @fundraiser_item = FundraiserItem.find(params[:id])
     @fundraiser_item.destroy
     # flash[:warning] = "Wholesale Product Deleted"
      redirect_to "/fundraiser_items"
@@ -55,6 +55,6 @@ class FundraiserItemsController < ApplicationController
   private 
 
     def product_params
-    return params.require(:fundraiser).permit(:name, :photo, :sm_bag, :id)     
+    return params.require(:fundraiser_item).permit(:name, :photo, :sm_bag, :id)     
     end
 end
