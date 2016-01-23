@@ -24,7 +24,7 @@ def create
     :currency    => 'usd'
   )
 
-  @order.update(:status => "purchased", :total => (@order.total + @user.shipping))
+  @order.update(:status => "purchased", :total => (@order.total_with_shipping))
 
   UserMailer.order_submission(@order).deliver
   UserMailer.order_confirmation(@order).deliver
