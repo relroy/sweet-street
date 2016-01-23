@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160123205748) do
+ActiveRecord::Schema.define(version: 20160123222958) do
 
   create_table "boss_day_items", force: true do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160123205748) do
     t.integer  "two_gal_tin_qty"
     t.integer  "three_half_tin_qty"
     t.integer  "six_half_tin_qty"
+    t.integer  "fundraiser_item_id"
   end
 
   create_table "christmas_items", force: true do |t|
