@@ -26,10 +26,10 @@
       <% @order.carted_products.each do |carted_product| %>
       <tr>
         <td><%= carted_product.ws_product.name %></td>&nbsp;&nbsp;
-        <center><td><%= carted_product.sm_bag_qty %></td></center>
-        <center><td><%= number_to_currency @order.total %></td></center>
-        <center><td><%= number_to_currency @order.shipping_total %></td></center>
-        <center><td><%= number_to_currency @order.total_with_shipping %></td></center>
+        <center><td><%= carted_product.sm_bag_qty %></td></center>&nbsp;&nbsp;
+        <center><td><%= number_to_currency @order.total %></td></center>&nbsp;&nbsp;
+        <center><td><%= number_to_currency @order.shipping_total %></td></center>&nbsp;&nbsp;
+        <center><td><%= number_to_currency @order.total_with_shipping %></td></center>&nbsp;&nbsp;
 
       <% end %>
       </tr>

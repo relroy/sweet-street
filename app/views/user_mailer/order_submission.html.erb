@@ -11,7 +11,7 @@
       <%= @order.user.address %>
       <%= @order.user.city %>, <%= @order.user.state %> <%= @order.user.zip_code %> <br>
       <a href="tel:+1-<%= @order.user.phone %>"><%= @order.user.phone %></a><br>
-      for a total of <%= number_to_currency @order.total_with_shipping %> including shipping.
+      for a total of <mark><%= number_to_currency @order.total_with_shipping %></mark> including shipping if applicable.
       <br>
     </p>
 
@@ -20,7 +20,10 @@
    <thead>
     <tr>
       <th>Name</th>&nbsp;&nbsp;
-      <th>Small Bag</th>
+        <th>Small Bag</th>&nbsp;&nbsp;
+        <th>Total</th>&nbsp;&nbsp;
+        <th>Shipping Total</th>&nbsp;&nbsp;
+        <th>Total Charges</th>&nbsp;&nbsp;
     </tr>
    </thead>
    <tbody>
@@ -28,7 +31,10 @@
   <% @order.carted_products.each do |carted_product| %>
     <tr>
   <td><%= carted_product.ws_product.name %></td>&nbsp;&nbsp;
-  <center><td><%= carted_product.sm_bag_qty %></td></center>
+  <center><td><%= carted_product.sm_bag_qty %></td></center>&nbsp;&nbsp;
+  <center><td><%= number_to_currency @order.total %></td></center>&nbsp;&nbsp;
+  <center><td><%= number_to_currency @order.shipping_total %></td></center>&nbsp;&nbsp;
+  <center><td><%= number_to_currency @order.total_with_shipping %></td></center>&nbsp;&nbsp;
   <% end %>
   </tr>
   </tbody>
