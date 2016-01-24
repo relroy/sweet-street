@@ -3,12 +3,12 @@
 <h1>Popcorn Flavors/ Fundraiser Prices</h1>
 <h3>Please add your items by each product line. Keep in mind that you MUST order in quantities of 50 bags. These may be broken into different flavors as long as there are 50 bags or 100 bags, etc. If you see a message at the top of your screen you probably do not have the correct amount required to go to your cart to finish the order.</h3>
 <% if current_user.admin? %>
-<button type="button" class="btn btn-success"><a href="/ws_products/new"><h5>ADD A NEW Fundraiser Product</h5></a></button>
+<button type="button" class="btn btn-success"><a href="/fundraiser_items/new"><h5>ADD A NEW Fundraiser Product</h5></a></button>
 <% end %>
 
 <div class="carted_length">
   <% if @carted_products %>
-  <h3>Your total so far: <%#= number_to_currency @order.total %> for <%= $total_carted_products %> bags of popcorn.</h3><% if $total_carted_products < 50 %><h3>You need <%= 50 - $total_carted_products %> more bags to go to your cart.</h3><% elsif $total_carted_products > 50 && $total_carted_products < 100 %><h3>You need <%= 100 - $total_carted_products %> more bags to go to your cart.</h3><% end %>
+  <h3>Your total so far: <%= number_to_currency @order.total %> for <%= $total_carted_products %> bags of popcorn.</h3><% if $total_carted_products < 50 %><h3>You need <%= 50 - $total_carted_products %> more bags to go to your cart.</h3><% elsif $total_carted_products > 50 && $total_carted_products < 100 %><h3>You need <%= 100 - $total_carted_products %> more bags to go to your cart.</h3><% end %>
     <% if @order.carted_products %>
   <% @carted_products.each do |p| %>
   <h5><button><a href="/carted_products/<%= p.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= p.id %>" rel="nofollow"><button class="glyphicon glyphicon-trash">&nbsp;Delete Product</button></a><%= p.fundraiser_item.name %>&nbsp;- <%= p.sm_bag_qty %> bags

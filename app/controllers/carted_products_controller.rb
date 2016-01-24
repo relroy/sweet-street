@@ -11,15 +11,6 @@ class CartedProductsController < ApplicationController
     elsif @order.user.fundraiser?
       redirect_to "/fundraiser_items"  
     end
-      # @order = Order.find_by(:user_id => current_user.id, :status => "cart")
-      # @carted_products = @order.carted_products
-      # @carted_products.each do |each_product|
-      #   if each_product.ws_product_id?
-      #     flash[:warning] = "Item exists, please update you quantity of this item"
-      #     each_product.sm_bag_qty.destroy
-      #     redirect_to "/ws_products"
-      #   end
-      # end
   end
   def index
     if 
