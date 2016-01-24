@@ -1,14 +1,17 @@
 class Order < ActiveRecord::Base
   has_many :carted_products
   has_many :ws_products, :through => :carted_products
+  has_many :fundraiser_items, :through => :carted_products
    belongs_to :user
    
 
    def sub_total
     sub_total = 0
     carted_products.each do |carted_product|
-      if carted_product.sm_bag_qty
+      if user_signed_in? && current_user.ws_cust? && carted_product.sm_bag_qty
         sub_total += (carted_product.ws_product.sm_bag * carted_product.sm_bag_qty)
+      elsif user_signed_in? && current_user.fundraiser? && carted_product.sm_bag_qty
+        sub_total += (carted_product.fundaiser_item.sm_bag * carted_product.sm_bag_qty)
       end
       # if carted_product.lg_bag_qty
       #   sub_total += (carted_product.ws_product.lg_bag * carted_product.lg_bag_qty)
