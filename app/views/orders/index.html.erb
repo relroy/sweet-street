@@ -22,7 +22,7 @@
         <td><%= order.user.first_name %> <%= order.user.last_name %> from <%= order.user.business %></td>
         <% end %>
         <td><%= order.created_at.strftime("%A, %D, %I:%M %p") %></td>
-        <td><%= number_to_currency order.total_with_shipping %></td>
+        <td><%= number_to_currency order.sub_total %></td>
         <% if order.user.ws_cust? %>
         <td><%= carted_product.ws_product.name %></td>
         <% elsif %>
