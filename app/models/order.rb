@@ -10,9 +10,9 @@ class Order < ActiveRecord::Base
     sub_total = 0
     carted_products.each do |carted_product|
       
-        if carted_product.sm_bag_qty && user.ws_cust?
+        if user.ws_cust? && carted_product.sm_bag_qty
         sub_total += (carted_product.ws_product.sm_bag * carted_product.sm_bag_qty)
-        elsif carted_product.sm_bag_qty && user.fundraiser?
+        elsif user.fundraiser? && carted_product.sm_bag_qty 
         sub_total += (carted_product.fundaiser_item.sm_bag * carted_product.sm_bag_qty)
         end
     end
