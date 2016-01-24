@@ -9,8 +9,7 @@ class FundraiserItemsController < ApplicationController
     @carted_products = @order.carted_products
     $total_carted_products = 0
     @carted_products.each do |carted_product|
-      $total_carted_products += carted_product.sm_bag_qty
-      
+      $total_carted_products += carted_product.sm_bag_qty      
     end
     end
   end

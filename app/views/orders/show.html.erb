@@ -20,14 +20,14 @@
 
   <% @order.carted_products.each do |carted_product| %>
     <tr>
+  <% if @order.user.ws_cust? %>
   <td><%= carted_product.ws_product.name %></td>
+  <% elsif %>
+  <td><%= carted_product.fundraiser_item.name %></td>
+  <% end %>
   <td><%= carted_product.sm_bag_qty %></td>
   <td><strong><button><a href="/carted_products/<%= carted_product.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= carted_product.id %>" rel="nofollow"><button>Delete Product</button></strong> </td>
-  <!-- <td><%= carted_product.lg_bag_qty %></td>
-  <td><%= carted_product.one_gal_tin_qty %></td>
-  <td><%= carted_product.two_gal_tin_qty %></td>
-  <td><%= carted_product.three_half_tin_qty %></td>
-  <td><%= carted_product.six_half_tin_qty %></td> -->
+ 
   <% end %>
   </tr>
   </tbody>

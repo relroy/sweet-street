@@ -1,6 +1,10 @@
 <div class="container-fluid" >
 <h1>Please edit your amount.</strong></h1>
-  <h4><%= @carted_product.ws_product.name %></h4>
+  <% if @order.user.ws_cust? %>
+    <h4><%= @carted_product.ws_product.name %></h4>
+  <% elsif @order.user.fundraiser? %>
+    <h4><%= @carted_product.fundraiser_item.name %></h4>
+  <% end %>
 <%= form_for @carted_product do |f| -%>
   <td><%= f.label :sm_bag_qty %><br>
   <%= f.text_field  :sm_bag_qty, :size => 3 %>

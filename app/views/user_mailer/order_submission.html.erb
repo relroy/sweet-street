@@ -4,7 +4,11 @@
     <%= image_tag attachments['sweet_logo.png'].url %>
   </head>
   <body>
+    <% if @order.user.ws_cust? %>
     <h1>You have a new Wholesale order!</h1>
+    <% elsif %>
+    <h1>You have a new Fundraising order!</h1>
+    <% end %>
     <p>
       <%= @order.user.first_name %> <%= @order.user.last_name %> <br>
       from: <%= @order.user.business %><br>
@@ -30,7 +34,11 @@
 
   <% @order.carted_products.each do |carted_product| %>
     <tr>
+  <% if @order.user.ws_cust? %>
   <td><%= carted_product.ws_product.name %></td>&nbsp;&nbsp;
+  <% elsif @order.user.fundraiser? %>
+  <td><%= carted_product.fundraiser_item.name %></td>&nbsp;&nbsp;
+  <% end %>
   <center><td><%= carted_product.sm_bag_qty %></td></center>&nbsp;&nbsp;
   <% end %>
   <center><td><%= number_to_currency @order.total %></td></center>&nbsp;&nbsp;

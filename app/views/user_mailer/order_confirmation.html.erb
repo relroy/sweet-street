@@ -25,7 +25,11 @@
 
       <% @order.carted_products.each do |carted_product| %>
       <tr>
-        <td><%= carted_product.ws_product.name %></td>&nbsp;&nbsp;
+      <% if @order.user.ws_cust? %>
+      <td><%= carted_product.ws_product.name %></td>&nbsp;&nbsp;
+      <% elsif @order.user.fundraiser? %>
+      <td><%= carted_product.fundraiser_item.name %></td>&nbsp;&nbsp;
+      <% end %>
         <center><td><%= carted_product.sm_bag_qty %></td></center>&nbsp;&nbsp;
       <% end %>
         <center><td><%= number_to_currency @order.total %></td></center>&nbsp;&nbsp;

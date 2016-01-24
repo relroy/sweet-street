@@ -36,6 +36,7 @@ class CartedProductsController < ApplicationController
   end
 
   def edit
+    @order = Order.find_by(:user_id => current_user.id, :status => "cart")
     @carted_product = CartedProduct.find(params[:id])    
   end
 
@@ -44,14 +45,22 @@ class CartedProductsController < ApplicationController
     @carted_product.update(carted_product_params) 
     @order = Order.find_by(:user_id => current_user.id, :status => "cart")
     # flash[:success] = "Your Whole Sale Product is updated!"
-    redirect_to '/ws_products'    
+    if @order.user.ws_cust?
+    redirect_to '/ws_products'
+    elsif @order.user.fundraiser?
+    redirect_to '/fundraiser_items'
+    end    
   end
 
   def destroy
     @carted_product = CartedProduct.find(params[:id])
     @carted_product.destroy
     # flash[:warning] = "Wholesale Product Deleted"
-     redirect_to "/ws_products"
+     if @order.user.ws_cust?
+    redirect_to '/ws_products'
+    elsif @order.user.fundraiser?
+    redirect_to '/fundraiser_items'
+    end    
   end
 
   def carted_product_params
