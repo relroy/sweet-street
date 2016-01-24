@@ -36,7 +36,7 @@ class CartedProduct < ActiveRecord::Base
       if user_signed_in? && current_user.ws_cust? 
         order_sub_total += (carted_product.ws_product.sm_bag * carted_product.sm_bag_qty)
       elsif user_signed_in? && current_user.fundraiser? && carted_product.sm_bag_qty
-        order_sub_total += (carted_product.fundraiser.sm_bag * carted_product.sm_bag_qty)
+        order_sub_total += (carted_product.fundraiser_item.sm_bag * carted_product.sm_bag_qty)
       end
       if carted_product.lg_bag_qty
         order_sub_total += (carted_product.ws_product.lg_bag * carted_product.lg_bag_qty)
