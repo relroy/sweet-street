@@ -6,17 +6,7 @@
 <button type="button" class="btn btn-success"><a href="/ws_products/new"><h5>ADD A NEW Fundraiser Product</h5></a></button>
 <% end %>
 
-<div class="carted_length">
-  <% if @carted_products %>
-  <h3>Your total so far: <%= number_to_currency @order.total %> for <%= $total_carted_products %> bags of popcorn.</h3><% if $total_carted_products < 50 %><h3>You need <%= 50 - $total_carted_products %> more bags to go to your cart.</h3><% elsif $total_carted_products > 50 && $total_carted_products < 100 %><h3>You need <%= 100 - $total_carted_products %> more bags to go to your cart.</h3><% end %>
-    <% if @order.carted_products %>
-  <% @carted_products.each do |p| %>
-  <h5><button><a href="/carted_products/<%= p.id %>/edit">Edit</a></button>&nbsp;<a data-confirm="Are you sure?" data-method="delete" href="/carted_products/<%= p.id %>" rel="nofollow"><button class="glyphicon glyphicon-trash">&nbsp;Delete Product</button></a><%= p.fundraiser_item.name %>&nbsp;- <%= p.sm_bag_qty %> bags
-  <% end %>
-  <% end %>
-    <center><button class="glyphicon glyphicon-shopping-cart"><a href="/orders/<%=@order.id %>">Go To Cart</a></button></center></h5>
-    <% end %>
-</div>
+
    
   <table class="table table-striped table-bordered table-responsive">
     <thead>
