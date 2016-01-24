@@ -1,6 +1,7 @@
 class CartedProduct < ActiveRecord::Base
 
   belongs_to :ws_product
+  belongs_to :fundraiser_item
   belongs_to :order
 
   def sub_total

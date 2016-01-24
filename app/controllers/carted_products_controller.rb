@@ -6,7 +6,11 @@ class CartedProductsController < ApplicationController
       @order = Order.create(:status => "cart", :user_id => current_user.id)
     end
     CartedProduct.create(carted_product_params.merge({:order_id => @order.id}))
-    redirect_to "/ws_products"
+    if @order.user.ws_cust?
+      redirect_to "/ws_products"
+    elsif @order.user.fundraiser?
+      redirect_to "/fundraiser_items"  
+    end
       # @order = Order.find_by(:user_id => current_user.id, :status => "cart")
       # @carted_products = @order.carted_products
       # @carted_products.each do |each_product|
@@ -51,7 +55,7 @@ class CartedProductsController < ApplicationController
   end
 
   def carted_product_params
-    return params.require(:carted_product).permit(:ws_product_id, :sm_bag_qty, :lg_bag_qty, :one_gal_tin_qty, :two_gal_tin_qty, :two_half_tin_qty, :three_half_tin_qty, :six_half_tin_qty)
+    return params.require(:carted_product).permit(:ws_product_id, :fundraiser_item_id, :sm_bag_qty, :lg_bag_qty, :one_gal_tin_qty, :two_gal_tin_qty, :two_half_tin_qty, :three_half_tin_qty, :six_half_tin_qty)
     
   end
   
