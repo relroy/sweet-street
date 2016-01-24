@@ -6,17 +6,18 @@ class Order < ActiveRecord::Base
    
 
    def sub_total
+    @user = User.find_by(:user_id => current_user.id)
     sub_total = 0
     carted_products.each do |carted_product|
-      if user.ws_product
-        if carted_product.sm_bag_qty
+      
+        if carted_product.sm_bag_qty && @user.ws_cust
         sub_total += (carted_product.ws_product.sm_bag * carted_product.sm_bag_qty)
-        end
-      elsif user.fundraiser
-        if carted_product.sm_bag_qty
+        
+        
+        elsif carted_product.sm_bag_qty && @user.fundraiser
         sub_total += (carted_product.fundaiser_item.sm_bag * carted_product.sm_bag_qty)
         end
-      end
+      
       # if carted_product.lg_bag_qty
       #   sub_total += (carted_product.ws_product.lg_bag * carted_product.lg_bag_qty)
       # end
