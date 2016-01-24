@@ -33,7 +33,7 @@ class CartedProduct < ActiveRecord::Base
   def order_sub_total
       order_sub_total = 0
     @carted_products.each do |carted_product|
-      if user_signed_in? && current_user.ws_cust? && carted_product.sm_bag_qty
+      if user_signed_in? && current_user.ws_cust? 
         order_sub_total += (carted_product.ws_product.sm_bag * carted_product.sm_bag_qty)
       elsif user_signed_in? && current_user.fundraiser? && carted_product.sm_bag_qty
         order_sub_total += (carted_product.fundraiser.sm_bag * carted_product.sm_bag_qty)
