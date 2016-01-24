@@ -10,6 +10,7 @@
       <th class= "bg-primary" >Total Paid</th>
       <th class= "bg-primary" >Name</th>&nbsp;&nbsp;
       <th class= "bg-primary" >Small Bag</th>
+      <th class= "bg-primary" >Order Type</th>
     </tr>
    </thead>
    <tbody>
@@ -28,6 +29,11 @@
         <td><%= carted_product.fundraiser_item.name %></td>
         <% end %>
         <td><%= carted_product.sm_bag_qty %></td>
+        <% if order.user.ws_cust? %>
+        <td>Wholesale Order</td>
+        <% elsif order.user.fundraiser? %>
+        <td>Fundraiser Order</td>
+        <% end %>
     <% end %>
     <% end %>
   <% end %>
