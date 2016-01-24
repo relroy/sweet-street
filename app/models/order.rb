@@ -12,8 +12,6 @@ class Order < ActiveRecord::Base
       
         if carted_product.sm_bag_qty && @user.ws_cust
         sub_total += (carted_product.ws_product.sm_bag * carted_product.sm_bag_qty)
-        
-        
         elsif carted_product.sm_bag_qty && @user.fundraiser
         sub_total += (carted_product.fundaiser_item.sm_bag * carted_product.sm_bag_qty)
         end
