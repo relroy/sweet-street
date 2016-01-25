@@ -54,6 +54,6 @@ class FundraiserItemsController < ApplicationController
   private 
 
     def product_params
-    return params.require(:fundraiser_item).permit(:name, :photo, :sm_bag, :id)     
+    return params.require(:fundraiser_item).permit(:name, :photo, :sm_bag, :sm_bag_2, :sm_bag_3, :id)     
     end
 end

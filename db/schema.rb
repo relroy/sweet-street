@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124223016) do
+ActiveRecord::Schema.define(version: 20160125183241) do
 
   create_table "boss_day_items", force: true do |t|
     t.string   "name"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160124223016) do
     t.decimal  "sm_bag",     precision: 6, scale: 2
     t.decimal  "sm_bag_2",   precision: 6, scale: 2
     t.decimal  "sm_bag_3",   precision: 6, scale: 2
+    t.decimal  "sm_bag_1",   precision: 6, scale: 2
   end
 
   create_table "fundraisers", force: true do |t|
