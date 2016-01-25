@@ -17,7 +17,7 @@ class Order < ActiveRecord::Base
             sub_total += (carted_product.fundraiser_item.sm_bag_1 * carted_product.sm_bag_qty)
           elsif $total_carted_products == 100
             sub_total += (carted_product.fundraiser_item.sm_bag_2 * carted_product.sm_bag_qty)
-          elsif $total_carted_products > 149
+          elsif $total_carted_products == 150
             sub_total += (carted_product.fundraiser_item.sm_bag_3 * carted_product.sm_bag_qty)
           end
         end
