@@ -47,9 +47,9 @@ class CartedProductsController < ApplicationController
     @carted_product = CartedProduct.find(params[:id])
     @carted_product.destroy
     # flash[:warning] = "Wholesale Product Deleted"
-     if @order.user.ws_cust?
+     if current_user.ws_cust?
     redirect_to '/ws_products'
-    elsif @order.user.fundraiser?
+    elsif current_user.fundraiser?
     redirect_to '/fundraiser_items'
     end    
   end
