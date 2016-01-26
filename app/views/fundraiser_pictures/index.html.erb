@@ -1,2 +1,19 @@
-<h1>FundraiserPictures#index</h1>
-<p>Find me in app/views/fundraiser_pictures/index.html.erb</p>
+<div class = "container-fluid" >
+  <h1>Fundraiser Pictures</h1>
+
+  <% if user_signed_in? && current_user.admin? %> 
+    <button type="button" class="btn btn-success"><a href="/fundraiser_pictures/new"><h5>ADD A NEW Fundraiser Picture</h5></a></button>
+  <% end %>
+
+<% @fundraiser_pictures.each do |item| %>
+  <div class="col-md-3 col-sm-3 col-xs-12 bor">
+    <p><%= item.name %></p>
+    <p><img src='<%= item.photo %>'  height="140" width="auto" class="thumbnail"></p>
+    <p><%= item.description %></p>
+      <% if user_signed_in? && current_user.admin? %>
+        <button><%= link_to 'EDIT Product', edit_fundraiser_picture_path(item.id) %></button>
+        <a data-confirm="Are you sure?" data-method="delete" href="/fundraiser_pictures/<%= item.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Fundraiser Picture</button></a>
+      <% end %>
+  </div>
+<% end %>
+</div>
