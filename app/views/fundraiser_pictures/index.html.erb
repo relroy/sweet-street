@@ -2,9 +2,13 @@
   <div class="fundraiser" >
     <%= image_tag "Banner_Playhouse.png" %>
   </div>
-  <center><h1>Fundraise with <u><strong>Sweet Street</strong></u> and make money for your organization!</h1></center>
-  <h3>Here's how it works</h3>
-  
+  <center><h1>Fundraising with <u><strong>Sweet Street</strong></u> is fun and you get to make money for your organization!</h1></center>
+  <h3>Here's how it works:</h3>
+  <ol>
+    <li>Contact Sweet Street to discuss whether your organization qualifies as non for profit. You can do this by clicking contact us on this website or call <a href="tel:+1-815-932-4010">815-932-4010.</a></li>
+    <li>Provide your non for profit tax letter to Sweet Street for record keeping.</li>
+    <li></li>
+  </ol>
   <% if user_signed_in? && current_user.admin? %> 
     <button type="button" class="btn btn-success"><a href="/fundraiser_pictures/new"><h5>ADD A NEW Fundraiser Picture</h5></a></button>
   <% end %>
