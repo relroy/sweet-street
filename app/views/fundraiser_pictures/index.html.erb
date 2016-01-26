@@ -1,6 +1,10 @@
 <div class = "container-fluid" >
-  <h1>Fundraiser Pictures</h1>
-
+  <div class="fundraiser" >
+    <%= image_tag "Banner_Playhouse.png" %>
+  </div>
+  <center><h1>Fundraise with <u><strong>Sweet Street</strong></u> and make money for your organization!</h1></center>
+  <h3>Here's how it works</h3>
+  
   <% if user_signed_in? && current_user.admin? %> 
     <button type="button" class="btn btn-success"><a href="/fundraiser_pictures/new"><h5>ADD A NEW Fundraiser Picture</h5></a></button>
   <% end %>
