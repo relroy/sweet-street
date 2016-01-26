@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
 
   devise_for :users do
   get '/users/sign_out' => 'devise/sessions#destroy'
@@ -68,6 +68,8 @@ end
   resources :tins
 
   resources :fundraiser_items
+
+  resources :fundraiser_pictures
 
   get "festivals" => "products#festivals"
 
