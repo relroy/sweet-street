@@ -15,7 +15,7 @@
   <% if user_signed_in? && current_user.admin? %> 
     <button type="button" class="btn btn-success"><a href="/fundraiser_pictures/new"><h5>ADD A NEW Fundraiser Picture</h5></a></button>
   <% end %>
-
+  <h3>Have your fundraiser picture featured right here.</h3>
 <% @fundraiser_pictures.each do |item| %>
   <div class="col-md-3 col-sm-3 col-xs-12 bor">
     <p><%= item.name %></p>
