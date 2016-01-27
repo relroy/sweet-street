@@ -11,7 +11,7 @@ class Order < ActiveRecord::Base
     carted_products.each do |carted_product|
       
         if user.ws_cust? && carted_product.sm_bag_qty
-        sub_total += (carted_product.ws_product.sm_bag * carted_product.sm_bag_qty)
+          sub_total += (carted_product.ws_product.sm_bag * carted_product.sm_bag_qty)
         elsif user.fundraiser? && carted_product.sm_bag_qty 
           if $total_carted_products == 50
             sub_total += (carted_product.fundraiser_item.sm_bag_1 * carted_product.sm_bag_qty)
