@@ -26,12 +26,18 @@ class LayoutsController < ApplicationController
     @layout = Layout.find(params[:id])
     @layout.update(layout_params)
       flash[:success] = "Your Layout is updated!"
-    redirect_to '/layouts'
-    
+    redirect_to '/layouts'   
   end
 
   def show
     @layout = Layout.find(params[:id])
+  end
+
+  def destroy
+    @layout = Layout.find(params[:id])
+    @layout.destroy
+    flash[:warning] = "Your layout has been deleted!"
+    redirect_to "/layouts"
   end
 
   private
