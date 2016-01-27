@@ -3,14 +3,16 @@
   <h1>Banners</h1>
     <% if user_signed_in? && current_user.admin? %>
   <% @layouts.each do |l| %>
-      <button><%= link_to 'EDIT Product', edit_layout_path(l.id) %></button>
-      <a data-confirm="Are you sure?" data-method="delete" href="/layouts/<%= l.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Layout</button></a>
   <% if l.active? %>
   <div class= "active_layout" >
   <center><h3>ACTIVE </h3></center>
+      <button><%= link_to 'EDIT Product', edit_layout_path(l.id) %></button>
+      <a data-confirm="Are you sure?" data-method="delete" href="/layouts/<%= l.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Layout</button></a>
   <a href="/layouts/<%= l.id %>/edit" ><p><img src= '<%= l.photo_url %>' height="90" width="100%" ></p></a>
   </div>
   <% else %>
+  <button><%= link_to 'EDIT Product', edit_layout_path(l.id) %></button>
+      <a data-confirm="Are you sure?" data-method="delete" href="/layouts/<%= l.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete Layout</button></a>
   <a href="/layouts/<%= l.id %>/edit" ><p><img src= '<%= l.photo_url %>' height="90" width="100%" ></p></a>
   <% end %>
     <% end %>
