@@ -12,6 +12,7 @@
       <th class= "bg-primary" >Order Type</th>
       <th class= "bg-primary" >Total Product Cost</th>
       <th class= "bg-primary" >Shipping</th>
+      <th class= "bg-primary" >Total Charged</th>
     </tr>
    </thead>
    <tbody>
@@ -37,6 +38,7 @@
     <% end %>
         <td><%= number_to_currency order.sub_total %></td>
         <td><%= number_to_currency order.shipping_total %></td>
+        <td><%= number_to_currency order.total_with_shipping %></td>
     <% end %>
   <% end %>
       </tr>
