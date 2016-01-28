@@ -21,9 +21,9 @@
         <% else %>
         <td><%= order.user.first_name %> <%= order.user.last_name %> from <%= order.user.business %></td>
         <% end %>
+        <td><%= order.created_at.strftime("%A, %D, %I:%M %p") %></td>
     <% order.carted_products.each do |carted_product| %>
       <tr>
-        <td><%= order.created_at.strftime("%A, %D, %I:%M %p") %></td>
         <% if order.user.ws_cust? %>
         <td><%= carted_product.ws_product.name %></td>
         <% elsif %>
