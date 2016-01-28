@@ -7,7 +7,8 @@
     <tr>
       <th class= "bg-primary" >Name</th>
       <th class= "bg-primary" >Date Order Placed</th>
-      <th class= "bg-primary" >Total Paid</th>
+      <th class= "bg-primary" >Total Product Cost</th>
+      <th class= "bg-primary" >Shipping</th>
       <th class= "bg-primary" >Name</th>&nbsp;&nbsp;
       <th class= "bg-primary" >Small Bag</th>
       <th class= "bg-primary" >Order Type</th>
@@ -23,6 +24,7 @@
         <% end %>
         <td><%= order.created_at.strftime("%A, %D, %I:%M %p") %></td>
         <td><%= number_to_currency order.sub_total %></td>
+        <td><%= number_to_currency order.shipping_total %></td>
         <% if order.user.ws_cust? %>
         <td><%= carted_product.ws_product.name %></td>
         <% elsif %>
