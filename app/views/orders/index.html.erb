@@ -34,9 +34,9 @@
         <% elsif order.user.fundraiser? %>
         <td>Fundraiser Order</td>
         <% end %>
+    <% end %>
         <td><%= number_to_currency order.sub_total %></td>
         <td><%= number_to_currency order.shipping_total %></td>
-    <% end %>
     <% end %>
   <% end %>
       </tr>
