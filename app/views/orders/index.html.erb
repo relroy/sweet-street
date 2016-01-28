@@ -16,8 +16,8 @@
     </tr>
    </thead>
    <tbody>
-    <% order.carted_products.each do |carted_product| %>
       <tr>
+    <% order.carted_products.each do |carted_product| %>
         <% if user_signed_in? && current_user.admin? %>
         <td><a data-confirm="Are you sure?" data-method="delete" href="/orders/<%= order.id %>" rel="nofollow"><button class="glyphicon glyphicon-trash">&nbsp;Delete order</button></a><%= order.user.first_name %> <%= order.user.last_name %> from <%= order.user.business %></td>
         <% else %>
