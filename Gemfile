@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails'
 # Use mysql as the database for Active Record
 group :producton do 
   gem 'pg' 
