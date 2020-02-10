@@ -10,7 +10,7 @@ GEM
       activesupport (= 4.1.6)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    actionview (4.1.6)
+    actionview (>= 4.2.11.1)
       activesupport (= 4.1.6)
       builder (~> 3.1)
       erubis (~> 2.7.0)
