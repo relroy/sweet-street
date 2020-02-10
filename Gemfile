@@ -46,7 +46,7 @@ gem 'stripe'
 gem "figaro"
 gem 'aws-sdk', '~> 2'
 gem "fog", "~> 1.3.1"
-gem 'nokogiri' '1.5.11'
+
 ruby '2.6.1'
 
 # Use ActiveModel has_secure_password
