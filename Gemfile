@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -47,7 +47,7 @@ gem "figaro"
 gem 'aws-sdk', '~> 2'
 gem "fog", "~> 1.3.1"
 
-ruby '2.1.3'
+ruby '2.6.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
